@@ -1,0 +1,62 @@
+.show-container{
+  top: 70px;
+  height: calc(100vh - 70px);
+}
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-color: $light-gray;
+}
+
+.show-back {
+ position: absolute;
+ top: 30px;
+ left: 30px;
+}
+
+.nxt-left {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  color: $blue;
+}
+.nxt-right {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  color: $blue;
+}
+
+.left-footer {
+  width: 60%;
+  position: absolute;
+  left: 0px;
+  padding-left: 30px;
+}
+
+.right-footer {
+  width: 40%;
+  position: absolute;
+  right: 0px;
+  padding-left: 30px;
+  border-left: 1px solid $light-gray;
+   p {
+    left: 30px;
+  }
+  a {
+    left: 30px;
+    color: $yellow;
+  }
+}
+
+.show-book {
+  position: absolute;
+  right: 50%;
+}
+
+
+
+
+
+
