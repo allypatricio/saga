@@ -1,4 +1,9 @@
 class ToursController < ApplicationController
+
+  def index
+    @tours = Tour.all
+  end
+
   def new
     @tour = Tour.new()
     # tour.user = current_user
