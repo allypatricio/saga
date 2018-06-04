@@ -1,0 +1,22 @@
+<div class="dashboard-wrapper">
+    <div class="dashboard">
+        <ul class="nav nav-pills">
+          <li class="active"><a data-toggle="pill" href="#tours"">My Tours</a></li>
+          <li><a data-toggle="pill" href="#bookings">Bookings</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="tours" class="tab-pane fade in active">
+            <%= link_to "Add new tour", new_tour_path, class: "btn btn-info" %>
+            <% 5.times do |tour| %>
+              <%= render "shared/tour" %>
+            <%end%>
+          </div>
+          <div id="bookings" class="tab-pane fade">
+            <% 5.times do |booking| %>
+              <%= render "shared/booking" %>
+            <%end%>
+          </div>
+        </div>
+    </div>
+</div>
