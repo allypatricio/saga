@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :locations
     resources :bookings
   end
+
+  resources :dashboard, only: :index
 end
 
 # dashboard
