@@ -1,0 +1,7 @@
+<div class="navbar-fixed">
+<% if user_signed_in? %>
+  <%= render partial: '/pages/shared/navbar_02' %>
+<% else %>
+  <%= render partial: '/pages/shared/navbar_01' %>
+<% end %>
+</div>
