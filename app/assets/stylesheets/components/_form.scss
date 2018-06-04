@@ -1,0 +1,57 @@
+.form-wrapper {
+  height: calc(100vh - 70px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+}
+
+.form-background {
+  // background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.1)),image-url("girl.jpeg");
+  filter: blur(1.25px);
+  background-size: cover;
+  opacity: 5px;
+  height: calc(100vh - 70px);
+  top: 70px;
+  width: 100%;
+  margin: 0px;
+  z-index: -1;
+  position: fixed;
+}
+
+.form-container {
+  z-index: 2;
+  padding: 2em;
+  padding-top: 0;
+}
+
+.form-inputs {
+  color: #2c2d33;
+  font-size: 18px;
+}
+
+.form-card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 30px;
+  background-color: white;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border-radius: 3px;
+  h2 {
+   color: #2c2d33;
+   text-align: center;
+ }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  box-shadow: none !important;
+  transition: none !important;
+  height: 15px !important;
+  width: 15px !important;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  float: left;
+  margin-right: 10px;
+}
