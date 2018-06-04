@@ -1,6 +1,15 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+# Added gems
+gem 'cloudinary'
+gem 'carrierwave'
+gem 'devise'
+gem 'faker'
+gem 'geocoder'
+gem 'pg_search'
+gem 'pundit'
+
 gem 'bootsnap', require: false
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
