@@ -80,3 +80,19 @@
     outline: none !important;
   }
 }
+
+// triangle button
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+
+  border-left: 20px solid $pink;
+  &:hover {
+    text-decoration: none;
+    color: $pink;
+    opacity: 0.5;
+  }
+}
