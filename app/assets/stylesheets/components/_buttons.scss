@@ -96,3 +96,19 @@
     opacity: 0.5;
   }
 }
+
+// FORM BUTTON - BLUE
+.btn-form-blue {
+  border-radius: 4px;
+  background-color: $blue;
+  color: $gray;
+  width: 100%;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
