@@ -18,6 +18,7 @@ class ToursController < ApplicationController
   end
 
   def edit
+    render layout: "map"
   end
 
   def show
