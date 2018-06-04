@@ -1,6 +1,9 @@
 class ToursController < ApplicationController
+  before_action :set_tour, only: [:edit, :show]
+  layout "map", only: [:edit, :show]
+
   def new
-    @tour = Tour.new()
+    @tour = Tour.new
     # tour.user = current_user
   end
 
@@ -18,14 +21,19 @@ class ToursController < ApplicationController
   end
 
   def edit
-    render layout: "map"
+
+    @location = Location.new
+
   end
 
   def show
-    render layout: "map"
   end
 
   private
+
+  def set_tour
+    @tour = Tour.find(params[:id])
+  end
 
   def tour_params
     params.require(:tour).permit(:title, :price, :duration, :description)
