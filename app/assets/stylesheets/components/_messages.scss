@@ -4,7 +4,7 @@
   align-items: center;
   padding: 20px;
   padding-left: 0px;
-  border-bottom: 1px solid $blue;
+  border-bottom: 1px solid $light-gray;
 }
 .message:last-child {
   border-bottom: none;
@@ -68,4 +68,5 @@
 .new-tour-margin{
   margin-bottom: 25px;
   margin-top: 25px;
+  width: 150px;
 }
