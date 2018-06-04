@@ -2,6 +2,13 @@ class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
+    @markers = @tours.map do |tour|
+      {
+        lat: tour.locations.first.latitude,
+        lng: tour.locations.first.longitude
+      }
+    end
+    render layout: "map"
   end
 
   def new
