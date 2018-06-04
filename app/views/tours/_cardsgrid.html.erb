@@ -1,0 +1,4 @@
+<div class="tours-container no-gutters">
+<% @tours.in_groups_of(5, Tour.new) do |group| %>
+    <%= group_cards_tours(group) %>
+<%end%>
