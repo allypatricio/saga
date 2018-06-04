@@ -21,7 +21,7 @@ class ToursController < ApplicationController
   end
 
   def show
-    render layout: "tour"
+    render layout: "map"
   end
 
   private
