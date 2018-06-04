@@ -1,3 +1,7 @@
+<div class="form-wrapper">
+  <div class="form-background" ></div>
+  <div class="form-container col-sm-5">
+    <div class="form-card">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -16,7 +20,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", :class=> "btn-form-blue" %>
   </div>
 <% end %>
 
@@ -24,4 +28,7 @@
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, :class => "btn-back-pnk" %>
+  </div>
+  </div>
+</div>

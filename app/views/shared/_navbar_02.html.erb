@@ -6,25 +6,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-xp-right hidden-xs hidden-sm">
-     <div class="search-container">
-  <%= form_tag "#{experiences_path}/#experiences", method: :get do %>
-<div class="search-components">
-  <%= label_tag :search do %>
-  <i class="fas fa-search"></i>
-<% end %>
-  <%= text_field_tag :search,
-    params[:search],
-    class: "search-form",
-    placeholder: "Search for an activity"%>
-<% end %>
-</div>
-</div>
       <p  class="navbar-xp-item navbar-xp-link-welcome">Welcome</p>
-      <% if current_user.first_name == nil %>
       <p class="navbar-xp-item navbar-xp-link-name"><%= current_user.email %></p>
-      <% else %>
-      <p class="navbar-xp-item navbar-xp-link-name"><%= current_user.first_name %></p>
-      <% end %>
 
       <!-- Profile picture with dropdown list -->
       <div class="navbar-xp-item">
@@ -40,8 +23,7 @@
           <%end%>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-xp-dropdown-menu">
-          <li><%=link_to "My bookings", bookings_path %></li>
-          <li><%=link_to "Create Experience", new_experience_path %></li>
+          <li><%=link_to "Create Experience", new_tour_path %></li>
           <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
           <!-- <li><a href="#">Dashboard</a></li> -->
           <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
@@ -56,11 +38,8 @@
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-xp-dropdown-menu">
           <li><p>Welcome</p></li>
-          <li>  <% if current_user.first_name == nil %>
             <p class="navbar-xp-item navbar-xp-link-name"><%= current_user.email %></p>
             <% else %>
-            <p class="navbar-xp-item navbar-xp-link-name"><%= current_user.first_name %></p>
-            <% end %></li>
           </ul>
         </div>
       </div>
