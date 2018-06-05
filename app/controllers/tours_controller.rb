@@ -50,6 +50,7 @@ class ToursController < ApplicationController
     @tour.update(tour_params)
     @tour.save
     redirect_to dashboard_index_path
+  end
 
   def show
     @tour = Tour.find(params[:id])
