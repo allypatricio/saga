@@ -27,7 +27,7 @@ PHOTO_URLS = [
   "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b5ecaef0464fc50a866e74a6176c3fdc&auto=format&fit=crop&w=1050&q=80",
   "https://images.unsplash.com/photo-1493807742375-fbc46d996e8f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6f0038573a81b1169576b6674a3ce202&auto=format&fit=crop&w=1552&q=80"]
 
-10.times do
+10.times do |i|
   tour = Tour.new({
     user_id: rand(1..4),
     title: Faker::Book.title,
@@ -41,7 +41,7 @@ PHOTO_URLS = [
 
   location = Location.new({
     tour_id: tour.id,
-    address: ADDRESSES.sample,
+    address: ADDRESSES[i],
     story: "Location 1 story",
     question: "Location 1 question",
     hint: "Location 1 hint",
