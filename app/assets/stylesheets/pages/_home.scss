@@ -1,1 +1,99 @@
 // Specific CSS for your home-page
+
+.banner {
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("lisbon.jpeg");
+  color: white;
+  text-align: center;
+  height: 100vh;
+  background-size: cover !important;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+.banner h1 {
+  font-size: 85px;
+  font-weight: bold;
+  // text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  text-shadow: 1px 1px 1px;
+  // color: #2c2d33;
+  text-align: center;
+}
+.banner p {
+  font-size: 30px;
+  font-weight: lighter;
+  color: white;
+  opacity: 0.8;
+  text-shadow: 1px 1px 0.5px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+// .button-banner{
+//   padding: 10px 20px;
+//   border-radius: 4px;
+//   background-color: #86E7DF;
+//   color: #2c2d33;
+//   text-decoration: none;
+//   &:hover {
+//     text-decoration: none;
+//     color: white;
+//     }
+// }
+
+.middle-landing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
+  }
+
+.box {
+
+  height: 300px;
+  border-spacing: 10px;
+  text-align: center;
+  width: 400px;
+  margin-left: 50px;
+  margin-right: 50px;
+
+}
+.bottom-landing-one {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 300px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.bottom-image {
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("map.jpeg");
+  background-size: cover !important;
+  padding: 200px;
+  margin-left: 200px;
+  // display: flex;
+}
+
+.bottom-text {
+  padding: 200px;
+}
+
+.bottom-landing-two {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+  height: 300px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.bottom-image-two {
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("laptop.jpeg");
+  background-size: cover !important;
+  padding: 200px;
+  margin-right: 200px;
+}
