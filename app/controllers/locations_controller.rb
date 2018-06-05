@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_tour, only: [:new, :create, :edit, :update]
+  before_action :set_tour, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_location, only: [:edit, :update]
   layout "map", only: [:edit]
 
@@ -28,6 +28,12 @@ class LocationsController < ApplicationController
 
   def update
     @location.update(location_params)
+    redirect_to edit_tour_path(@tour)
+  end
+
+  def destroy
+    @location = Location.find(params[:id])
+    @location.destroy
     redirect_to edit_tour_path(@tour)
   end
 

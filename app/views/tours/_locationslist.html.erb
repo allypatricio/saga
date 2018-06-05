@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
   <% @locations_ordered.each do |location| %>
-    <div class="location-box">
+    <div class="location-box" location-id="<%= location.id %>">
       <li>
         <div class="location-link">
           <%= link_to edit_tour_location_path(@tour, location) do %>
@@ -9,10 +9,15 @@
         </div>
         <div class="location-icons">
           <i class="fas fa-bars"></i>
-          <i class="far fa-trash-alt"></i>
+          <%= link_to tour_location_path(@tour, location), method: :delete, data: {confirm: 'Are you sure you want to delete this location?'} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
         </div>
       </li>
     </div>
   <% end %>
 </ul>
+
+
+
 
