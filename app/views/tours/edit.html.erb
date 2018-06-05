@@ -1,7 +1,33 @@
-<div class="map-container">
-<div id="map"
-  style="width: 100%;
-  height: 100vh;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+<div class="map-wrapper">
+  <div class="map-container-full-page">
+    <div id="map"
+      style="width: 100%;
+      height: 100%;"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
+  </div>
+
+<div class="edit-tour-menu">
+  <div class="searchbox">
+    <%= simple_form_for([@tour, @location]) do |f| %>
+
+      <label for="address">Add Location</label>
+      <%= f.input :address, label: false, wrapper_html: {class: "form-inline"} do %>
+        <%= f.input_field :address, label: false %>
+        <%= f.button :submit, "+", :class => "form-button" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <p><strong>Locations</strong></p>
+
+  <div id="locations-list">
+    <%= render 'locationslist' %>
+  </div>
 </div>
+
+</div>
+
+
+
+
