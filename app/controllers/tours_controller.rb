@@ -2,6 +2,17 @@ class ToursController < ApplicationController
   before_action :set_tour, only: [:edit, :show]
   layout "map", only: [:edit, :show]
 
+  def index
+    @tours = Tour.all
+    @markers = @tours.map do |tour|
+      {
+        lat: tour.locations.first.latitude,
+        lng: tour.locations.first.longitude
+      }
+    end
+    render layout: "map"
+  end
+
   def new
     @tour = Tour.new
   end
@@ -41,7 +52,7 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :price, :duration, :description)
+    params.require(:tour).permit(:title, :price, :duration, :description, :photo, :photo_cache)
   end
 
 end

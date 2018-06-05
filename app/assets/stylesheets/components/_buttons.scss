@@ -66,11 +66,8 @@
 .btn-back-pnk {
   color: $pink;
   border: solid 2px $pink;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 4px;
-  position: absolute;
-  bottom: 20px;
-  left: 26px;
   &:hover {
     text-decoration: none;
     color: $pink;
@@ -81,7 +78,7 @@
   }
 }
 
-// triangle button
+// TRIANGLE BUTTON - PINK
 
 .arrow-right {
   width: 0;
@@ -111,4 +108,26 @@
     outline: none !important;
   }
 }
+
+// CIRCULAR BUTTON - PINK
+.btn-rnd-pnk {
+  border: 2px solid $pink;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
