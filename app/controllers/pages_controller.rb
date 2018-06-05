@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @no_navbar = true
+    @navbar = false
   end
 end
