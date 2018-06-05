@@ -1,4 +1,6 @@
 class Tour < ApplicationRecord
   belongs_to :user
-  belongs_to :category
+  has_many :locations
+  mount_uploader :photo, PhotoUploader
+  CATEGORIES = ["Bachelor Party", "Team buidling", "Kids", "Rainy day", "Sightseeing"]
 end

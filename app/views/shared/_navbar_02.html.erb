@@ -1,0 +1,45 @@
+<div class="navbar-saga">
+  <!-- Logo -->
+  <a href="/" class="navbar-saga-brand">
+    <%= image_tag('favicon.png') %>
+  </a>
+  <!-- Right Navigation -->
+  <div class="navbar-saga-right hidden-xs hidden-sm">
+      <p  class="navbar-saga-item navbar-saga-link-welcome">Welcome</p>
+      <p class="navbar-saga-item navbar-saga-link-name"><%= current_user.email %></p>
+
+      <!-- Profile picture with dropdown list -->
+      <div class="navbar-saga-item">
+        <div class="dropdown">
+          <% if User.instance_methods.include? :photo %>
+          <% if current_user.photo.url == nil %>
+          <i class="far fa-user dropdown-toggle avatar-border-turqoise-i " id="navbar-saga-menu" data-toggle="dropdown"></i>
+          <% else %>
+          <%= image_tag current_user.photo.url(:thumnail), :class => "avatar dropdown-toggle avatar-border-turqois", :id => "navbar-saga-menu",data: { toggle: 'dropdown' }%>
+          <%end%>
+          <%else%>
+          <i class="far fa-user dropdown-toggle avatar-border-turqoise-i " id="navbar-saga-menu" data-toggle="dropdown"></i>
+          <%end%>
+
+        <ul class="dropdown-menu dropdown-menu-right navbar-saga-dropdown-menu">
+          <li><%=link_to "Dashboard", dashboard_index_path %></li>
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+          <!-- <li><a href="#">Dashboard</a></li> -->
+          <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-saga-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-saga-dropdown-menu">
+          <li><p>Welcome</p></li>
+            <p class="navbar-saga-item navbar-saga-link-name"><%= current_user.email %></p>
+            <% else %>
+          </ul>
+        </div>
+      </div>
+</div>

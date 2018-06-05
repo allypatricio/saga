@@ -1,0 +1,6 @@
+<% content_for :external_script do %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+  <%= javascript_pack_tag "map" %>
+<% end %>
+
+<%= render :file => 'layouts/application.html.erb'%>

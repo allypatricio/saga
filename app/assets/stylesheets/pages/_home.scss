@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 
+
 .banner {
   background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("lisbon.jpeg");
   color: white;
@@ -96,4 +97,14 @@
   background-size: cover !important;
   padding: 200px;
   margin-right: 200px;
+  
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
