@@ -7,15 +7,15 @@
   </div>
 
   <div class="left-footer">
+    <h1><%= @tour.title.capitalize %></h1>
     <h2>Description</h2>
-    <p>blah blah blah</p>
+    <p><%= @tour.description.capitalize %></p>
   </div>
 
   <div class="right-footer">
-    <p>Price:</p>
-    <p>Duration:</p>
-    <p>Date:</p>
-    <p>Reviews:</p>
+    <p>Price: <%= @tour.price %></p>
+    <p>Duration: <%= @tour.duration %></p>
+    <p>Reviews: </p>
     <a href="/"><i class="fas fa-star"></i></a>
   </div>
 </div>
