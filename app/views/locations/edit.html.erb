@@ -1,0 +1,13 @@
+<h1>Edit Location</h1>
+
+<%= simple_form_for [@tour, @location] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :address %>
+  <%= f.input :position %>
+  <%= f.input :story, as: :text %>
+
+  <%= f.input :question %>
+  <%= f.input :hint %>
+  <%= f.input :answer %>
+  <%= f.submit "Edit location" %>
+<% end %>

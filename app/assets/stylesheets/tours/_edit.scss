@@ -37,7 +37,10 @@
 }
 
 .location-box {
-  background-color: $light-gray;
   padding: 5px 10px;
+  background-color: $light-gray;
   border: solid 1px black;
+  a {
+    color: black;
+  }
 }

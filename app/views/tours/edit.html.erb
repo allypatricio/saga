@@ -23,9 +23,11 @@
   <p><strong>List of Locations</strong></p>
 
   <ul class="list-unstyled">
-    <% @tour.locations.each do |location| %>
+    <% @locations_ordered.each do |location| %>
       <li class="location-box">
-        <%= "#{location.position}: #{location.title}" %>
+        <%= link_to edit_tour_location_path(@tour, location) do %>
+          <%= truncate "#{location.position}: #{location.address}", length: 45 %>
+        <% end %>
       </li>
     <% end %>
   </ul>

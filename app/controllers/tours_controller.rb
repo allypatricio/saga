@@ -21,9 +21,8 @@ class ToursController < ApplicationController
   end
 
   def edit
-
     @location = Location.new
-
+    @locations_ordered = @tour.locations.sort_by {|obj| obj.position}
   end
 
   def show
