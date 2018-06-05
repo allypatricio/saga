@@ -9,7 +9,7 @@ class ToursController < ApplicationController
         lat: tour.locations.first.latitude,
         lng: tour.locations.first.longitude,
         infoWindow: {
-                    content: tour.title
+                    content: "Tour: " + tour.title
                     }
       }
     end
