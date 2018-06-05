@@ -9,7 +9,7 @@
 
 <div class="edit-tour-menu">
   <div class="searchbox">
-    <%= simple_form_for [@tour, @location] do |f| %>
+    <%= simple_form_for([@tour, @location]) do |f| %>
 
       <label for="address">Add Location</label>
       <%= f.input :address, label: false, wrapper_html: {class: "form-inline"} do %>
@@ -19,21 +19,11 @@
     <% end %>
   </div>
 
-  <div class="locations-list">
-  <p><strong>List of Locations</strong></p>
+  <p><strong>Locations</strong></p>
 
-  <ul class="list-unstyled">
-    <% @locations_ordered.each do |location| %>
-      <li class="location-box">
-        <%= link_to edit_tour_location_path(@tour, location) do %>
-          <%= truncate "#{location.position}: #{location.address}", length: 45 %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-
+  <div id="locations-list">
+    <%= render 'locationslist' %>
   </div>
-
 </div>
 
 </div>

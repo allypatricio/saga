@@ -1,0 +1,18 @@
+<ul class="list-unstyled">
+  <% @locations_ordered.each do |location| %>
+    <div class="location-box">
+      <li>
+        <div class="location-link">
+          <%= link_to edit_tour_location_path(@tour, location) do %>
+            <%= truncate "#{location.position}: #{location.address}", length: 40 %>
+          <% end %>
+        </div>
+        <div class="location-icons">
+          <i class="fas fa-bars"></i>
+          <i class="far fa-trash-alt"></i>
+        </div>
+      </li>
+    </div>
+  <% end %>
+</ul>
+

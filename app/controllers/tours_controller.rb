@@ -4,7 +4,6 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
-    # tour.user = current_user
   end
 
   def create
@@ -23,6 +22,13 @@ class ToursController < ApplicationController
   def edit
     @location = Location.new
     @locations_ordered = @tour.locations.sort_by {|obj| obj.position}
+
+    @markers = @tour.locations.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+      }
+    end
   end
 
   def show

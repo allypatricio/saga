@@ -39,8 +39,20 @@
 .location-box {
   padding: 5px 10px;
   background-color: $light-gray;
+  opacity: 0.8;
   border: solid 1px black;
+  position: relative;
+}
+
+.location-link {
   a {
     color: black;
   }
 }
+
+.location-icons {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+

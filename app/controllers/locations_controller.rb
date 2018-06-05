@@ -1,18 +1,26 @@
 class LocationsController < ApplicationController
   before_action :set_tour, only: [:new, :create, :edit, :update]
   before_action :set_location, only: [:edit, :update]
+  layout "map", only: [:edit]
+
 
   def new
-    @location = Location.new
-    @location.tour = @tour
   end
 
   def create
     @location = Location.new(location_params)
     @location.tour = @tour
-    @location.title = "Click to add details"
     @location.position = @tour.locations.count + 1
-    @location.save
+    if @location.save && @location.longitude != 0
+      redirect_to edit_tour_path(@tour)
+    elsif @location.save
+      redirect_to edit_tour_path(@tour)
+      # add notice
+    else
+      redirect_to edit_tour_path(@tour)
+      # add notice
+    end
+
   end
 
   def edit
