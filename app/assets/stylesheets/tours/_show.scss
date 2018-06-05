@@ -1,12 +1,12 @@
 .show-container{
   top: 70px;
-  // height: calc(100vh - 70px);
 }
 .gallery {
   position: relative;
   width: 100%;
   height: 60vh;
-  background-color: $light-gray;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .fa-chevron-circle-left:before {
@@ -14,62 +14,53 @@
   left: 70px;
   top: 50%;
   color: white;
-  &:hover {
-    opacity: 0.5px;
-    color: white;
-  }
 }
 .fa-chevron-circle-right:before {
   position: absolute;
   right: 70px;
   top: 50%;
   color: white;
-   &:hover {
-    opacity: 0.5px;
-    color: white;
-  }
 }
 
 .left-footer {
-  width: 80%;
+  width: 70%;
   position: absolute;
   left: 0px;
   padding-left: 30px;
+  padding-right: 30px;
   h1 {
     color: $gray;
   }
 }
 
 .right-footer {
-  width: 20%;
+  width: 30%;
   position: absolute;
   right: 0px;
   padding-left: 30px;
   padding-top: 30px;
+  padding-right: 30px;
   border-left: 1px solid $light-gray;
   p {
     left: 30px;
     color: $gray;
   }
-  a {
-    left: 30px;
-    color: $yellow;
-  }
 }
-
+.fa-star:before {
+  left: 30px;
+  color: $yellow;
+}
 .show-back {
  position: absolute;
  top: 30px;
  left: 40px;
 }
+
 .show-book {
  position: absolute;
-bottom: 5px;
-right: 5px;
+ right: 30px;
+ bottom: 30px;
 }
-
-
-
 
 
 
