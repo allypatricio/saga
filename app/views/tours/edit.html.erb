@@ -18,6 +18,20 @@
       <% end %>
     <% end %>
   </div>
+
+  <div class="locations-list">
+  <p><strong>List of Locations</strong></p>
+
+  <ul class="list-unstyled">
+    <% @tour.locations.each do |location| %>
+      <li class="location-box">
+        <%= "#{location.position}: #{location.title}" %>
+      </li>
+    <% end %>
+  </ul>
+
+  </div>
+
 </div>
 
 </div>
