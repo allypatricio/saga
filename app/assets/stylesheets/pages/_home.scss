@@ -11,13 +11,24 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 2vh;
+  // &:before {
+  //   content: '';
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // background-image: linear-gradient(to bottom right,#fff);
+  // opacity: .6;
+  // }
 }
 .banner h1 {
+  padding-top: 300px;
   font-size: 85px;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 0px;
   // text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
+  opacity: 1;
   text-shadow: 1px 1px 1px;
   // color: #2c2d33;
   text-align: center;
@@ -26,7 +37,7 @@
   font-size: 30px;
   font-weight: lighter;
   color: white;
-  opacity: 0.8;
+  opacity: 1;
   text-shadow: 1px 1px 0.5px;
   padding-bottom: 25px;
   text-align: center;
@@ -54,14 +65,18 @@
   }
 
 .box {
-
   height: 300px;
   border-spacing: 10px;
   text-align: center;
   width: 400px;
   margin-left: 50px;
   margin-right: 50px;
+}
 
+.bottom {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 10px;
 }
 .bottom-landing-one {
   display: flex;
@@ -70,24 +85,28 @@
   height: 300px;
   margin-right: 50px;
   margin-left: 50px;
+  margin-bottom: 10px;
 }
 
 .bottom-image {
   background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("map.jpeg");
   background-size: cover !important;
   padding: 200px;
-  margin-left: 200px;
+  margin-left: 75px;
   // display: flex;
 }
 
 .bottom-text {
-  padding: 200px;
+  padding: 10px;
+  vertical-align: super;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .bottom-landing-two {
   display: flex;
   justify-content: space-between;
-  margin-top: 200px;
+  margin-top: 100px;
   height: 300px;
   margin-right: 50px;
   margin-left: 50px;
@@ -97,23 +116,25 @@
   background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("laptop.jpeg");
   background-size: cover !important;
   padding: 200px;
-  margin-right: 200px;
+  margin-right: 75px;
 }
 
 .bottom-landing-three {
   display: flex;
   justify-content: space-between;
-  margin-top: 200px;
+  margin-top: 100px;
   height: 300px;
   margin-right: 50px;
   margin-left: 50px;
-}
+
+  }
 
 .bottom-image-three {
   background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%), image-url("hands.jpeg");
   background-size: cover !important;
   padding: 200px;
-  margin-left: 200px;
+  margin-left: 75px;
+  margin-bottom: 20px;
 }
 
 // .no-gutters {
