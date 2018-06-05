@@ -7,27 +7,118 @@
     ></div>
   </div>
 
-<div class="edit-tour-menu">
-  <div class="searchbox">
-    <%= simple_form_for([@tour, @location]) do |f| %>
+  <div class="edit-tour-menu">
+    <div class="searchbox">
+      <%= simple_form_for([@tour, @location]) do |f| %>
 
-      <label for="address">Add Location</label>
-      <%= f.input :address, label: false, wrapper_html: {class: "form-inline"} do %>
-        <%= f.input_field :address, label: false %>
-        <%= f.button :submit, "+", :class => "form-button" %>
+        <label for="address">Add Location</label>
+        <%= f.input :address, label: false, wrapper_html: {class: "form-inline"} do %>
+          <%= f.input_field :address, label: false %>
+          <%= f.button :submit, "+", :class => "form-button" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+    <p><strong>Locations</strong></p>
+
+    <div id="locations-list">
+      <ul class="list-unstyled">
+        <% @locations_ordered.each do |location| %>
+          <div class="location-box" location-id="<%= location.id %>">
+            <li>
+              <div class="location-link">
+                <%= link_to "", data: {toggle: "modal", target: "#editLocation#{location.id}"} do %>
+                  <%= truncate "#{location.position}: #{location.address}", length: 40 %>
+                <% end %>
+              </div>
+              <div class="location-icons">
+                <i class="fas fa-bars"></i>
+                <%= link_to tour_location_path(@tour, location), method: :delete, data: {confirm: 'Are you sure you want to delete this location?'} do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </div>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu text-center" %>
   </div>
 
-  <p><strong>Locations</strong></p>
 
-  <div id="locations-list">
-    <%= render 'locationslist' %>
+
+</div>
+
+
+
+<!-- EDIT LOCATION MODAL -->
+
+<% @locations_ordered.each do |location| %>
+
+  <div class="modal fade" id= <%= "editLocation#{location.id}" %> tabindex="-1" role="dialog" aria-labelledby="editLocationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="bookNowModalLabel">
+            Edit Location
+          </h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <%= simple_form_for [@tour, location] do |f| %>
+            <%= f.input :address %>
+            <%= f.input :position %>
+            <%= f.input :story, as: :text %>
+
+            <%= f.input :question %>
+            <%= f.input :hint %>
+            <%= f.input :answer %>
+            <%= f.submit "Edit location" %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-</div>
+<% end %>
 
+<!-- UPDATE TOUR MODAL -->
 
+  <div class="modal fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">
+            Finalize Tour
+          </h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
+          <%= simple_form_for(@tour) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+          <div class="form-inputs">
+            <%= f.input :title %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :duration %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Submit for Review", :class => "btn-main-pnk" %>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
