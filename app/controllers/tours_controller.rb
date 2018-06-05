@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:edit, :show]
+  before_action :set_tour, only: [:edit, :show, :update]
   layout "map", only: [:edit, :show]
 
   def index
@@ -23,11 +23,14 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
+        format.html { redirect_to edit_tour_path(@tour), notice: 'Tour was successfully created.' }
       else
         format.html { render :new }
       end
     end
+  end
+
+  def show
   end
 
   def edit
@@ -42,7 +45,10 @@ class ToursController < ApplicationController
     end
   end
 
-  def show
+  def update
+    @tour.update(tour_params)
+    @tour.save
+    redirect_to dashboard_index_path
   end
 
   private

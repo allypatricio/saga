@@ -43,6 +43,7 @@
       </ul>
     </div>
 
+    <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu text-center" %>
   </div>
 
 
@@ -51,7 +52,7 @@
 
 
 
-<!-- MODAL -->
+<!-- EDIT LOCATION MODAL -->
 
 <% @locations_ordered.each do |location| %>
 
@@ -85,3 +86,39 @@
   </div>
 
 <% end %>
+
+<!-- UPDATE TOUR MODAL -->
+
+  <div class="modal fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">
+            Finalize Tour
+          </h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <%= simple_form_for(@tour) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <div class="form-inputs">
+            <%= f.input :title %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :duration %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Submit for Review", :class => "btn-main-pnk" %>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
