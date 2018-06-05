@@ -1,17 +1,18 @@
 
 <div class="show-container">
 
-    <% if @tour.locations.first.photo.url != nil %>
+  <% if @tour.locations.first.photo.url != nil %>
   <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.locations.first.photo%>);">
     <%else%>
 
     <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(http://via.placeholder.com/500x500);">
       <% end %>
-    <div class="nxt-right"><i class="fas fa-chevron-circle-right fa-3x"></i></div>
-    <div class="nxt-left"><i class="fas fa-chevron-circle-left fa-3x"></i></div>
-    <%= link_to "Back", tours_path, :class => "btn-back-pnk show-back" %>
+      <a href="/"><i class="fas fa-chevron-circle-right fa-3x"></i></a>
+      <a href=""><i class="fas fa-chevron-circle-left fa-3x"></i></a>
+
+      <%= link_to "Back", tours_path, :class => "btn-back-pnk show-back" %>
+    </div>
   </div>
-</div>
 
   <div class="left-footer">
     <h1><%= @tour.title.capitalize %></h1>
@@ -19,11 +20,13 @@
   </div>
 
   <div class="right-footer">
+    <p>Location: <%= @tour.locations.first.address %></p>
     <p>Price: <%= @tour.price %></p>
     <p>Duration: <%= @tour.duration %></p>
-    <p>Reviews: </p>
-    <a href="/"><i class="fas fa-star"></i></a>
-<%= link_to "Book", tours_path, :class => "btn-main-pnk show-book" %>
+    <i class="fas fa-star"></i></a>
   </div>
+  <%= link_to "Book", tours_path, :class => "btn-main-pnk show-book" %>
+
 </div>
+
 
