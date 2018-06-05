@@ -7,7 +7,10 @@ class ToursController < ApplicationController
     @markers = @tours.map do |tour|
       {
         lat: tour.locations.first.latitude,
-        lng: tour.locations.first.longitude
+        lng: tour.locations.first.longitude,
+        infoWindow: {
+                    content: "Tour: " + tour.title
+                    }
       }
     end
     render layout: "map"
@@ -30,9 +33,6 @@ class ToursController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
     @location = Location.new
     @locations_ordered = @tour.locations.sort_by {|obj| obj.position}
@@ -45,10 +45,15 @@ class ToursController < ApplicationController
     end
   end
 
+
   def update
     @tour.update(tour_params)
     @tour.save
     redirect_to dashboard_index_path
+
+  def show
+    @tour = Tour.find(params[:id])
+    render layout: "map"
   end
 
   private
