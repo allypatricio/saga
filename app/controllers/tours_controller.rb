@@ -7,7 +7,10 @@ class ToursController < ApplicationController
     @markers = @tours.map do |tour|
       {
         lat: tour.locations.first.latitude,
-        lng: tour.locations.first.longitude
+        lng: tour.locations.first.longitude,
+        infoWindow: {
+                    content: tour.title
+                    }
       }
     end
     render layout: "map"
