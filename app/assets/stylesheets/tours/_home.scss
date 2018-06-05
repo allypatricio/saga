@@ -5,7 +5,7 @@
   align-content: space-around;
   height: 100%;
   padding-left: 0vw;
-  padding-right: 5vw;
+  padding-right: 0vw;
 }
 
 .map-container{
@@ -13,13 +13,18 @@
   height: 100%;
   padding: 20px;
   padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
   position: sticky !important;
-  top: 150px;
+  top: 145px;
 }
 
 .card-wrapper{
   width: 60vw;
-  padding: 20px;
+  padding-top: 0px;
+  top: 200px;
+  padding-right: 2vw;
+  padding-left: 2vw;
 }
 
 #map{
@@ -28,11 +33,16 @@
 
 .filter-bar{
   display: flex;
-  width: 100%;
-  height: 50px;
-  margin-top:20px;
-  top: 100px;
-  justify-content: space-around;
   position: sticky;
+  justify-content: space-around;
+  top: 70px;
+  width: 100%;
   z-index: 999;
+  padding-top:20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
 }
+
+
