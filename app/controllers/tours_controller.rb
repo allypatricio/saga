@@ -88,17 +88,18 @@ class ToursController < ApplicationController
     end
   end
 
-
   def show
     @tour = Tour.find(params[:id])
     @markers = @tour.locations.map do |location|
       {
-        lat: location.latitude,
-        lng: location.longitude,
+        lat: @tour.locations.first.latitude,
+        lng: @tour.locations.first.longitude,
       }
     end
 @booking = Booking.new(tour_id: params[:id])
   end
+
+
 
   private
 
