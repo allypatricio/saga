@@ -1,0 +1,14 @@
+<% if @tour.errors.any? %>
+// When there are errors, render them
+  function renderUpdatedForm(input) {
+    const modalBody = document.getElementById('updateTourModalBody');
+    modalBody.innerHTML = input;
+  }
+
+  renderUpdatedForm('<%= j render "tours/updatetourform" %>');
+
+<% else %>
+// Redirect
+window.location.replace("/dashboard")
+
+<% end %>

@@ -141,6 +141,7 @@
   margin-bottom: 20px;
 }
 
+
 .fa-chart-line:before, .fa-euro-sign:before, .fa-search:before {
   color: $gray;
   padding-right: 8px;
@@ -151,9 +152,12 @@
 //   margin-right: 0;
 //   margin-left: 0;
 
-//   > .col,
-//   > [class*="col-"] {
-//     padding-right: 0;
-//     padding-left: 0;
-//   }
-// }
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

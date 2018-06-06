@@ -7,7 +7,7 @@ class Location < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :address, presence: true
-  validates :story, presence: true, length: { in: (20..60) }
+  # validates :story, presence: true, length: { in: (20..60) }
   validates :position, presence: true
 
   # TO DO:
