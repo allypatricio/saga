@@ -8,15 +8,15 @@
   </div>
 
   <div class="edit-tour-menu">
-    <strong>Add Location</strong>
+    <div class="menu-label">Add Location</div>
     <div class="add-location-form">
       <%= simple_form_for [@tour, @location], html: {class: "form-inline"} do |f| %>
-          <%= f.input :address, label: false, class: "add-location-searchbox", size: 40  %>
-          <%= f.button :submit, "+", class: "add-location-submit"%>
+          <%= f.input :address, label: false %>
+          <%= f.button :submit, "+" %>
       <% end %>
     </div>
 
-    <strong>Locations</strong>
+    <div class="menu-label">Locations</div>
 
     <div id="locations-list">
       <ul class="list-unstyled">
@@ -105,7 +105,7 @@
 
           <div class="form-inputs">
             <%= f.input :title %>
-            <%= f.input :description %>
+            <%= f.input :description, as: :text, :input_html => {:rows => 6} %>
             <%= f.input :price %>
             <%= f.input :duration %>
           </div>
