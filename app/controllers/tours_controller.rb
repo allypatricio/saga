@@ -20,9 +20,12 @@ class ToursController < ApplicationController
     @max_price = prices.max.to_i + 10
 
 
+    @tours = @tours.location(params[:location]) if params[:location].present?
     @tours = @tours.category(params[:category].downcase.capitalize) if params[:category].present? && !params[:category].empty?
     @tours = @tours.duration(params[:duration]) if params[:duration].present?
     @tours = @tours.price(params[:price]) if params[:price].present?
+
+
 
 
     @markers = @tours.map do |tour|
@@ -74,13 +77,26 @@ class ToursController < ApplicationController
 
   def update
     @tour.update(tour_params)
-    @tour.save
-    redirect_to dashboard_index_path
+    respond_to do |format|
+      if @tour.save
+        format.html { redirect_to dashboard_index_path, notice: 'Your tour is submitted for review' }
+        format.js
+      else
+        format.html { redirect_to edit_tour_path }
+        format.js
+      end
+    end
   end
+
 
   def show
     @tour = Tour.find(params[:id])
-    render layout: "map"
+    @markers = @tour.locations.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+      }
+    end
   end
 
   private
@@ -90,7 +106,7 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :price, :duration, :description, :photo, :photo_cache)
+    params.require(:tour).permit(:title, :price, :duration, :description, :photo, :photo_cache, :location)
   end
 
 end

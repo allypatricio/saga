@@ -15,20 +15,22 @@
     </div>
 
     <div class="location-search">
-      location
+      <label for="location">Location</label>
+       <input id="location" type="text" name="location" placeholder="Lisbon"><br>
     </div>
 
     <div class="duration-search" >
-      <label for="duration">Duration</label>
-      <input id="duration" name="duration" type="range" min="0" max="<%= @max_duration %>" value="<%= @max_duration %>" >
+      <label for="duration" id="textDuration" >Duration: <%= @max_duration %>h</label>
+      <input id="duration" name="duration" type="range" min="0" max="<%= @max_duration %>" value="<%= @max_duration %>" onchange="updateDurationInput(this.value);" >
     </div>
 
     <div class="price-search">
-      <label for="price">Price</label>
-      <input id="price" name="price" type="range" min="0" max= "<%= @max_price %>"value = "<%= @max_price %>" >
+      <label for="price" id="textPrice" >Price: <%= @max_price %>€</label>
+      <input id="price" name="price" type="range" min="0" max= "<%= @max_price %>"value = "<%= @max_price %>" onchange="updatePriceInput(this.value);" >
     </div>
       <div class="filter-box-element">
         <input type="submit" value="Apply filters" class="btn-filter">
+        <button type="button" onClick="window.location.reload();">Reset filters</button>
       </div>
 
     <%end%>
@@ -48,7 +50,14 @@
   </div>
 <% content_for :external_script do  %>
   <script>
+    function updatePriceInput(val) {
+          document.getElementById('textPrice').innerHTML='Price: '+val+'€';
 
+        }
+    function updateDurationInput(val) {
+          document.getElementById('textDuration').innerHTML='Duration: '+val+'h';
+          console.log(val)
+        }
   </script>
 <% end %>
 

@@ -1,4 +1,4 @@
-<div class="tours-container no-gutters">
+<div class="tours-container no-gutters" data-markers="<%= @markers.to_json %>" id="cardspartial">
 <% @tours.in_groups_of(5, Tour.new) do |group| %>
     <%= group_cards_tours(group) %>
 <%end%>
