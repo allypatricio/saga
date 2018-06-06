@@ -2,10 +2,13 @@ import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
 
 // NORMAL MAP
-const mapElement = document.getElementById('map');
-if (mapElement) { // don't try to build a map if there's no div#map to inject in
+const mapStandard = document.getElementById('map');
+const mapFiltered = document.getElementById('cardspartial')
+const mapMarkers = document.getElementById('map-markers')
+
+function createMap(mapElement) {
   const map = window.map = new GMaps({
-    el: '#map',
+    el: "#"+mapElement.id,
     lat: 0,
     lng: 0,
     mapTypeControl: false,
@@ -18,12 +21,14 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     });
 
   if (document.getElementById('cardspartial')) {
-    var cardsgrid = document.getElementById('cardspartial');
-    } else {
-    var cardsgrid = document.getElementById('map');
-    }
+    var mapElement = document.getElementById('cardspartial');
+  } else if (document.getElementById('map-markers')){
+    var mapElement = document.getElementById('map-markers');
+  } else {
+    var mapElement = document.getElementById('map');
+  }
 
-  const markers = JSON.parse(cardsgrid.dataset.markers);
+  const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
@@ -33,7 +38,9 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
-}
+};
+
+createMap(mapStandard || mapFiltered || mapMarkers)
 
 
 // // MAP WITH OFFSET FOR MARKERS
