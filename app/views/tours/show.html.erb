@@ -45,11 +45,14 @@
 <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="bookNowModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="text-align: center;" >
-        <h3>Booking Confirmation</h3>
-        <p class="modal-title" id="bookNowModalLabel">
-          Booking: <%= @tour.title%></p>
-          <p>Host: <%= @tour.user.first_name.capitalize %></p>
+      <div class="modal-header" >
+        <div class="title-center" style="text-align: center">
+        <h3>Your Booking</h3>
+        </div>
+          <p>Booking: <%= @tour.title%></p>
+          <p>Price: <%= @tour.price %></p>
+          <p>Duration: <%= @tour.duration %></p>
+          <p>Starting Location: <%= @tour.locations.first.address %></p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
