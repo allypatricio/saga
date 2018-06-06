@@ -34,7 +34,7 @@ PHOTO_URLS = [
     price: rand(5..30),
     duration: rand(1..5),
     status: 1,
-    description: Faker::Lorem.words(rand(10..60)).join(" "),
+    description: Faker::Lorem.words(rand(10..30)).join(" "),
     category: Tour::CATEGORIES.sample
     })
   tour.save
@@ -42,7 +42,7 @@ PHOTO_URLS = [
   location = Location.new({
     tour_id: tour.id,
     address: ADDRESSES[i],
-    story: "Location 1 story",
+    story: "Location 1 story but then longer so it meets the validation",
     question: "Location 1 question",
     hint: "Location 1 hint",
     answer: "Location 1 answer",
