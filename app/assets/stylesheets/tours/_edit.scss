@@ -25,6 +25,8 @@
   top: 70px;
 }
 
+// MENU
+
 .edit-tour-menu {
   z-index: 2;
   width: 25%;
@@ -35,8 +37,34 @@
   position: relative;
 }
 
+.menu-label {
+  font-weight: bolder;
+  color: white;
+  padding: 5px 10px;
+}
+
+// SEARCHBOX
 .add-location-form {
   margin-bottom: 10em;
+}
+
+.searchbox {
+  width: 80%
+}
+
+#location_address {
+  width: 100%;
+}
+
+.location_address {
+  width: 90%;
+}
+
+// LOCATION LIST
+
+#locations-list {
+  height: 55%;
+  overflow-y: scroll;
 }
 
 .location-box {
@@ -56,20 +84,5 @@
   bottom: 5px;
 }
 
-.menu-label {
-  font-weight: bolder;
-  color: white;
-  padding: 5px 10px;
-}
+// SCROLLBAR
 
-.searchbox {
-  width: 80%
-}
-
-#location_address {
-  width: 100%;
-}
-
-.location_address {
-  width: 90%;
-}
