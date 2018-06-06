@@ -1,0 +1,33 @@
+function renderFilteredGrid(input) {
+  const cardsGrid = document.getElementById('cardsgrid')
+  cardsGrid.innerHTML = input;
+}
+
+// function rendermap(input) {
+//   const map = document.getElementById('map-id')
+//   map.innerHTML = input;
+// }
+
+renderFilteredGrid('<%= j render "tours/cardsgrid" %>');
+// rendermap('<%= j render "tours/map" %>');
+// console.log("hello from index.js.erb");
+// // console.log('<%= j render "tours/map" %>');
+
+// console.log('<%= j @markers.to_json %>')
+
+
+//   var data = '<%= j @markers.to_json %>';
+//   var markers = JSON.parse(data.replace(/(&quot\;)/g,"\""));
+//   console.log(markers)
+
+//   map.addMarkers(markers);
+//   if (markers.length === 0) {
+//     map.setZoom(2);
+//   } else if (markers.length === 1) {
+//     map.setCenter(markers[0].lat, markers[0].lng);
+//     map.setZoom(14);
+//   } else {
+//     map.fitLatLngBounds(markers);
+//   }
+
+

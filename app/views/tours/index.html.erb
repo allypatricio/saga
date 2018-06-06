@@ -1,27 +1,54 @@
-  <div class="filter-bar">
-    <div class="category-search">
-      category
+
+ <div class="filter-bar">
+
+
+    <div class="filter-box-element">
+           <%= form_tag tours_path, method: :get, remote: true do%>
+    <input type="hidden" id="searchquery" name="search" value=<%= params[:search] %>>
+      <label for="category">Category</label>
+      <select id="category" name="category" placeholder="Category" class="input-box no-margin">
+        <option></option>
+        <% Tour::CATEGORIES.each do |category| %>
+        <option><%= category %></option>
+        <% end %>
+      </select>
     </div>
+
     <div class="location-search">
       location
     </div>
+
     <div class="duration-search">
       duration
     </div>
+
     <div class="price-search">
       price
     </div>
-  </div>
+      <div class="filter-box-element">
+        <input type="submit" value="Apply filters" class="btn-filter">
+      </div>
+
+    <%end%>
+</div>
+
 
   <div class="flex-container">
-    <div class="map-container">
-      <div id="map" style="width: 100%; height: calc(100vh - 140px);;" data-markers="<%= @markers.to_json %>"></div>
+    <div class="map-container" id="map-id">
+      <%= render 'map' %>
     </div>
 
     <div class="card-wrapper">
-      <div class="row">
+      <div class="row" id="cardsgrid">
         <%= render 'cardsgrid' %>
       </div>
     </div>
   </div>
+
+<% content_for :external_script do  %>
+  <script>
+  var slider = new Slider('#duration', {});
+  var slider = new Slider('#price', {});
+  </script>
+<% end %>
 

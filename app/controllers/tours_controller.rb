@@ -4,6 +4,26 @@ class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
+
+    durations = []
+    @tours.each do |exp|
+      durations << exp.duration
+    end
+
+    @max_duration = durations.max.to_i + 1
+
+    prices = []
+    @tours.each do |exp|
+      prices << exp.price
+    end
+
+    @max_price = prices.max.to_i + 10
+
+
+    @tours = @tours.category(params[:category].downcase.capitalize) if params[:category].present? && !params[:category].empty?
+
+
+
     @markers = @tours.map do |tour|
       {
         lat: tour.locations.first.latitude,
@@ -13,7 +33,12 @@ class ToursController < ApplicationController
                     }
       }
     end
-    render layout: "map"
+
+    respond_to do |format|
+      format.html {render layout: "map"}
+      format.js
+    end
+
   end
 
   def new
