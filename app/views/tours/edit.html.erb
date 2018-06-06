@@ -11,7 +11,7 @@
     <div class="menu-label">Add Location</div>
     <div class="add-location-form">
       <%= simple_form_for [@tour, @location], html: {class: "form-inline"} do |f| %>
-          <%= f.input :address, label: false %>
+          <%= f.input :address, label: false, html: { class: "searchbox" } %>
           <%= f.button :submit, "+" %>
       <% end %>
     </div>
