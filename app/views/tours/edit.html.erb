@@ -89,6 +89,7 @@
   <div class="modal fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
+
         <div class="modal-header">
           <h2 class="modal-title">
             Finalize Tour
@@ -97,25 +98,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
 
-          <%= simple_form_for(@tour) do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-          <div class="form-inputs">
-            <%= f.input :title %>
-            <%= f.input :description, as: :text, :input_html => {:rows => 6} %>
-            <%= f.input :price %>
-            <%= f.input :duration %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Submit for Review", :class => "btn-main-pnk" %>
-          </div>
-          <% end %>
-
+        <div class="modal-body" id="updateTourModalBody">
+          <%= render 'updatetourform' %>
         </div>
+
       </div>
     </div>
   </div>
