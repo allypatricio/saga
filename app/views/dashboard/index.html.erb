@@ -8,8 +8,8 @@
         <div class="tab-content">
           <div id="tours" class="tab-pane fade in active">
             <%= link_to "Add new tour", new_tour_path, class: "btn btn-form-blue new-tour-margin" %>
-            <% 5.times do |tour| %>
-              <%= render "shared/tour" %>
+            <% @tours.each do |tour| %>
+              <%= render "shared/tour", tour: tour %>
             <%end%>
           </div>
           <div id="bookings" class="tab-pane fade">
