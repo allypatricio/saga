@@ -3,7 +3,7 @@
 
 
     <div class="filter-box-element">
-           <%= form_tag tours_path, method: :get, remote: true do%>
+    <%= form_tag tours_path, method: :get, remote: true do %>
     <input type="hidden" id="searchquery" name="search" value=<%= params[:search] %>>
       <label for="category">Category</label>
       <select id="category" name="category" placeholder="Category" class="input-box no-margin">
@@ -18,12 +18,14 @@
       location
     </div>
 
-    <div class="duration-search">
-      duration
+    <div class="duration-search" >
+      <label for="duration">Duration</label>
+      <input id="duration" name="duration" type="range" min="0" max="<%= @max_duration %>" value="<%= @max_duration %>" >
     </div>
 
     <div class="price-search">
-      price
+      <label for="price">Price</label>
+      <input id="price" name="price" type="range" min="0" max= "<%= @max_price %>"value = "<%= @max_price %>" >
     </div>
       <div class="filter-box-element">
         <input type="submit" value="Apply filters" class="btn-filter">
@@ -44,11 +46,9 @@
       </div>
     </div>
   </div>
-
 <% content_for :external_script do  %>
   <script>
-  var slider = new Slider('#duration', {});
-  var slider = new Slider('#price', {});
+
   </script>
 <% end %>
 

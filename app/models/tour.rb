@@ -6,8 +6,8 @@ class Tour < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   scope :category, -> (category) { where category: category }
-  scope :duration, -> (duration) { where("duration > ? AND duration < ?", duration.split(",").first, duration.split(",").last) }
-  scope :price,    -> (price)    { where("price > ? AND price < ?", price.split(",").first, price.split(",").last) }
+  scope :duration, -> (duration) { where("duration < ?", duration) }
+  scope :price,    -> (price)    { where("price < ?", price) }
 
   validates :title, presence: true, length: { in: (8..25) }
   validates :description, presence: true, length: { in: (40..200) }

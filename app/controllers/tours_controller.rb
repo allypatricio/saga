@@ -21,7 +21,8 @@ class ToursController < ApplicationController
 
 
     @tours = @tours.category(params[:category].downcase.capitalize) if params[:category].present? && !params[:category].empty?
-
+    @tours = @tours.duration(params[:duration]) if params[:duration].present?
+    @tours = @tours.price(params[:price]) if params[:price].present?
 
 
     @markers = @tours.map do |tour|
