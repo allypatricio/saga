@@ -36,8 +36,8 @@
 }
 
 .create-button-pink {
-  color: white;
-  background-color: $gray;
+  color: $gray;
+  border: solid $gray;
   opacity: 0.9;
   padding: 10px 30px;
   border-radius: 4px;
@@ -45,8 +45,9 @@
 
  &:hover {
   text-decoration: none;
+  border: solid white;
   color: white;
-  opacity: 0.5;
+  opacity: 0.9;
 
 }
 }
@@ -92,6 +93,10 @@
   margin-left: 100px;
   padding: 10px;
 
+  }
+  .icon {
+    height: 150px;
+    color: blue;
   }
 
 .bottom-landing {
