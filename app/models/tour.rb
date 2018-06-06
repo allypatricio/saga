@@ -8,7 +8,7 @@ class Tour < ApplicationRecord
   scope :category, -> (category) { where category: category }
   scope :duration, -> (duration) { where("duration < ?", duration) }
   scope :price,    -> (price)    { where("price < ?", price) }
-  scope :location, -> (location) { includes(:locations).where("locations.address like ?", "%#{location}%").references(:locations) }
+  scope :location, -> (location) { includes(:locations).where("locations.address like ?", "%#{location.capitalize}%").references(:locations) }
 
   # validates :title, presence: true, length: { in: (8..25) }
   # validates :description, presence: true, length: { in: (40..200) }
