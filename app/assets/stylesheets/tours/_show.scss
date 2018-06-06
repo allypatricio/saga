@@ -1,5 +1,6 @@
 .show-container{
   top: 70px;
+  align-items: center;
 }
 .gallery {
   position: relative;
@@ -23,24 +24,26 @@
 }
 
 .left-footer {
-  width: 70%;
-  position: absolute;
+  width: 60%;
+  // position: absolute;
   left: 0px;
   padding-left: 30px;
   padding-right: 30px;
-  h1 {
+  margin: 0px;
+  h1, h2 {
     color: $gray;
   }
 }
 
 .right-footer {
-  width: 30%;
-  position: absolute;
+  width: 40%;
+  // position: absolute;
   right: 0px;
   padding-left: 30px;
   padding-top: 30px;
   padding-right: 30px;
   border-left: 1px solid $light-gray;
+  margin: 0px;
   p {
     left: 30px;
     color: $gray;
@@ -59,8 +62,20 @@
 .show-book {
  position: absolute;
  right: 30px;
- bottom: 30px;
+ bottom: 190px;
+ z-index: 1;
 }
+
+.flex-container {
+  display: flex;
+}
+
+#map {
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
 
 
 
