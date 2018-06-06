@@ -11,8 +11,8 @@
     <strong>Add Location</strong>
     <div class="add-location-form">
       <%= simple_form_for [@tour, @location], html: {class: "form-inline"} do |f| %>
-          <%= f.input :address, label: false, class: "searchbox"  %>
-          <%= f.button :submit, "+" %>
+          <%= f.input :address, label: false, class: "add-location-searchbox", size: 40  %>
+          <%= f.button :submit, "+", class: "add-location-submit"%>
       <% end %>
     </div>
 
