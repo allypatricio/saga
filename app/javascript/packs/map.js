@@ -1,7 +1,6 @@
 import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
 
-// NORMAL MAP
 const mapStandard = document.getElementById('map');
 const mapFiltered = document.getElementById('cardspartial')
 const mapMarkers = document.getElementById('map-markers')
@@ -38,37 +37,37 @@ function createMap(mapElement) {
   } else {
     map.fitLatLngBounds(markers);
   }
+
+  let geocoder = new google.maps.Geocoder;
+
+  if (mapElement.id === "map-markers") {
+    map.addListener('click', function(e) {
+      map.addMarker({lat: e.latLng.lat(), lng: e.latLng.lng()});
+      geocoder.geocode({'location': e.latLng}, createLocation);
+    });
+  }
+
+  function createLocation(results, status) {
+    if (status === "OK") {
+      let address = results[0].formatted_address;
+      const tourId = window.location.pathname.split("/")[2]
+      fetch(`/tours/${tourId}/locations/`, {
+        method: 'post',
+        body: JSON.stringify({location: {address: address}}),
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': Rails.csrfToken()
+        },
+        credentials: 'same-origin'
+      })
+    } else {
+      console.log("No address found")
+    }
+
+  };
 };
 
-createMap(mapStandard || mapFiltered || mapMarkers)
 
 
-// // MAP WITH OFFSET FOR MARKERS
-// const fullMapElement = document.getElementById('full-page-map');
-// if (fullMapElement) {
-//   const map = new GMaps({
-//     el: '#full-page-map',
-//     lat: 0,
-//     lng: 0,
-//     mapTypeControl: false,
-//     streetViewControl: false,
-//     fullscreenControl: false,
-//     zoomControl: true,
-//     zoomControlOptions: {
-//         position: google.maps.ControlPosition.TOP_RIGHT
-//     }
-//     });
-
-//   const markers = JSON.parse(mapElement.dataset.markers);
-//   map.addMarkers(markers);
-//   if (markers.length === 0) {
-//     map.setZoom(2);
-//   } else if (markers.length === 1) {
-//     map.setCenter(markers[0].lat, markers[0].lng);
-//     map.setZoom(14);
-//   } else {
-//     map.fitLatLngBounds(markers);
-//   }
-// }
-
+createMap(mapStandard || mapFiltered || mapMarkers);
 autocomplete();
