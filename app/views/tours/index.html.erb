@@ -7,7 +7,7 @@
     <input type="hidden" id="searchquery" name="search" value=<%= params[:search] %>>
       <label for="category">Category</label>
       <select id="category" name="category" placeholder="Category" class="input-box no-margin">
-        <option></option>
+        <option value="" disabled selected>select category</option>
         <% Tour::CATEGORIES.each do |category| %>
         <option><%= category %></option>
         <% end %>
@@ -28,9 +28,9 @@
       <label for="price" id="textPrice" >Price: <%= @max_price %>€</label>
       <input id="price" name="price" type="range" min="0" max= "<%= @max_price %>"value = "<%= @max_price %>" onchange="updatePriceInput(this.value);" >
     </div>
-      <div class="filter-box-element">
+      <div class="filter-button-element">
         <input type="submit" value="Apply filters" class="btn-filter">
-        <button type="button" onClick="window.location.reload();">Reset filters</button>
+        <button type="button" class="btn-filter" onClick="window.location.reload();">Reset filters</button>
       </div>
 
     <%end%>
