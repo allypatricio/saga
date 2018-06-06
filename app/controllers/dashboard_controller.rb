@@ -9,6 +9,6 @@ class DashboardController < ApplicationController
         @bookings_filtered << booking
       end
     end
-
+    @bookings_guest = Booking.where(user_id: current_user.id)
   end
 end
