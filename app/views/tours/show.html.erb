@@ -14,19 +14,30 @@
     </div>
   </div>
 
-  <div class="left-footer">
-    <h1><%= @tour.title.capitalize %></h1>
-    <p><%= @tour.description.capitalize %></p>
-  </div>
+  <div class="flex-container">
+    <div class="col left-footer">
+      <h1><%= @tour.title.capitalize %></h1>
+      <p><%= @tour.description.capitalize %></p>
+      <div class="show-avatar-position">
+        <% if @tour.user.photo.url == nil %>
+        <i class="far fa-user card-user avatar-border-turqoise-i"></i>
+        <% else %>
+        <%= image_tag tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-turqoise"%>
+        <% end %>
+      </div>
+      <h3>Reviews:</h2>
+      <a><i class="fas fa-star"></i></a>
+    </div>
 
-  <div class="right-footer">
-    <p>Location: <%= @tour.locations.first.address %></p>
-    <p>Price: <%= @tour.price %></p>
-    <p>Duration: <%= @tour.duration %></p>
-    <i class="fas fa-star"></i></a>
+    <div class="col right-footer">
+       <%= link_to "Book", tours_path, :class => "btn-main-pnk show-book" %>
+      <p>Price: <%= @tour.price %>€</p>
+      <p>Duration: <%= @tour.duration %>h</p>
+      <p>Starting Location: <%= @tour.locations.first.address %></p>
+      <div id="map" style="width: 100%; height: 40vh;" data-markers="<%= @markers.to_json %>">
+      </div>
+    </div>
   </div>
-  <%= link_to "Book", tours_path, :class => "btn-main-pnk show-book" %>
-
 </div>
 
 

@@ -83,7 +83,12 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
-    render layout: "map"
+    @markers = @tour.locations.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+      }
+    end
   end
 
   private
