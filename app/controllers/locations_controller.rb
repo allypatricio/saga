@@ -20,8 +20,6 @@ class LocationsController < ApplicationController
       redirect_to edit_tour_path(@tour)
       # add notice
     end
-    raise
-
   end
 
   def edit

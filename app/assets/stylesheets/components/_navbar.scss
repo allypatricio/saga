@@ -22,6 +22,7 @@
 /* Logo */
 .navbar-saga-brand img {
   height: 50px;
+  flex-grow: 0;
 }
 
 /* User Avatar */
@@ -35,6 +36,7 @@
 /* Right section */
 .navbar-saga-right {
   display: flex;
+  flex-grow: 0;
   align-items: center;
   justify-content: space-between;
   p {
@@ -46,6 +48,7 @@
 .navbar-saga-item {
   cursor: pointer;
   padding: 0 20px;
+  flex-grow: 0;
 }
 
 /* Navbar link */
@@ -154,3 +157,7 @@
   }
 }
 
+.notice-box {
+  flex-grow: 1;
+  padding: 10px 40px;
+}
