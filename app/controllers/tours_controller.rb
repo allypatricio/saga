@@ -97,6 +97,7 @@ class ToursController < ApplicationController
         lng: location.longitude,
       }
     end
+@booking = Booking.new(tour_id: params[:id])
   end
 
   private

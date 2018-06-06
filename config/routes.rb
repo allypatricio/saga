@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :tours do
     resources :locations
-    resources :bookings
+    resources :bookings do
+      resources :reviews, only: [:new, :create, :show, :destroy]
+    end
   end
 
   resources :dashboard, only: :index
