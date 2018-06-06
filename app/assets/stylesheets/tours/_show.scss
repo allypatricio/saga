@@ -30,23 +30,27 @@
   padding-left: 30px;
   padding-right: 30px;
   margin: 0px;
-  h1, h2 {
+  h1, h3 {
     color: $gray;
   }
 }
 
 .right-footer {
   width: 40%;
-  // position: absolute;
+  // position: sticky;
   right: 0px;
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-right: 30px;
-  border-left: 1px solid $light-gray;
+  padding: 30px;
+  // border-left: 1px solid $light-gray;
   margin: 0px;
+  background-color: $light-gray;
+  border-radius: 5px;
+  margin: 30px;
   p {
-    left: 30px;
     color: $gray;
+  }
+  .show-book {
+    position: absolute;
+    right: 60px;
   }
 }
 .fa-star:before {
@@ -59,21 +63,14 @@
  left: 40px;
 }
 
-.show-book {
- position: absolute;
- right: 30px;
- bottom: 190px;
- z-index: 1;
-}
 
 .flex-container {
   display: flex;
 }
 
 #map {
-  border: 1px solid $light-gray;
+  // border: 1px solid $light-gray;
   border-radius: 3px;
-  margin-bottom: 30px;
 }
 
 
