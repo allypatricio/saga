@@ -13,8 +13,8 @@
             <%end%>
           </div>
           <div id="bookings" class="tab-pane fade">
-            <% 5.times do |booking| %>
-              <%= render "shared/booking" %>
+            <% @bookings_filtered.each do |booking| %>
+              <%= render "shared/booking", booking: booking %>
             <%end%>
           </div>
         </div>
