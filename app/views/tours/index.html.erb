@@ -15,7 +15,8 @@
     </div>
 
     <div class="location-search">
-      location
+      <label for="location">Location</label>
+       <input id="location" type="text" name="location" placeholder="Lisbon"><br>
     </div>
 
     <div class="duration-search" >
@@ -29,6 +30,7 @@
     </div>
       <div class="filter-box-element">
         <input type="submit" value="Apply filters" class="btn-filter">
+        <button type="button" onClick="window.location.reload();">Reset filters</button>
       </div>
 
     <%end%>
