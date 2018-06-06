@@ -13,17 +13,14 @@
 }
 
 .alert {
+  margin: 0;
+  color: white;
+  text-align: center;
   background-color: $red;
 }
 
 .notice {
-  background-color: $blue;
-}
-
-.flash-message {
-  margin: 0;
-  color: white;
-  text-align: center;
+  background-color: $blue !important;
 }
 
 // .alert-info {
