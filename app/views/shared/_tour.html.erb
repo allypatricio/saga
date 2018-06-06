@@ -1,5 +1,5 @@
 <div class="message">
-  <img class="message-small" src=<%=tour.locations.first.photo.url%>>
+  <%= image_tag("lisbon.jpeg", class: "message-small") %>
   <div class="message-name">
     <p>Category: <%=tour.category%></p>
     <p>Created at:<br> <%=tour.created_at.strftime("%b %e, %l:%M %p")%></p>
@@ -18,7 +18,7 @@
     <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="far fa-star"></i>
-  <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
   </div>
   <div class="message-status">
     <p class="status active">Active</p>
