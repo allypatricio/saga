@@ -15,19 +15,18 @@ renderFilteredGrid('<%= j render "tours/cardsgrid" %>');
 
 // console.log('<%= j @markers.to_json %>')
 
-
-//   var data = '<%= j @markers.to_json %>';
-//   var markers = JSON.parse(data.replace(/(&quot\;)/g,"\""));
-//   console.log(markers)
-
-//   map.addMarkers(markers);
-//   if (markers.length === 0) {
-//     map.setZoom(2);
-//   } else if (markers.length === 1) {
-//     map.setCenter(markers[0].lat, markers[0].lng);
-//     map.setZoom(14);
-//   } else {
-//     map.fitLatLngBounds(markers);
-//   }
+  var cardsgrid = document.getElementById('cardspartial')
+  var markers = JSON.parse(cardsgrid.dataset.markers);
+  console.log(window.map)
+  window.map.removeMarkers();
+  window.map.addMarkers(markers);
+  if (markers.length === 0) {
+    window.map.setZoom(2);
+  } else if (markers.length === 1) {
+    window.map.setCenter(markers[0].lat, markers[0].lng);
+    window.map.setZoom(14);
+  } else {
+    window.map.fitLatLngBounds(markers);
+  }
 
 

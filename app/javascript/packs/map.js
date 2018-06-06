@@ -4,7 +4,7 @@ import { autocomplete } from '../components/autocomplete';
 // NORMAL MAP
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
-  const map = new GMaps({
+  const map = window.map = new GMaps({
     el: '#map',
     lat: 0,
     lng: 0,
@@ -17,7 +17,8 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     }
     });
 
-  const markers = JSON.parse(mapElement.dataset.markers);
+  const cardsgrid = document.getElementById('cardspartial')
+  const markers = JSON.parse(cardsgrid.dataset.markers);
   map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
