@@ -13,5 +13,5 @@ class Tour < ApplicationRecord
   validates :description, presence: true, length: { in: (40..200) }
   validates :price, presence: true, on: :update
   validates :duration, presence: true, on: :update
-  validates :category, presence: true, on: :update
+  # validates :category, presence: true, on: :update
 end
