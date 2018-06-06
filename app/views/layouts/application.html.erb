@@ -12,6 +12,16 @@
   <body style=" background-color: white;">
     <%= render '/shared/navbar' unless @navbar == false %>
 
+    <% if notice || alert %>
+      <div class="notice-box">
+        <% if notice  %>
+          <p class="notice flash-message"><%= notice %></p>
+        <% elsif alert %>
+          <p class="alert flash-message"><%= alert %></p>
+        <% end %>
+      </div>
+    <% end %>
+
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>

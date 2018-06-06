@@ -3,18 +3,32 @@
 * ------------------------------------- */
 
 .notice-box {
-  flex-grow: 1;
-  padding: 10px 40px;
+  position: fixed;
+  width: 600px;
+  top: 0px;
+  z-index: 100;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 7px;
 }
 
 .alert {
+  background-color: $red;
+}
+
+.notice {
+  background-color: $blue;
+}
+
+.flash-message {
   margin: 0;
-  text-align: center;
   color: white;
+  text-align: center;
 }
-.alert-info {
-  background: $green;
-}
-.alert-warning {
-  background: $red;
-}
+
+// .alert-info {
+//   background: $green;
+// }
+// .alert-warning {
+//   background: $red;
+// }
