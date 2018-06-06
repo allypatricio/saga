@@ -6,8 +6,8 @@
     <%= form_tag tours_path, method: :get, remote: true do %>
     <input type="hidden" id="searchquery" name="search" value=<%= params[:search] %>>
       <label for="category">Category</label>
-      <select id="category" name="category" placeholder="Category" class="input-box no-margin">
-        <option value="" disabled selected>select category</option>
+      <select id="category" name="category" placeholder="Category" class="input-box no-margin" onchange="updateCategoryInput();">
+        <option></option>
         <% Tour::CATEGORIES.each do |category| %>
         <option><%= category %></option>
         <% end %>
@@ -29,7 +29,7 @@
       <input id="price" name="price" type="range" min="0" max= "<%= @max_price %>"value = "<%= @max_price %>" onchange="updatePriceInput(this.value);" >
     </div>
       <div class="filter-button-element">
-        <input type="submit" value="Apply filters" class="btn-filter">
+        <input type="submit" value="Apply filters" class="btn-filter" id="apply-button">
         <button type="button" class="btn-filter" onClick="window.location.reload();">Reset filters</button>
       </div>
 
@@ -52,11 +52,15 @@
   <script>
     function updatePriceInput(val) {
           document.getElementById('textPrice').innerHTML='Price: '+val+'€';
+          document.getElementById("apply-button").click();
 
         }
     function updateDurationInput(val) {
           document.getElementById('textDuration').innerHTML='Duration: '+val+'h';
-          console.log(val)
+          document.getElementById("apply-button").click();
+        }
+    function updateCategoryInput() {
+          document.getElementById("apply-button").click();
         }
   </script>
 <% end %>
