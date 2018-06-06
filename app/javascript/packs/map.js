@@ -17,7 +17,12 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     }
     });
 
-  const cardsgrid = document.getElementById('cardspartial')
+  if (document.getElementById('cardspartial')) {
+    var cardsgrid = document.getElementById('cardspartial');
+    } else {
+    var cardsgrid = document.getElementById('map');
+    }
+
   const markers = JSON.parse(cardsgrid.dataset.markers);
   map.addMarkers(markers);
   if (markers.length === 0) {
