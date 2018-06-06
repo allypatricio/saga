@@ -2,6 +2,11 @@
  * Your CSS code for flash notices and alerts
 * ------------------------------------- */
 
+.notice-box {
+  flex-grow: 1;
+  padding: 10px 40px;
+}
+
 .alert {
   margin: 0;
   text-align: center;
