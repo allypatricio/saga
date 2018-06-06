@@ -30,12 +30,12 @@
   width: 25%;
   background-color: $gray-transparent;
   padding: 1vw;
-  margin: 2vw 0vw 2vw 2vw;
+  margin: 2vw 0vw 2vw 1vw;
   left: 20px;
   position: relative;
 }
 
-.searchbox {
+.add-location-form {
   margin-bottom: 10em;
 }
 
@@ -54,4 +54,10 @@
   position: absolute;
   right: 5px;
   bottom: 5px;
+}
+
+.menu-label {
+  font-weight: bolder;
+  color: white;
+  padding: 5px 10px;
 }
