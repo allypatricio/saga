@@ -1,8 +1,8 @@
 
 <div class="show-container">
 
-  <% if @tour.locations.first.photo.url != nil %>
-  <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.locations.first.photo%>);">
+  <% if @tour.photo.url != nil %>
+  <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.photo%>);">
     <%else%>
 
     <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(http://via.placeholder.com/500x500);">
