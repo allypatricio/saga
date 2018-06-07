@@ -46,7 +46,6 @@ PHOTO_URLS = [
     question: "Location 1 question",
     hint: "Location 1 hint",
     answer: "Location 1 answer",
-    position: 1
     })
   location.remote_photo_url = PHOTO_URLS.sample
   location.save
