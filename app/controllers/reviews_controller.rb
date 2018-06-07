@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_booking
+  before_action :set_booking, :set_tour
 
   def new
     @review = Review.new
@@ -22,6 +22,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_tour
+    @tour = Tour.find(params[:tour_id])
+  end
 
   def set_booking
     @booking = Booking.find(params[:booking_id])
