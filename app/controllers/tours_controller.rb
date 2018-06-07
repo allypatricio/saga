@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:edit, :show, :update]
+  before_action :set_tour, only: [:edit, :show, :update, :create]
   layout "map", only: [:edit, :show]
 
   def index
