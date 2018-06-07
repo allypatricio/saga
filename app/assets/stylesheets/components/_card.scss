@@ -107,7 +107,7 @@
 }
 
 .fa-map-marker:before, .fa-euro-sign:before, .fa-clock:before {
-  color: $blue;
+  color: $blue !important;
   padding-right: 8px;
 }
 .card-container{
