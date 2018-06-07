@@ -37,6 +37,7 @@ PHOTO_URLS = [
     description: Faker::Lorem.words(rand(10..30)).join(" "),
     category: Tour::CATEGORIES.sample
     })
+  tour.remote_photo_url = PHOTO_URLS.sample
   tour.save
 
   location = Location.new({
@@ -47,7 +48,6 @@ PHOTO_URLS = [
     hint: "Location 1 hint",
     answer: "Location 1 answer",
     })
-  location.remote_photo_url = PHOTO_URLS.sample
   location.save
 end
 

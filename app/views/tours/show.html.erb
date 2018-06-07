@@ -1,8 +1,8 @@
 
 <div class="show-container">
 
-  <% if @tour.locations.first.photo.url != nil %>
-  <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.locations.first.photo%>);">
+  <% if @tour.photo.url != nil %>
+  <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.photo%>);">
     <%else%>
 
     <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(http://via.placeholder.com/500x500);">
@@ -42,23 +42,29 @@
 </div>
 
 <!-- Modal -->
+<% placeholder_text = "Hi #{@booking.tour.user.first_name.capitalize}!
+
+I am really looking forward to playing your tour! "%>
+
 <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="bookNowModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header" >
-        <div class="title-center" style="text-align: center">
-        <h3>Your Booking</h3>
-        </div>
-          <p>Booking: <%= @tour.title%></p>
-          <p>Price: <%= @tour.price %></p>
-          <p>Duration: <%= @tour.duration %></p>
-          <p>Starting Location: <%= @tour.locations.first.address %></p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="text-center" style="text-align: center">
+        <h3>You are Booking "<%= @tour.title%>" </h3>
+          <p><i class="fas fa-map-marker"></i><%= @tour.locations.first.address %></p>
+          <p><i class="fas fa-clock"></i>The estimated duration of your tour is <%= @tour.duration %>h</p>
+          <p><i class="fas fa-info-circle"></i> <strong>Please Note:</strong> You will recieve a confirmation email with a link to play your tour. Once the tour is completed this link is no longer accessible. </p>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <%= simple_form_for([@tour, @booking]) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :message, as: :text, :input_html => {:rows => 4}, label: "Send your host a message:", placeholder: placeholder_text %>
+          </div>
 
           <div class="form-actions" style="text-align: center;">
             <%= f.button :submit, "Confirm", :class => "btn-main-pnk" %>

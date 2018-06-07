@@ -56,7 +56,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to edit_tour_path(@tour), notice: 'Tour was successfully created.' }
+        format.html { redirect_to edit_tour_path(Tour.last), notice: 'Tour was successfully created.' }
       else
         format.html { render :new }
       end
@@ -67,10 +67,14 @@ class ToursController < ApplicationController
     @location = Location.new
     @locations_ordered = @tour.locations.sort_by {|obj| obj.position}
 
-    @markers = @tour.locations.map do |location|
+    @markers = @locations_ordered.map do |location|
       {
+        icon: {url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'},
         lat: location.latitude,
         lng: location.longitude,
+        infoWindow: {
+                    content: location.position.to_s + ": " + location.address
+                    }
       }
     end
   end
@@ -109,7 +113,7 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :price, :duration, :description, :photo, :photo_cache, :location)
+    params.require(:tour).permit(:title, :price, :duration, :description, :location, :photo)
   end
 
 end

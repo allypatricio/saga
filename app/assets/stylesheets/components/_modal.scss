@@ -1,0 +1,26 @@
+.text-center {
+  color: $gray;
+}
+
+.form-inputs {
+  color: $gray;
+  label {
+    padding-bottom: 10px;
+  }
+}
+
+.fa-info-circle {
+  padding-right: 10px;
+  color: $blue;
+}
+
+.close {
+  position: absolute;
+  bottom: 88%;
+
+}
+
+.modal-header {
+  position: relative;
+}
+

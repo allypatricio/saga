@@ -54,6 +54,6 @@ def set_tour
 end
 
 def booking_params
-  params.permit(:tour_id)
+  params.permit(:tour_id, :message)
 end
 end

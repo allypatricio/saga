@@ -109,6 +109,24 @@
   }
 }
 
+// INVERSE FORM BUTTON - BLUE
+.btn-form-inv-blue {
+  background-color: white;
+  color: $blue;
+  // width: 100%;
+  border: solid 2px $blue;
+  padding: 10px 20px;
+  border-radius: 4px;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.5px !important;
+    color: $blue;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
 // CIRCULAR BUTTON - PINK
 .btn-rnd-pnk {
   border: 2px solid $pink;

@@ -9,7 +9,6 @@ class Location < ApplicationRecord
 
   validates :address, presence: true
   # validates :story, presence: true, length: { in: (20..60) }
-  # validates :position, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
 
