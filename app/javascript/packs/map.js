@@ -16,7 +16,7 @@ function createMap(mapElement) {
     zoomControl: true,
     zoomControlOptions: {
         position: google.maps.ControlPosition.TOP_RIGHT
-    }
+    },
     });
 
   if (document.getElementById('cardspartial')) {
@@ -71,3 +71,5 @@ function createMap(mapElement) {
 
 createMap(mapStandard || mapFiltered || mapMarkers);
 autocomplete();
+
+
