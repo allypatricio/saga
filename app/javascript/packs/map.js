@@ -42,7 +42,11 @@ function createMap(mapElement) {
 
   if (mapElement.id === "map-markers") {
     map.addListener('click', function(e) {
-      map.addMarker({lat: e.latLng.lat(), lng: e.latLng.lng()});
+      map.addMarker({
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng(),
+        icon: {url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'}
+      });
       geocoder.geocode({'location': e.latLng}, createLocation);
     });
   }

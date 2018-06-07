@@ -67,10 +67,14 @@ class ToursController < ApplicationController
     @location = Location.new
     @locations_ordered = @tour.locations.sort_by {|obj| obj.position}
 
-    @markers = @tour.locations.map do |location|
+    @markers = @locations_ordered.map do |location|
       {
+        icon: {url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'},
         lat: location.latitude,
         lng: location.longitude,
+        infoWindow: {
+                    content: location.position.to_s + ": " + location.address
+                    }
       }
     end
   end
