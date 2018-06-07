@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:edit, :show, :update, :create]
+  before_action :set_tour, only: [:edit, :show, :update]
   layout "map", only: [:edit, :show]
 
   def index
@@ -56,7 +56,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to edit_tour_path(@tour), notice: 'Tour was successfully created.' }
+        format.html { redirect_to edit_tour_path(Tour.last), notice: 'Tour was successfully created.' }
       else
         format.html { render :new }
       end
