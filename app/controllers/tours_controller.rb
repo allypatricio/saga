@@ -30,6 +30,7 @@ class ToursController < ApplicationController
 
     @markers = @tours.map do |tour|
       {
+        icon: {url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'},
         lat: tour.locations.first.latitude,
         lng: tour.locations.first.longitude,
         infoWindow: {

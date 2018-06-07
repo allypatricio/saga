@@ -30,3 +30,29 @@ renderFilteredGrid('<%= j render "tours/cardsgrid" %>');
   }
 
 
+    var cards = document.getElementsByClassName("card");
+
+    function markBlue(i) {
+        map.markers[i].setIcon({
+          url: 'http://maps.google.com/mapfiles/ms/icons/blue.png'
+        })
+      }
+
+    function markRed(i) {
+        map.markers[i].setIcon({
+          url: 'http://maps.google.com/mapfiles/ms/icons/red.png'
+        })
+      }
+
+    Array.from(cards).forEach(function(card, index) {
+      card.addEventListener("mouseover", function() {
+        markBlue(index);
+      });
+    });
+
+    Array.from(cards).forEach(function(card, index) {
+      card.addEventListener("mouseout", function() {
+        markRed(index);
+      });
+    });
+

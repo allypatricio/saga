@@ -48,6 +48,8 @@
       </div>
     </div>
   </div>
+
+
 <% content_for :external_script do  %>
   <script>
     function updatePriceInput(val) {
@@ -62,6 +64,33 @@
     function updateCategoryInput() {
           document.getElementById("apply-button").click();
         }
+
+    var cards = document.getElementsByClassName("card");
+
+    function markBlue(i) {
+        map.markers[i].setIcon({
+             url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        })
+      }
+
+    function markRed(i) {
+        map.markers[i].setIcon({
+          url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+        })
+      }
+
+    Array.from(cards).forEach(function(card, index) {
+      card.addEventListener("mouseover", function() {
+        markBlue(index);
+      });
+    });
+
+    Array.from(cards).forEach(function(card, index) {
+      card.addEventListener("mouseout", function() {
+        markRed(index);
+      });
+    });
+
   </script>
 <% end %>
 
