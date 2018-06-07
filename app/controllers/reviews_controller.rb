@@ -8,8 +8,10 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking_id = @booking.id
+    @review.user_id = current_user.id
+    @review.tour_id = @tour.id
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to dashboard_index_path
     else
       render :new
     end
