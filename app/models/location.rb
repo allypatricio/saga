@@ -1,5 +1,6 @@
 class Location < ApplicationRecord
   belongs_to :tour
+  acts_as_list scope: :tour
 
   geocoded_by :address
   before_validation :geocode, if: :will_save_change_to_address?

@@ -1,8 +1,6 @@
 import "bootstrap";
 import './application.css';
+import { initDraggable } from '../components/draggable';
 
-// import Slider from '../components/bootstrap-slider.js';
-
-// import noUiSlider from "nouislider";
-// import '../components/slider2';
+initDraggable();
 
