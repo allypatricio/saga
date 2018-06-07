@@ -18,8 +18,8 @@
 
     <div class="menu-label">Locations</div>
 
-    <div id="locations-list">
       <ul class="list-unstyled">
+        <div id="locations-list">
         <% @locations_ordered.each do |location| %>
           <div class="location-box" location-id="<%= location.id %>">
             <li>
@@ -107,19 +107,3 @@
 
 
 
-<script>
-
-  console.log("hi!")
-
-  import { Sortable } from '@shopify/draggable'
-
-  // const sortable = new Sortable(document.querySelectorAll('ul'), {
-  //   draggable: 'li'
-  // });
-
-  // sortable.on('sortable:start', () => console.log('sortable:start'));
-  // sortable.on('sortable:sort', () => console.log('sortable:sort'));
-  // sortable.on('sortable:sorted', () => console.log('sortable:sorted'));
-  // sortable.on('sortable:stop', () => console.log('sortable:stop'));
-
-</script>
