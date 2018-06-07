@@ -1,23 +1,26 @@
 
 <div class="banner">
-  <div></div>
-  <div class="banner content">
-    <div>
-      <%= link_to "Find a tour", tours_path, class: "text-center create-button-white border-radius"  %>
-      <br>
-
-    <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
-     </div>
-
+  <div class="banner-content">
 
     <h1>SAGA</h1>
 
     <h4>Create discovery games in your city.Earn extra income while growing your business online. Have fun discovering your own city by finding fun and unusal places to share with your users!</h4>
     <br>
 
-    <div class="button"><%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-pink border-radius"  %></div>
+    <div class="button"><%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-gray border-radius"  %></div>
 
   </div>
+
+
+  <%= video_tag "run.mp4", autoplay: "true", controls: "true", class: "background-video" %>
+
+  <div>
+    <%= link_to "Find a tour", tours_path, class: "text-center create-button-white border-radius"  %>
+    <br>
+
+    <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
+  </div>
+
 </div>
 <div class="middle-landing">
   <div>
