@@ -10,6 +10,9 @@
   left: 50%;
   margin-left: -300px;
   margin-top: 7px;
+  animation-name: myAnimation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
 .alert {
@@ -23,9 +26,19 @@
   background-color: $blue !important;
 }
 
-// .alert-info {
-//   background: $green;
-// }
-// .alert-warning {
-//   background: $red;
-// }
+@keyframes myAnimation{
+  0%{
+      opacity: 1;
+      // transform: rotateX(90deg);
+  }
+  80%{
+      opacity: 0.8;
+      transform: rotateX(0deg);
+  }
+  100%{
+      display: none;
+      opacity: 0;
+      transform: rotateX(90deg);
+}
+}
+
