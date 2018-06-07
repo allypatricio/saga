@@ -11,7 +11,7 @@
   <div class="message-body">
     <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
     <p>
-      (Message)
+      <%= link_to "add review", new_tour_booking_review_path(booking.tour_id ,booking) %>
     </p>
   </div>
   <%if booking.status == nil || "accepted"%>
