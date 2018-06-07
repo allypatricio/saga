@@ -12,10 +12,15 @@ function initDraggable() {
   sortable.on('sortable:stop', (event) => {
     const oldIndex = event.data.oldIndex;
     const newIndex = event.data.newIndex;
-    const locationId = event.data.newContainer.children[newIndex].attributes[1].value;
-    const tourId = window.location.pathname.split("/")[2];
-    const URL = `/tours/${tourId}/locations/${locationId}`;
-    console.log(URL);
+    console.log(oldIndex);
+    console.log(newIndex);
+
+    // Until here it works 100% as intended
+
+    // const locationId = event.data.newContainer.children[newIndex].attributes[1].value;
+    // const tourId = window.location.pathname.split("/")[2];
+    // const URL = `/tours/${tourId}/locations/${locationId}`;
+    // console.log(URL);
     // fetch(URL, {
     //   method: 'patch',
     //   body: JSON.stringify({location: {position: newIndex}}),
