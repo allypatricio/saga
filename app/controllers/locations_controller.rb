@@ -22,8 +22,11 @@ class LocationsController < ApplicationController
   end
 
   def update
-    @location.update(location_params)
-    redirect_to edit_tour_path(@tour)
+    if @location.update(location_params)
+      render json: @location
+    else
+      render json: {errors: @location.errors.messages }
+    end
   end
 
   def destroy
