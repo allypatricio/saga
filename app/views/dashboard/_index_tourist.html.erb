@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="dashboard">
+        <ul class="nav nav-pills">
+          <li class="active"><a data-toggle="pill" href="#bookings-guest"">Bookings</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="tours" class="tab-pane fade in active">
+          <div id="bookings-guest" class="tab-pane">
+          <% if @bookings_guest.any? %>
+            <% @bookings_guest.each do |booking_guest| %>
+                <%= render "booking_guest", booking: booking_guest %>
+              <%end%>
+          <%else%>
+            <h3>There are no bookings yet</h3>
+            <h3><%= link_to "Make one!", tours_path %> </h3>
+          <%end%>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
