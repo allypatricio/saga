@@ -47,6 +47,7 @@ PHOTO_URLS = [
     question: "Location 1 question",
     hint: "Location 1 hint",
     answer: "Location 1 answer",
+    position: 1
     })
   location.save
 end
