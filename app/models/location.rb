@@ -1,5 +1,6 @@
 class Location < ApplicationRecord
   belongs_to :tour
+  acts_as_list scope: :tour
 
   geocoded_by :address
   before_validation :geocode, if: :will_save_change_to_address?
@@ -8,7 +9,7 @@ class Location < ApplicationRecord
 
   validates :address, presence: true
   # validates :story, presence: true, length: { in: (20..60) }
-  validates :position, presence: true
+  # validates :position, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
 

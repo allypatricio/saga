@@ -1,7 +1,7 @@
 class Tour < ApplicationRecord
   CATEGORIES = ["Bachelor Party", "Team buidling", "Kids", "Rainy day", "Sightseeing"]
   belongs_to :user
-  has_many :locations, dependent: :destroy
+  has_many :locations, -> { order(position: :asc) }, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 

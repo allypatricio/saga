@@ -10,12 +10,8 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     @location.tour = @tour
-    @location.position = @tour.locations.count + 1
-    if @location.save && @location.longitude != 0 || @location.longitude != nil
+    if @location.save
       redirect_to edit_tour_path(@tour)
-    elsif @location.save
-      redirect_to edit_tour_path(@tour)
-      # add notice
     else
       redirect_to edit_tour_path(@tour)
       # add notice
