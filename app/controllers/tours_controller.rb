@@ -101,9 +101,10 @@ class ToursController < ApplicationController
         lng: @tour.locations.first.longitude,
       }
     end
+    @reviews_full = Review.where(tour_id: @tour.id)
     @reviews = Review.where(tour_id: @tour.id).last(5)
     ratings = []
-    @reviews.each do |review|
+    @reviews_full.each do |review|
       ratings << review.rating
     end
     if ratings.any?
