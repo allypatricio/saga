@@ -1,9 +1,9 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:edit, :show, :update]
+  before_action :set_tour, only: [:edit, :show, :update, :change_status]
   layout "map", only: [:edit, :show]
 
   def index
-    @tours = Tour.all
+    @tours = Tour.active
 
     durations = []
     @tours.each do |exp|
@@ -116,6 +116,17 @@ class ToursController < ApplicationController
     @booking = Booking.new(tour_id: params[:id])
   end
 
+  def change_status
+    if @tour.active?
+      @tour.disactivate
+    else
+      @tour.activate
+    end
+
+  end
+
+
+
 
 
   private
@@ -125,7 +136,7 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :price, :duration, :description, :location, :photo)
+    params.require(:tour).permit(:title, :price, :duration, :description, :location, :photo, :status)
   end
 
 end

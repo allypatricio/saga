@@ -2,6 +2,7 @@ class Tour < ApplicationRecord
   CATEGORIES = ["Bachelor Party", "Team buidling", "Kids", "Rainy day", "Sightseeing"]
   belongs_to :user
   has_many :locations, -> { order(position: :asc) }, dependent: :destroy
+  enum status: [:inactive, :active]
 
   mount_uploader :photo, PhotoUploader
 
@@ -15,4 +16,14 @@ class Tour < ApplicationRecord
   validates :price, presence: true, on: :update
   validates :duration, presence: true, on: :update
   # validates :category, presence: true, on: :update
+
+  def activate
+    update_attributes(status: :active)
+
+  end
+
+  def disactivate
+    update_attributes(status: :inactive)
+  end
+
 end
