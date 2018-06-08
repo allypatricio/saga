@@ -2,7 +2,11 @@ class ReviewsController < ApplicationController
   before_action :set_booking, :set_tour
 
   def new
-    @review = Review.new
+    if Review.where(user_id: current_user.id, booking_id: params[:booking_id]).any?
+      @review = Review.where(user_id: current_user.id, booking_id: params[:booking_id]).first
+    else
+      @review = Review.new
+    end
   end
 
   def create
