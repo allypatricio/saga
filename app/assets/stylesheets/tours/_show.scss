@@ -37,7 +37,7 @@
 }
 .header {
   position: relative;
-   width: 100%;
+  width: 100%;
   height: 60vh;
 
 }
@@ -96,5 +96,10 @@
   }
 }
 
+.list-unstyled p {
+  // border-top: 1px solid $light-gray;
+  border-bottom: 3px solid $light-gray;
+  color: $gray;
 
+}
 

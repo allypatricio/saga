@@ -40,13 +40,30 @@
   padding: 10px 30px;
   border-radius: 4px;
 
- &:hover {
-  text-decoration: none;
-  border-width: 1px;
-  border-color: white;
-  border-style: solid;
+  &:hover {
+    text-decoration: none;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    opacity: 0.9;
+  }
+}
+
+.create-button-sign-up {
   color: white;
-  opacity: 0.9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 250px;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+   &:focus {
+    outline: none !important;
   }
 }
 
@@ -57,9 +74,13 @@
   position: absolute;
   top: 20px;
   right: 150px;
-   &:hover {
-  color: white;
-  opacity: 0.5;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+  &:focus {
+    outline: none !important;
   }
 }
 
@@ -70,9 +91,13 @@
   position: absolute;
   top: 20px;
   right: 20px;
- &:hover {
-  color: white;
-  opacity: 0.5;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+   &:focus {
+    outline: none !important;
   }
 }
 .middle-landing {
@@ -86,10 +111,10 @@
   // margin-top:20px;
   padding: 20px;
 
-  }
-  .icon {
-    height: 150px;
-  }
+}
+.icon {
+  height: 150px;
+}
 
 .bottom-landing {
   display: flex;

@@ -51,11 +51,11 @@
         </div>
       </p>
       <p>Last 5 Reviews:</p>
-      <ul class="list-unstyled">
+      <div class="list-unstyled">
         <% @reviews.each do |review| %>
-        <li><%= review.content %></li>
+        <p><%= review.content %><%= @booking.tour.user.first_name.capitalize %></p>
         <%end%>
-      </ul>
+      </div>
    </div>
  </div>
 </div>
