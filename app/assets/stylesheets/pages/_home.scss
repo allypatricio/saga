@@ -29,11 +29,11 @@
   margin-left: 200px;
   margin-right: 200px;
 }
-// .button {
-//   text-align: center;
-//   margin-top: 60px;
-//   font-size: 20px;
-// }
+.button {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 20px;
+}
 
 .create-button-gray {
   align-items: center;
@@ -41,8 +41,7 @@
   opacity: 1;
   padding: 10px 30px;
   border-radius: 4px;
-  position: absolute;
-  left: 800px;
+
 
   &:hover {
     text-decoration: none;
