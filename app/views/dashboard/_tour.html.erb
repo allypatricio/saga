@@ -36,8 +36,21 @@
     </div>
   </div>
   <div class="message-status">
-    <p class="status active">Active</p>
+    <% if tour.active?%>
+    <span id="active-tour"><p class="status active">Active</p>
+    <p>
+      <%= link_to "change to inactive", change_status_tour_path(tour), method: :POST ,remote: true %>
+    </p> </span>
+    <%else%>
+      <span id ="inactive-tour"><p class="status inactive">Inactive</p>
+        <p>
+        <%= link_to "change to active", change_status_tour_path(tour), method: :POST ,remote: true %>
+      </p>
+    </span>
+    <%end%>
   </div>
+
+
   <div class="message-edit-link">
     <%=link_to edit_tour_path(tour) do %>
     <div class="arrow-right">

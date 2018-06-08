@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :bookings do
       resources :reviews, only: [:new, :create, :show, :destroy]
     end
+    member do
+      post :change_status
+    end
   end
 
   resources :dashboard, only: :index
