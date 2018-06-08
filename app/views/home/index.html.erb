@@ -7,31 +7,26 @@
     <h4>Create discovery games in your city.Earn extra income while growing your business online. Have fun discovering your own city by finding fun and unusal places to share with your users!</h4>
     <br>
 
-    <div class="button"><%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-gray border-radius"  %></div>
+    <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-gray border-radius" %>
   </div>
-<!--
-  <video autoplay loop id="video-background" muted plays-inline style="width: 100%;  background: linear-gradient(-225deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%);">
-    <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
-  </video>
- -->
   <%= video_tag "run.mp4", autoplay: "true", loop: "true", id: "video-background" %>
 
-<div>
-  <%= link_to "Find a tour", tours_path, class: "text-center create-button-white border-radius"  %>
-  <br>
+  <div>
+    <%= link_to "Find a tour", tours_path, class: "text-center create-button-white border-radius"  %>
+    <br>
 
-  <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
-</div>
+    <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
+  </div>
 
 </div>
 <div class="middle-landing">
-  <div>
-    <h3>Grow your business</h3><br> <%= image_tag "graph.svg", class: "icon" %>
-  </div>
-  <div><h3>Earn extra money</h3><br> <%= image_tag "coins.svg", class: "icon" %>
-  </div>
-  <div><h3>Discover new places</h3><br> <%= image_tag "loupe.svg", class: "icon" %>
-  </div>
+
+ <div><h3>Grow your business</h3><br><br> <%= image_tag "graph.svg", class: "icon" %>
+ </div>
+ <div><h3>Earn extra money</h3><br> <%= image_tag "coins.svg", class: "icon" %>
+ </div>
+ <div><h3>Discover new places</h3><br> <%= image_tag "loupe.svg", class: "icon" %>
+ </div>
 </div>
 
 <div class="bottom">
@@ -53,6 +48,9 @@
     <div class="bottom-image-three"></div>
     <div class="bottom-text"><h1>3</h1><h4>Publish & BAM!!, you got yourself an urban advanture!</h4>
       <p>Once you have planned your tour and submitted it, one of our lovely saga team will review and approve it within 24 hours!</p>
+    </div>
+    <div>
+
     </div>
   </div>
 </div>
