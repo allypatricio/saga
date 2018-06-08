@@ -10,12 +10,9 @@
   </div>
   <div class="message-body">
     <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
-
-<div class="button-book">
-<button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#reviewModal">Review</button>
-</div>
-
-
+    <p>
+      <%= link_to "add review", new_tour_booking_review_path(booking.tour_id ,booking) %>
+    </p>
   </div>
   <%if booking.status == nil || "accepted"%>
   <div class="message-status">
