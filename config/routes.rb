@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :tours do
     resources :locations
     resources :bookings do
-      resources :reviews, only: [:new, :create, :show, :destroy]
+      resources :reviews, only: [:new, :create, :show, :update, :destroy]
     end
     member do
       post :change_status
