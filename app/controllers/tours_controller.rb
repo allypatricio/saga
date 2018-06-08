@@ -101,7 +101,18 @@ class ToursController < ApplicationController
         lng: @tour.locations.first.longitude,
       }
     end
-@booking = Booking.new(tour_id: params[:id])
+    @reviews = Review.where(tour_id: @tour.id).last(5)
+    ratings = []
+    @reviews.each do |review|
+      ratings << review.rating
+    end
+    if ratings.any?
+      @average_rating = ratings.sum / ratings.size
+    else
+      @average_rating = 0
+    end
+
+    @booking = Booking.new(tour_id: params[:id])
   end
 
 

@@ -26,7 +26,22 @@
         <% end %>
       </div>
       <h3>Reviews:</h3>
-      <a><i class="fas fa-star"></i></a>
+      <p>Overall rating:
+        <div class="rating">
+        <% (@average_rating.to_i).times do%>
+          <div class="full-star">★</div>
+        <% end %>
+        <% (5-@average_rating.to_i).times do%>
+          <div class="emtpty-star">☆</div>
+        <% end %>
+        </div>
+      </p>
+      <p>Last 5 reviews:</p>
+      <ul class="list-unstyled">
+        <% @reviews.each do |review| %>
+        <li><%= review.content %></li>
+        <%end%>
+      </ul>
     </div>
 
     <div class="col right-footer">
