@@ -1,6 +1,6 @@
 
 #video-background {
- width: 100%
+ width: 100%;
 }
 
 .banner-content
@@ -8,6 +8,7 @@
   color: #f1f1f1;
   width: 100%;
   position: absolute;
+  height: 100vh;
 }
 .banner h1 {
   padding-top: 300px;
@@ -35,12 +36,15 @@
 .create-button-gray {
   align-items: center;
   color: white;
-  opacity: 0.9;
+  opacity: 1;
   padding: 10px 30px;
   border-radius: 4px;
+
  &:hover {
   text-decoration: none;
-  border: solid white;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
   color: white;
   opacity: 0.9;
   }
