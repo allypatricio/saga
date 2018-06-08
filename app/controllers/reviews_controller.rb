@@ -21,6 +21,14 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def update
+    @review = Review.find(params[:id])
+    @review.content = review_params[:content]
+    @review.rating = review_params[:rating]
+    @review.save
+    redirect_to dashboard_index_path
+  end
+
   def show
   end
 
