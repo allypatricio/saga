@@ -2,17 +2,31 @@ class ReviewsController < ApplicationController
   before_action :set_booking, :set_tour
 
   def new
-    @review = Review.new
+    if Review.where(user_id: current_user.id, booking_id: params[:booking_id]).any?
+      @review = Review.where(user_id: current_user.id, booking_id: params[:booking_id]).first
+    else
+      @review = Review.new
+    end
   end
 
   def create
     @review = Review.new(review_params)
     @review.booking_id = @booking.id
+    @review.user_id = current_user.id
+    @review.tour_id = @tour.id
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to dashboard_index_path
     else
       render :new
     end
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @review.content = review_params[:content]
+    @review.rating = review_params[:rating]
+    @review.save
+    redirect_to dashboard_index_path
   end
 
   def show

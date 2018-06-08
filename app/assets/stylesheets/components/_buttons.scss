@@ -144,8 +144,22 @@
 }
 
 
-
-
+// FILTER BUTTON - PINK
+ .btn-filter-pnk {
+  color: $pink;
+  border: solid 2px $pink;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: white;
+  &:hover {
+    text-decoration: none;
+    color: $pink;
+    opacity: 0.5px !important;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
 
 
 

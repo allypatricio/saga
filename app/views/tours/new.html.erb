@@ -1,4 +1,7 @@
-<div class="container">
+<div class="form-wrapper">
+<div class="form-background" ></div>
+ <div class="form-container col-sm-5">
+    <div class="form-card">
   <h1>Add a Tour</h1>
     <%= simple_form_for(@tour) do |f| %>
     <%= f.error_notification %>
@@ -10,7 +13,9 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Add", :class => "form-button" %>
+      <%= f.button :submit, "Add", :class => "btn-form-blue" %>
     </div>
   <% end %>
+</div>
+ </div>
 </div>

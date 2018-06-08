@@ -1,9 +1,9 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:edit, :show, :update, :create]
+  before_action :set_tour, only: [:edit, :show, :update, :change_status]
   layout "map", only: [:edit, :show]
 
   def index
-    @tours = Tour.all
+    @tours = Tour.active
 
     durations = []
     @tours.each do |exp|
@@ -56,7 +56,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to edit_tour_path(@tour), notice: 'Tour was successfully created.' }
+        format.html { redirect_to edit_tour_path(Tour.last), notice: 'Tour was successfully created.' }
       else
         format.html { render :new }
       end
@@ -101,8 +101,31 @@ class ToursController < ApplicationController
         lng: @tour.locations.first.longitude,
       }
     end
-@booking = Booking.new(tour_id: params[:id])
+    @reviews_full = Review.where(tour_id: @tour.id)
+    @reviews = Review.where(tour_id: @tour.id).last(5)
+    ratings = []
+    @reviews_full.each do |review|
+      ratings << review.rating
+    end
+    if ratings.any?
+      @average_rating = ratings.sum / ratings.size
+    else
+      @average_rating = 0
+    end
+
+    @booking = Booking.new(tour_id: params[:id])
   end
+
+  def change_status
+    if @tour.active?
+      @tour.disactivate
+    else
+      @tour.activate
+    end
+
+  end
+
+
 
 
 
@@ -113,7 +136,7 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :price, :duration, :description, :location, :photo)
+    params.require(:tour).permit(:title, :price, :duration, :description, :location, :photo, :status)
   end
 
 end

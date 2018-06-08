@@ -9,6 +9,7 @@ gem 'faker'
 gem 'geocoder'
 gem 'pg_search'
 gem 'pundit'
+gem 'acts_as_list'
 
 gem 'bootsnap', require: false
 gem 'figaro'

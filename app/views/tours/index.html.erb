@@ -28,9 +28,9 @@
       <label for="price" id="textPrice" >Price: <%= @max_price %>€</label>
       <input id="price" name="price" type="range" min="0" max= "<%= @max_price %>"value = "<%= @max_price %>" onchange="updatePriceInput(this.value);" >
     </div>
-      <div class="filter-button-element">
-        <input type="submit" value="Apply filters" class="btn-filter" id="apply-button">
-        <button type="button" class="btn-filter" onClick="window.location.reload();">Reset filters</button>
+      <div class="filter-button-element" style="margin-bottom: 10px">
+        <input type="submit" value="Apply filters" class="btn-filter-pnk" id="apply-button">
+        <button type="button" class="btn-filter-pnk" onClick="window.location.reload();">Reset filters</button>
       </div>
 
     <%end%>
