@@ -55,25 +55,30 @@ function createMap(mapElement) {
     if (status === "OK") {
       let address = results[0].formatted_address;
       const tourId = window.location.pathname.split("/")[2]
+      let data = new FormData;
+      data.append("location[address]", address)
       fetch(`/tours/${tourId}/locations/`, {
         method: 'post',
-        body: JSON.stringify({location: {address: address}}),
+        body: data,
         headers: {
-          'Content-Type': 'application/json',
+          // 'Content-Type': 'application/javascript',
           'X-CSRF-Token': Rails.csrfToken()
         },
         credentials: 'same-origin'
       })
+      .then(response => response.json())
+      .then((json) => { appendLocation(json.location)})
     } else {
       console.log("No address found")
     }
-
   };
 };
 
+function appendLocation(input) {
+  const locationList = document.getElementById("locations-list")
+  locationList.insertAdjacentHTML("beforeend", input)
+}
 
 
 createMap(mapStandard || mapFiltered || mapMarkers);
 autocomplete();
-
-

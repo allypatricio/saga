@@ -1,0 +1,14 @@
+<div class="location-box" location-id="<%= location.id %>">
+  <li>
+    <div class="location-link">
+      <%= link_to "", data: {toggle: "modal", target: "#editLocation#{location.id}"} do %>
+        <%= truncate "#{location.position}: #{location.address}", length: 40 %>
+      <% end %>
+    </div>
+    <div class="location-icons">
+      <%= link_to tour_location_path(@tour, location), method: :delete, data: {confirm: 'Are you sure you want to delete this location?'} do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </li>
+</div>

@@ -11,22 +11,38 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.tour = @tour
     if @location.save
-      redirect_to edit_tour_path(@tour)
+      @location_html = render_to_string(partial: 'locations/location', locals: {location: @location})
+      respond_to do |format|
+        format.js do
+          # byebug
+          render json: {location: @location_html}
+        end
+        format.html { redirect_to edit_tour_path(@tour), notice: "Location succesfully added"}
+      end
     else
-      redirect_to edit_tour_path(@tour)
-      # add notice
+      redirect_to edit_tour_path(@tour), notice: "Adding location failed, please try again"
     end
+    # respond_to do |format|
+    #     format.js do
+    #       byebug
+    #     end
+    #   end
   end
 
   def edit
   end
 
   def update
-
     if @location.update(location_params)
-      render json: @location, status: :ok
+      respond_to do |format|
+        format.html { redirect_to edit_tour_path(@tour), notice: "Location succesfully edited"}
+        format.json { render json: @location, status: :ok }
+      end
     else
-      render json: {errors: @location.errors.messages }, status: :unprocessable_entity
+      respond_to do |format|
+        format.html { redirect_to edit_tour_path(@tour), alert: "Could not update location, please try again"}
+        render json: {errors: @location.errors.messages }, status: :unprocessable_entity
+      end
     end
   end
 

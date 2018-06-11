@@ -18,13 +18,17 @@
 
     <div class="menu-label">Locations</div>
 
-    <%= render 'locationslist' %>
+    <ul class="list-unstyled">
+      <div id="locations-list">
+        <% @locations_ordered.each do |location| %>
+            <%= render location  %>
+        <% end %>
+      </div>
+    </ul>
 
     <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu text-center" %>
   </div>
 </div>
-
-
 
 <!-- EDIT LOCATION MODAL -->
 
@@ -45,7 +49,6 @@
 
           <%= simple_form_for [@tour, location] do |f| %>
             <%= f.input :address %>
-            <%= f.input :position %>
             <%= f.input :story, as: :text %>
 
             <%= f.input :question %>
