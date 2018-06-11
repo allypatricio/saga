@@ -48,8 +48,10 @@
 
   <div class="message-edit-link">
     <%=link_to edit_tour_path(tour) do %>
-    <div class="arrow-right">
-    </div>
+    <i class="far fa-edit"></i>
     <%end%>
-  </div>
+    <%=link_to tour_path(tour) do %>
+    <i class="fas fa-search"></i>
+    <%end%>
+   </div>
 </div>
