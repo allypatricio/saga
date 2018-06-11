@@ -53,7 +53,7 @@
       <p>Last 5 Reviews:</p>
       <div class="list-unstyled">
         <% @reviews.each do |review| %>
-        <p><%= review.content %><%= @booking.tour.user.first_name.capitalize %></p>
+        <p><%= review.content %> - <%= User.find(review.user_id).first_name.capitalize %></p>
         <%end%>
       </div>
    </div>
