@@ -1,0 +1,10 @@
+
+<h1> Available tours: </h1>
+<ul>
+<% @bookings.each do |booking| %>
+  <p> Tour: <%=Tour.find(booking.tour_id).title%> </p>
+  <p> <%= link_to "Start playing", play_path(booking) %> </p>
+<%end%>
+
+</ul>
+
