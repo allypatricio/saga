@@ -22,10 +22,11 @@ class LocationsController < ApplicationController
   end
 
   def update
+
     if @location.update(location_params)
-      render json: @location
+      render json: @location, status: :ok
     else
-      render json: {errors: @location.errors.messages }
+      render json: {errors: @location.errors.messages }, status: :unprocessable_entity
     end
   end
 
