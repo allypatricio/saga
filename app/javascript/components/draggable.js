@@ -21,27 +21,17 @@ function initDraggable() {
 
     const tourId = window.location.pathname.split("/")[2];
     const URL = `/tours/${tourId}/locations/${locationId}`;
-    console.log(URL);
 
-    // console.log(JSON.stringify({position: newIndex}))
-    // Until here it works 100% as intended
     fetch(URL, {
-      method: 'patch',
-      body: JSON.stringify({"position": newIndex}),
+      method: 'put',
+      body: JSON.stringify({"position": newIndex + 1}),
       headers: {
         'Content-Type': 'application/json',
         'X-CSRF-Token': Rails.csrfToken()
       },
       credentials: 'same-origin'
     })
-
-    // DONE fix url - oldIndex should be locationId
-    // 2. write proper fetch to patch locationId (fix 400 Bad Request)
-    // 3. use .then to check response (check frontend slides)
-    // 4. if the JSON contains no errors (this means that the location was updated! see controller), refresh the page
-    // 5. if the JSON does contain errors, refresh the page and show an error method
-    // .then
-
+      // .catch((response) => console.log(response.errors))
   })
 }
 export { initDraggable };
