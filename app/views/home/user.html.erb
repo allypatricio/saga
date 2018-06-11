@@ -1,0 +1,22 @@
+
+<div class="banner">
+
+  <div class="banner-content">
+    <h1>SAGA</h1>
+    <p class="description">Discover the unexpected</p>
+
+    <!--  <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-gray border-radius" %></div> -->
+
+  </div>
+  <%= video_tag "lisbon.mp4", autoplay: "true", loop: "true", id: "video-background" %>
+
+<form class="user-landing-search-form">
+  <div>
+    <input type="search" id="mySearch" name="q"
+    placeholder="Search the site..." required>
+    <button>Search</button>
+    <span class="validity"></span>
+  </div>
+</form>
+
+</div>

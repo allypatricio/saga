@@ -1,0 +1,32 @@
+#video-background {
+ width: 100%;
+}
+
+.banner-content
+{
+  z-index: 9999;
+  width: 100%;
+  position: absolute;
+  height: 100vh;
+  //background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%);
+  //image-url("lisbon.mp4");
+
+}
+.banner h1 {
+  color: white;
+  padding-top: 300px;
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 0px;
+  opacity: 1;
+  text-shadow: 1px 1px 1px;
+  text-align: center;
+}
+.banner h4 {
+  //padding-top: 75px;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
