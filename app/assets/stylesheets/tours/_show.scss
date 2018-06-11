@@ -52,7 +52,7 @@
   margin: 0px;
   background-color: rgba(244, 244, 244, 0.7);
   border: 1px solid #9b9b9b;
-  border-radius: 5px;
+  border-radius: 3px;
   margin: 30px;
   opacity: 0.8px;
   p {
@@ -60,12 +60,9 @@
   }
   .show-book {
     position: absolute;
-    right: 30px;
+    left: 30px;
+    top: 38vh;
   }
-}
-.fa-star:before {
-  left: 30px;
-  color: $yellow;
 }
 .show-back {
  position: absolute;
@@ -81,6 +78,9 @@
 #map {
   // border: 1px solid $light-gray;
   border-radius: 3px;
+  position: absolute;
+  top: 0vh;
+  right: 0vh;
 }
 
 
@@ -97,9 +97,17 @@
 }
 
 .list-unstyled p {
-  // border-top: 1px solid $light-gray;
   border-bottom: 3px solid $light-gray;
   color: $gray;
 
 }
 
+.booking-details {
+  height: 30vh;
+  width: 40%;
+  h3 {
+    font-size: 27px;
+    color: $gray;
+    padding-bottom: 5px
+  }
+}
