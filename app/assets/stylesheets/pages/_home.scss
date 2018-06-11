@@ -5,8 +5,7 @@
 
 .banner-content
 {
-  // color: #f1f1f1;
-  z-index: 9999;
+  z-index: 9998;
   width: 100%;
   position: absolute;
   height: 100vh;
@@ -38,25 +37,28 @@
 .create-button-gray {
   align-items: center;
   border:solid white 2px;
-  color: white;
+  background-color: white;
+  color: black;
   opacity: 1;
   padding: 10px 30px;
   border-radius: 4px;
   &:hover {
     text-decoration: none;
     border: solid white 2px;
-    color: white;
+    color: black;
     opacity: 0.6;
   }
 }
 
 .create-button-sign-up {
   color: white;
+  background-color: grey;
+  opacity: 0.6;
   padding: 10px 20px;
   border-radius: 5px;
   position: absolute;
   top: 20px;
-  right: 250px;
+  right: 270px;
   &:hover {
     text-decoration: none !important;
     color: white;
@@ -69,11 +71,13 @@
 
 .create-button-login {
   color: white;
+  background-color: grey;
+  opacity: 0.6;
   padding: 10px 30px;
   border-radius: 5px;
   position: absolute;
   top: 20px;
-  right: 150px;
+  right: 157px;
   &:hover {
     text-decoration: none !important;
     color: white;
@@ -86,6 +90,8 @@
 
 .create-button-white {
   color: white;
+  background-color: grey;
+  opacity: 0.6;
   padding: 10px 20px;
   border-radius: 5px;
   position: absolute;
@@ -116,11 +122,20 @@
   height: 150px;
 }
 
+.title {
+  text-align: center;
+  font-size: 80px;
+  font-style: bold;
+  //text-decoration: underline;
+
+}
+
 .bottom-landing {
   display: flex;
+  //border-bottom: solid gray 2px;
   justify-content: space-between;
-  margin-top: 100px;
-  height: 300px;
+  // margin-top: 100px;
+  // height: 300px;
   margin-right: 50px;
   margin-left: 50px;
   margin-bottom: 10px;
