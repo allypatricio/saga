@@ -22,7 +22,7 @@
   text-align: center;
 }
 .banner h4 {
-  padding-top: 75px;
+  //padding-top: 75px;
   font-size: 25px;
   color: white;
   text-align: center;
@@ -37,19 +37,16 @@
 
 .create-button-gray {
   align-items: center;
+  border:solid white 2px;
   color: white;
   opacity: 1;
   padding: 10px 30px;
   border-radius: 4px;
-
-
   &:hover {
     text-decoration: none;
-    border-width: 1px;
-    border-color: white;
-    border-style: solid;
+    border: solid white 2px;
     color: white;
-    opacity: 0.9;
+    opacity: 0.6;
   }
 }
 
