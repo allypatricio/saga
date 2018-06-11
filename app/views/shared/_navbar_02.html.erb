@@ -12,8 +12,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-saga-right hidden-xs hidden-sm">
-      <p  class="navbar-saga-item navbar-saga-link-welcome">Welcome</p>
-      <p class="navbar-saga-item navbar-saga-link-name"><%= current_user.email %></p>
+    <p><%= link_to 'View Tours', tours_path, :class => "navbar-saga-item navbar-saga-link-find" %></p>
+      <p class="navbar-saga-item navbar-saga-link-name">Hi, <%= current_user.first_name.capitalize %></p>
 
 
       <!-- Profile picture with dropdown list -->
