@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
 
   root to: 'home#index'
+  get '/user-landing-page', to: 'home#user'
 
   # get '/tours' => "tours#index", as: :user_root
 
