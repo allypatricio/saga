@@ -1,8 +1,14 @@
 <div class="navbar-saga">
   <!-- Logo -->
-  <a href="/" class="navbar-saga-brand">
+  <% if current_user.guide %>
+    <%= link_to tours_path, class: "navbar-saga-brand"  do %>
     <%= image_tag('favicon.png') %>
-  </a>
+  <%end%>
+  <%else%>
+    <%= link_to tours_path, class: "navbar-saga-brand"  do %>
+    <%= image_tag('favicon.png') %>
+  <%end%>
+  <%end%>
 
   <!-- Right Navigation -->
   <div class="navbar-saga-right hidden-xs hidden-sm">

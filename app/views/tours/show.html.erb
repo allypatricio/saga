@@ -1,18 +1,30 @@
 
 <div class="show-container">
 
+<div class="header">
   <% if @tour.photo.url != nil %>
   <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.photo%>);">
     <%else%>
 
     <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(http://via.placeholder.com/500x500);">
       <% end %>
-      <a href="/"><i class="fas fa-chevron-circle-right fa-3x"></i></a>
-      <a href=""><i class="fas fa-chevron-circle-left fa-3x"></i></a>
+    <!--   <a href="/"><i class="fas fa-chevron-circle-right fa-3x"></i></a>
+      <a href=""><i class="fas fa-chevron-circle-left fa-3x"></i></a> -->
 
       <%= link_to "Back", tours_path, :class => "btn-back-pnk show-back" %>
     </div>
+
+    <div class="col right-header">
+<div class="button-book">
+<button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
+</div>
+     <p>Price: <%= @tour.price %>€</p>
+     <p>Duration: <%= @tour.duration %>h</p>
+     <p>Starting Location: <%= @tour.locations.first.address %></p>
+     <div id="map" style="width: 100%; height: 30vh;" data-markers="<%= @markers.to_json %>"></div>
+   </div>
   </div>
+</div>
 
   <div class="flex-container">
     <div class="col left-footer">
@@ -25,18 +37,25 @@
         <%= image_tag tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-turqoise"%>
         <% end %>
       </div>
-      <h3>Reviews:</h3>
-      <a><i class="fas fa-star"></i></a>
     </div>
-
     <div class="col right-footer">
-<div class="button-book">
-<button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
-</div>
-     <p>Price: <%= @tour.price %>€</p>
-     <p>Duration: <%= @tour.duration %>h</p>
-     <p>Starting Location: <%= @tour.locations.first.address %></p>
-     <div id="map" style="width: 100%; height: 40vh;" data-markers="<%= @markers.to_json %>"></div>
+     <h1>Reviews</h1>
+      <p>Overall Rating:
+        <div class="rating">
+        <% (@average_rating.to_i).times do%>
+          <div class="full-star">★</div>
+        <% end %>
+        <% (5-@average_rating.to_i).times do%>
+          <div class="emtpty-star">☆</div>
+        <% end %>
+        </div>
+      </p>
+      <p>Last 5 Reviews:</p>
+      <div class="list-unstyled">
+        <% @reviews.each do |review| %>
+        <p><%= review.content %><%= @booking.tour.user.first_name.capitalize %></p>
+        <%end%>
+      </div>
    </div>
  </div>
 </div>

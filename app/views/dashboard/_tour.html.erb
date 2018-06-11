@@ -1,3 +1,15 @@
+<% reviews_full = Review.where(tour_id: tour.id) %>
+<%ratings = []%>
+<%reviews_full.each do |review|%>
+  <%ratings << review.rating %>
+<%end%>
+<%if ratings.any? %>
+  <%average_rating = ratings.sum / ratings.size%>
+<%else%>
+  <%average_rating = 0 %>
+<%end%>
+
+
 <div class="message">
   <%= image_tag(tour.photo.url(:thumnail), class: "message-small") %>
   <div class="message-name">
@@ -14,15 +26,32 @@
      -->
   </div>
   <div class="message-rating">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="far fa-star"></i>
-    <i class="far fa-star"></i>
+    <div class="rating">
+    <% (average_rating.to_i).times do%>
+      <div class="full-star">★</div>
+    <% end %>
+    <% (5-average_rating.to_i).times do%>
+      <div class="emtpty-star">☆</div>
+    <% end %>
+    </div>
   </div>
   <div class="message-status">
-    <p class="status active">Active</p>
+    <span id='status-<%=tour.id%>'>
+      <% if tour.active?%>
+        <p class="status active">Active</p>
+        <p>
+          <%= link_to "change to inactive", change_status_tour_path(tour), method: :POST ,remote: true %>
+        </p>
+      <%else%>
+        <p class="status inactive">Inactive</p>
+        <p>
+        <%= link_to "change to active", change_status_tour_path(tour), method: :POST ,remote: true %>
+        </p>
+      <%end%>
+    </span>
   </div>
+
+
   <div class="message-edit-link">
     <%=link_to edit_tour_path(tour) do %>
     <div class="arrow-right">

@@ -6,7 +6,7 @@ class CreateTours < ActiveRecord::Migration[5.2]
       t.string :title
       t.integer :price
       t.integer :duration
-      t.integer :status
+      t.integer :status, null: false, default: 0
 
       t.timestamps
     end
