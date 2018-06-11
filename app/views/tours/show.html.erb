@@ -8,43 +8,40 @@
 
       <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(http://via.placeholder.com/500x500);">
         <% end %>
-    <!--   <a href="/"><i class="fas fa-chevron-circle-right fa-3x"></i></a>
-      <a href=""><i class="fas fa-chevron-circle-left fa-3x"></i></a> -->
+      </div>
 
+      <div class="col right-header">
+        <div class="button-book">
+          <button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
+        </div>
+        <div class="booking-details">
+          <h3><strong>Booking Details</strong></h3>
+          <p><strong>Price:</strong> <%= @tour.price %>€</p>
+          <p><strong>Duration:</strong> <%= @tour.duration %>h</p>
+          <p><strong>Starting Location:</strong> <%= @tour.locations.first.address %></p>
+        </div>
+        <div id="map" style="width: 55%; height: 50vh;" data-markers="<%= @markers.to_json %>"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div class="col left-footer">
+      <h1><%= @tour.title.capitalize %></h1>
+      <p><%= @tour.description.capitalize %></p>
+      <div class="show-avatar-position">
+        <% if @tour.user.photo.url == nil %>
+        <i class="far fa-user card-user avatar-border-turqoise-i"></i>
+        <% else %>
+        <%= image_tag tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-turqoise"%>
+        <% end %>
+      </div>
       <%= link_to "Back", tours_path, :class => "btn-back-pnk show-back" %>
     </div>
 
-    <div class="col right-header">
-      <div class="button-book">
-        <button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
-      </div>
-      <div class="booking-details">
-        <h3><strong>Booking Details</strong></h3>
-        <p><strong>Price:</strong> <%= @tour.price %>€</p>
-       <p><strong>Duration:</strong> <%= @tour.duration %>h</p>
-       <p><strong>Starting Location:</strong> <%= @tour.locations.first.address %></p>
-     </div>
-     <div id="map" style="width: 55%; height: 50vh;" data-markers="<%= @markers.to_json %>"></div>
-   </div>
- </div>
-</div>
-
-<div class="flex-container">
-  <div class="col left-footer">
-    <h1><%= @tour.title.capitalize %></h1>
-    <p><%= @tour.description.capitalize %></p>
-    <div class="show-avatar-position">
-      <% if @tour.user.photo.url == nil %>
-      <i class="far fa-user card-user avatar-border-turqoise-i"></i>
-      <% else %>
-      <%= image_tag tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-turqoise"%>
-      <% end %>
-    </div>
-  </div>
-  <div class="col right-footer">
-   <h1>Reviews</h1>
-   <p>Overall Rating:
-    <div class="rating">
+    <div class="col right-footer">
+     <h1>Reviews</h1>
+     <div class="rating">
       <% (@average_rating.to_i).times do%>
       <div class="full-star">★</div>
       <% end %>
@@ -52,14 +49,15 @@
       <div class="emtpty-star">☆</div>
       <% end %>
     </div>
-  </p>
-  <p>Last 5 Reviews:</p>
-  <div class="list-unstyled">
-    <% @reviews.each do |review| %>
-    <p><%= review.content %> - <%= User.find(review.user_id).first_name.capitalize %></p>
-    <%end%>
+<!--      <p>Last 5 Reviews:</p>
+ -->    <div class="scrollable">
+    <div class="list-unstyled">
+      <% @reviews.each do |review| %>
+      <p>"<%= review.content %>"</p>
+      <%end%>
+    </div>
+    </div>
   </div>
-</div>
 </div>
 </div>
 
@@ -72,7 +70,7 @@ I am really looking forward to playing your tour! "%>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header" >
-        <div class="text-center" style="text-align: center">
+        <div class="text-center" style="text-align: center; padding-left: 25px; padding-right: 25px;">
           <h3>You are Booking "<%= @tour.title%>" </h3>
           <p><i class="fas fa-map-marker"></i><%= @tour.locations.first.address %></p>
           <p><i class="fas fa-clock"></i>The estimated duration of your tour is <%= @tour.duration %>h</p>
@@ -84,11 +82,8 @@ I am really looking forward to playing your tour! "%>
       </div>
       <div class="modal-body">
         <%= simple_form_for([@tour, @booking]) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :message, as: :text, :input_html => {:rows => 4}, label: "Send your host a message:", placeholder: placeholder_text %>
-        </div>
 
-        <div class="form-actions" style="text-align: center;">
+        <div class="form-actions" style="text-align: center; padding-bottom: 10px;">
           <%= f.button :submit, "Confirm", :class => "btn-main-pnk" %>
         </div>
         <% end %>
