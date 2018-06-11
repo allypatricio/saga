@@ -9,7 +9,6 @@
           <% end %>
         </div>
         <div class="location-icons">
-          <i class="fas fa-bars"></i>
           <%= link_to tour_location_path(@tour, location), method: :delete, data: {confirm: 'Are you sure you want to delete this location?'} do %>
           <i class="far fa-trash-alt"></i>
           <% end %>
