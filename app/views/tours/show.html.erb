@@ -41,7 +41,7 @@
 
     <div class="col right-footer">
      <h1>Reviews</h1>
-     <div class="rating">
+     <div class="rating" id="rating-show">
       <% (@average_rating.to_i).times do%>
       <div class="full-star">★</div>
       <% end %>
@@ -53,7 +53,7 @@
  -->    <div class="scrollable">
     <div class="list-unstyled">
       <% @reviews.each do |review| %>
-      <p>"<%= review.content %>"</p>
+      <p>"<%= review.content %>" <sub><i> ~ <%=review.created_at.strftime("%b %e, %l:%M %p")%></i></sub></p>
       <%end%>
     </div>
     </div>
