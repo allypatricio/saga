@@ -14,11 +14,13 @@ class ReviewsController < ApplicationController
     @review.booking_id = @booking.id
     @review.user_id = current_user.id
     @review.tour_id = @tour.id
-    if @review.save
-      redirect_to dashboard_index_path
-    else
-      render :new
-      # render 'dashboard/index'
+    @tour = Tour.find(@booking.tour_id)
+    respond_to do |format|
+      if @review.save
+        format.js
+      else
+        format.js
+      end
     end
   end
 
@@ -26,8 +28,14 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.content = review_params[:content]
     @review.rating = review_params[:rating]
-    @review.save
-    redirect_to dashboard_index_path
+    @tour = Tour.find(@booking.tour_id)
+    respond_to do |format|
+      if @review.save
+        format.js
+      else
+        format.js
+      end
+    end
   end
 
   def show

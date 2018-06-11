@@ -1,0 +1,21 @@
+console.log('from create')
+<% if @review.errors.any? %>
+  console.log('error')
+  function renderReviewForm(input) {
+  const form = document.getElementById('review-form-<%=@booking.id%>')
+  form.innerHTML = input;
+}
+
+// function rendermap(input) {
+//   const map = document.getElementById('map-id')
+//   map.innerHTML = input;
+// }
+
+renderReviewForm('<%= j render "dashboard/review_form", {review: @review, tour: @tour, booking: @booking}  %>');
+
+<% else %>
+// Redirect
+console.log('update')
+window.location.replace("/dashboard")
+
+<% end %>
