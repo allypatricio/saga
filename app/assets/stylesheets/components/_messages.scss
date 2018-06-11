@@ -97,5 +97,21 @@
 }
 
 .dashboard{
-  margin-top: 20px;
+  margin-top: 100px;
+
+}
+
+.new-message{
+  padding: 20px 0;
+  height: 191px;
+  text-align: center;
+  border: 1px solid $gray;
+  background-color: $light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-message-button{
+
 }
