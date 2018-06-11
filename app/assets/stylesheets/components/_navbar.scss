@@ -65,15 +65,15 @@
     outline: none !important;
   }
 }
-.navbar-saga-link-welcome {
-  color: $gray;
+.navbar-saga-link-find {
+  color: $blue;
   font-size: 18px;
-  padding-right: 20px;
+  padding-right: 25px;
   border-right: 1px solid $blue;
+  padding-left: 10px;
   &:hover {
     text-decoration: none;
-    color: $gray;
-    opacity: 0.8;
+    color: rgba(134, 231, 223, 0.5);
   }
 }
 .navbar-saga-link {
