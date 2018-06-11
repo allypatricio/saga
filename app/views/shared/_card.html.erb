@@ -17,7 +17,7 @@
       <% end %>
       <%=link_to tour_path(tour) do %>
       <div class="card-footer">
-        <span class="card-category">Tour category</span>
+        <span class="card-category"><%=tour.category%></span>
         <div class="center-title"><h2><%= tour.title %></h2></div>
 
         <div class="card-location"><p><i class="fas fa-map-marker"></i><%= tour.locations.first.address %></p></div>
