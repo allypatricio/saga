@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
       redirect_to dashboard_index_path
     else
       render :new
+      # render 'dashboard/index'
     end
   end
 

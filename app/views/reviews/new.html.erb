@@ -3,6 +3,7 @@
   <div class="form-container col-sm-5">
     <div class="form-card">
       <h2>Add a Review</h2>
+
       <%= simple_form_for [@tour, @booking, @review] do |f| %>
       <div class="form-inputs">
         <%= f.input :content, label: "Review:" %>

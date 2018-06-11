@@ -13,6 +13,7 @@
     <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
     <%end%>
     <p>
+      <button type="button" class="" data-toggle="modal" data-target="#review-<%=booking.id%>">add Review</button>
       <%= link_to "add review", new_tour_booking_review_path(booking.tour_id ,booking) %>
     </p>
   </div>
@@ -26,3 +27,61 @@
     <%end%> -->
   </div>
 </div>
+
+
+<%  if Review.where(user_id: current_user.id, booking_id: booking.id).any? %>
+<%     review = Review.where(user_id: current_user.id, booking_id: booking.id).first %>
+<%    else %>
+<%      review = Review.new %>
+<%   end %>
+<%    tour = Tour.find(booking.tour_id) %>
+
+
+<!-- Modal -->
+<div class="modal fade" id="review-<%=booking.id%>" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Review for <%=Tour.find(booking.tour_id).title%></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      <%= simple_form_for [tour, booking, review] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :content, label: "Review:" %>
+        <div class="form-group integer required review_rating"><label class="form-control-label integer required" for="review_rating-<%=booking.id%>">Rating: </label>
+                <fieldset>
+                <span class="star-cb-group">
+                <input type="radio" id="rating-5-<%=booking.id%>" name="review[rating]" value="5" />
+                <label for="rating-5-<%=booking.id%>">5</label>
+                <input type="radio" id="rating-4-<%=booking.id%>" name="review[rating]" value="4" checked="checked" />
+                <label for="rating-4-<%=booking.id%>">4</label>
+                <input type="radio" id="rating-3-<%=booking.id%>" name="review[rating]" value="3" />
+                <label for="rating-3-<%=booking.id%>">3</label>
+                <input type="radio" id="rating-2-<%=booking.id%>" name="review[rating]" value="2" />
+                <label for="rating-2-<%=booking.id%>">2</label>
+                <input type="radio" id="rating-1-<%=booking.id%>" name="review[rating]" value="1" />
+                <label for="rating-1-<%=booking.id%>">1</label>
+                <input type="radio" id="rating-0-<%=booking.id%>" name="review[rating]" value="0" class="star-cb-clear" />
+                <label for="rating-0-<%=booking.id%>">0</label>
+                </span>
+                </fieldset>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "submit", :class=> "btn-form-blue" %>
+      </div>
+      <% end %>
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
