@@ -8,8 +8,10 @@
     <h3> Guide: <%= User.find(booking.tour.user_id).first_name%></h3>
     <p> <%=booking.created_at.strftime("%b %e, %l:%M %p")%></p>
   </div>
-  <div class="message-body">
+  <div class="message-body tourist">
+    <%=link_to tour_path(Tour.find(booking.tour_id)) do %>
     <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
+    <%end%>
     <p>
       <%= link_to "add review", new_tour_booking_review_path(booking.tour_id ,booking) %>
     </p>
@@ -19,8 +21,8 @@
     <p class="status accepted">Booked</p>
   <%end%>
     <p class="message-price"><%=(Tour.find(booking.tour_id)).price.to_i%>€</p>
-    <%= link_to tour_booking_path(Tour.find(booking.tour_id), booking), method: :delete,remote: true, :class => "message-link" do %>
+<!--     <%= link_to tour_booking_path(Tour.find(booking.tour_id), booking), method: :delete,remote: true, :class => "message-link" do %>
     <i class="far fa-trash-alt"></i>
-    <%end%>
+    <%end%> -->
   </div>
 </div>
