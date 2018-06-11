@@ -1,0 +1,6 @@
+function appendLocation(input) {
+  const locationList = document.getElementById("locations-list")
+  locationList.insertAdjacentHTML("beforeend", input)
+}
+
+appendLocation('<%= j render @location %>');
