@@ -1,28 +1,12 @@
 <div class="container">
-    <div class="dashboard">
-        <ul class="nav nav-pills">
-          <li class="active"><a data-toggle="pill" href="#tours"">My Tours</a></li>
-          <li><a data-toggle="pill" href="#bookings">Bookings-Host</a></li>
-          <li><a data-toggle="pill" href="#bookings-guest">Bookings-Guest</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="tours" class="tab-pane fade in active">
-            <%= link_to "Add new tour", new_tour_path, class: "btn btn-form-blue new-tour-margin" %>
-            <% @tours.each do |tour| %>
-              <%= render "tour", tour: tour %>
-            <%end%>
-          </div>
-          <div id="bookings" class="tab-pane fade">
-            <% @bookings_filtered.each do |booking| %>
-              <%= render "booking_host", booking: booking %>
-            <%end%>
-          </div>
-          <div id="bookings-guest" class="tab-pane fade">
-            <% @bookings_guest.each do |booking_guest| %>
-              <%= render "booking_guest", booking: booking_guest %>
-            <%end%>
-          </div>
-        </div>
+  <div class="dashboard">
+    <div class="new-message">
+      <div class="new-message-button">
+      <%= link_to "Add new tour", new_tour_path, class: "btn btn-form-blue new-tour-margin" %>
+      </div>
     </div>
+    <% @tours.each do |tour| %>
+      <%= render "tour", tour: tour %>
+    <%end%>
+  </div>
 </div>
