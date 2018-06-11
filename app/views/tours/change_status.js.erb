@@ -20,14 +20,12 @@
 var span = document.getElementById('status-<%=@tour.id%>');
 <% if @tour.active?%>
   span.innerHTML =
-        '<p class="status active">Active</p> \
-        <p> \
-          <%= link_to "change to inactive", change_status_tour_path(@tour), method: :POST ,remote: true %> \
-        </p>'
+        '\
+          <%= link_to "Active", change_status_tour_path(@tour), method: :POST ,remote: true, class: "status active" %> \
+        '
 <%else%>
   span.innerHTML =
-        '<p class="status inactive">Inactive</p> \
-        <p> \
-        <%= link_to "change to active", change_status_tour_path(@tour), method: :POST ,remote: true %> \
-        </p>'
+        '\
+        <%= link_to "Inactive", change_status_tour_path(@tour), method: :POST ,remote: true, class: "status inactive"  %> \
+        '
 <%end%>
