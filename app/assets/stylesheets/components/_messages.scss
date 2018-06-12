@@ -28,6 +28,7 @@
   margin-top: 5px;
 }
 .message-body {
+  text-align: center;
   padding-left: 10px;
   font-size: 16px;
   color: rgba(0,0,0,0.7);
@@ -152,7 +153,6 @@ margin-bottom: 20px;
 }
 
 .message-body.tourist{
-  padding-left:15vw;
   a{
     color: black;
   }
