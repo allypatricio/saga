@@ -40,14 +40,13 @@
   <% end %>
 </div>
 
-
 <!-- UPDATE TOUR MODAL -->
 
-<div class="modal fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div class="modal right fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-edit-tour-page" role="document">
+    <div class="modal-content modal-content-edit-tour-page">
 
-      <div class="modal-header">
+      <div class="modal-header modal-header-edit-tour-page">
         <h2 class="modal-title">
           Finalize Tour
         </h2>
@@ -56,8 +55,8 @@
         </button>
       </div>
 
-      <div class="modal-body" id="updateTourModalBody">
-        <%= render 'updatetourform' %>
+      <div class="modal-body modal-body-edit-tour-page" id="updateTourModalBody">
+        <%= render 'updateTourForm' %>
       </div>
 
     </div>
@@ -65,7 +64,6 @@
 </div>
 
 <!-- INSTRUCTIONS MODAL -->
-
 
 <div class="modal right fade" id= "instructions" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
   <div class="modal-dialog modal-dialog-edit-tour-page" role="document">

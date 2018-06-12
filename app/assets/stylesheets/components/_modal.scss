@@ -22,6 +22,8 @@
    background-color: gray;
 }
 
+// EDIT TOUR PAGE MODALS
+
 .modal-dialog-edit-tour-page {
   margin-top: calc(70px + 2vh) !important;
   margin-right: 2vw !important;
@@ -35,6 +37,7 @@
 .modal-content-edit-tour-page {
   height: 100% !important;
   background-color: $gray-transparent;
+  overflow-y: auto;
   h2, h3, p {
     color: white;
   }
@@ -43,6 +46,15 @@
   }
 }
 
+.modal-body-edit-tour-page {
+  padding: 1vw;
+  position: relative;
+}
+
+.modal-header-edit-tour-page {
+  padding-right: 1vw;
+  padding-left: 1vw;
+}
 
 .modal.right.fade .modal-dialog {
   right: -320px;
@@ -61,3 +73,9 @@
 .modal.right.fade.in .modal-dialog {
   right: 0;
 }
+
+.modal-label {
+  color: white;
+}
+
+

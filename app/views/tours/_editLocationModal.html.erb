@@ -1,24 +1,26 @@
-<div class="modal fade" id= <%= "editLocation#{location.id}" %> tabindex="-1" role="dialog" aria-labelledby="editLocationLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+<div class="modal right fade" id= <%= "editLocation#{location.id}" %> tabindex="-1" role="dialog" aria-labelledby="editLocationLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-edit-tour-page" role="document">
+    <div class="modal-content modal-content-edit-tour-page">
+      <div class="modal-header modal-header-edit-tour-page">
         <h2 class="modal-title" id="bookNowModalLabel">
-          Edit Location
+          <%= "Edit Location #{location.position}: #{location.address}"  %>
         </h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-body-edit-tour-page">
 
-        <%= simple_form_for [@tour, @location] do |f| %>
+        <%= simple_form_for [@tour, @location], defaults: { label_html: {:class => "modal-label"} } do |f| %>
           <%= f.input :address %>
           <%= f.input :story, as: :text %>
 
           <%= f.input :question %>
           <%= f.input :hint %>
           <%= f.input :answer %>
-          <%= f.submit "Edit location" %>
+
+          <hr>
+          <%= f.submit "Edit location", class: "btn-main-pnk" %>
         <% end %>
 
       </div>
