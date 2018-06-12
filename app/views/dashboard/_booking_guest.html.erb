@@ -13,7 +13,11 @@
     <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
     <%end%>
     <p>
-      <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">add Review</button>
+      <%  if Review.where(user_id: current_user.id, booking_id: booking.id).any? %>
+        <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Edit Review</button>
+      <%else%>
+        <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Add Review</button>
+      <%end%>
     </p>
   </div>
   <%if booking.status == nil || "accepted"%>
