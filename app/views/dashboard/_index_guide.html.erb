@@ -6,7 +6,7 @@
 
      <div class="welcome-dashboard">
     <% if current_user.sign_in_count == 1 %>
-      <p> Welcome! Create your first tour below.</p>
+      <p> Welcome <%= current_user.first_name %>! Create your first tour below.</p>
     <%end%>
     </div>
     <div class="new-message">
