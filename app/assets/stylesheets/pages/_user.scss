@@ -19,3 +19,81 @@ input:valid ~ span:after {
     padding-left: 5px;
     position: absolute;
 }
+
+.search {
+  text-align: center;
+  line-height: 50px;
+}
+
+.discover-btn {
+  background-color: $blue;
+  padding:1px 30px;
+  color: white;
+  font-weight: bold;
+  border-radius:4px;
+  border-width: 0px;
+}
+.search-box {
+  border: 0px;
+  border-radius: 4px;
+  margin: 0px;
+  opacity: 0.8;
+  box-decoration-break: none;
+}
+
+.create-button-sign-up1 {
+  color: white;
+  background-color: gray;
+  opacity: 0.6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 292px;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+   &:focus {
+    outline: none !important;
+  }
+}
+
+.create-button-login1 {
+  color: white;
+  background-color: grey;
+  opacity: 0.6;
+  padding: 10px 30px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 180px;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.create-button-new {
+  color: white;
+  background-color: grey;
+  opacity: 0.6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+   &:focus {
+    outline: none !important;
+  }
+}
