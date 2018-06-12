@@ -1,38 +1,35 @@
-
-
-<div class="banner">
+ <div class="banner">
 
   <div class="banner-content">
     <h1>SAGA</h1>
 
     <h4>Create discovery games in your city.
       <br>
-    Earn extra income while growing your business online.
-    <br>
-     Have fun discovering your own city by finding fun and unusal places to share with your users!</h4>
-    <br>
+      Earn extra income while growing your business online.
+      <br>
+    Have fun discovering your own city by finding fun and unusal places to share with your users!</h4>
 
-     <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-pink border-radius" %></div>
-      <div>
-    <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
-    <br>
+    <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-blue border-radius" %></div>
+    <div>
+      <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
+      <br>
 
 
-  <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
+      <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
 
-   <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
-</div>
+      <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
+    </div>
   </div>
+
   <%= video_tag "lisbon.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
 
 
 
 </div>
 <div class="middle-landing">
-
- <div><h3>Grow your business</h3><br><br> <%= image_tag "graph.svg", class: "icon" %>
+ <div><h3>Grow your business</h3><br><%= image_tag "graph.svg", class: "icon" %>
  </div>
- <div><h3>Earn extra money</h3><br> <%= image_tag "coins.svg", class: "icon" %>
+ <div><h3>Earn extra money</h3><br><%= image_tag "coins.svg", class: "icon" %>
  </div>
  <div><h3>Discover new places</h3><br> <%= image_tag "loupe.svg", class: "icon" %>
  </div>

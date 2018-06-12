@@ -5,18 +5,25 @@
     <h1>SAGA</h1>
     <p class="description">Discover the unexpected</p>
 
-    <!--  <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-gray border-radius" %></div> -->
+   <div>
+    <%= link_to "Create a Tour", root_path, class: "text-center create-button-new border-radius"  %>
+   <!--  <br> -->
 
-  </div>
-  <%= video_tag "lisbon.mp4", autoplay: "true", loop: "true", id: "video-background" %>
 
-<form class="user-landing-search-form">
-  <div>
-    <input type="search" id="mySearch" name="q"
-    placeholder="Search the site..." required>
-    <button>Search</button>
-    <span class="validity"></span>
+  <%= link_to "Login", new_user_session_path, class: "text-center create-button-login1 border-radius"  %>
+
+   <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up1 border-radius"  %>
+</div>
+    <form>
+  <div class="search">
+    <input type="search" id="mySearch" name="q" class="search-box">
+    <button class="discover-btn"><i class="fas fa-search"></i>
+</button>
   </div>
 </form>
 
+    <!--  <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-gray border-radius" %></div> -->
+
+  </div>
+  <%= video_tag "lisbon1.mp4", autoplay: "true", loop: "true", id: "video-background" %>
 </div>
