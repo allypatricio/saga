@@ -13,7 +13,7 @@
     <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
     <%end%>
     <p>
-      <button type="button" class="" data-toggle="modal" data-target="#review-<%=booking.id%>">add Review</button>
+      <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">add Review</button>
     </p>
   </div>
   <%if booking.status == nil || "accepted"%>
