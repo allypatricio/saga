@@ -45,6 +45,7 @@
   margin: 6px 0;
 }
 .message-status {
+  text-align: center;
   width: 150px;
   font-size: 16px;
   font-weight: bold;
@@ -101,26 +102,38 @@
 
 }
 
+
+.new-message::before {
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),image-url("card_background.png");
+  filter: blur(1.5px);
+  background-position: right 0px top 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+}
 .new-message{
+  position: relative;
   padding: 20px 0;
   height: 191px;
   text-align: center;
-  border: 1px solid $gray;
-  background-color: $light-gray;
+  border: 1px solid #a0a0a0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .header-tours{
-text-align: center;
-width: 10vw;
-padding: 15px 10px;
-background-color: $blue;
-color: white;
+text-align: left;
+padding: 0px 0px;
 font-weight: bold;
 margin-bottom: 10px;
-font-size: 18px;
+font-size: 32px;
 margin-bottom: 20px;
   p{
     margin:0;
