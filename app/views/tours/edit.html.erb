@@ -31,10 +31,11 @@
 </div>
 
 <!-- EDIT LOCATION MODAL -->
-
-<% @locations_ordered.each do |location| %>
-  <%= render 'editLocationModal', {tour: @tour, location: location} %>
-<% end %>
+<div id="location-modals">
+  <% @locations_ordered.each do |location| %>
+    <%= render 'editLocationModal', {tour: @tour, location: location} %>
+  <% end %>
+</div>
 
 
 <!-- UPDATE TOUR MODAL -->

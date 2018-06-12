@@ -67,16 +67,24 @@ function createMap(mapElement) {
         credentials: 'same-origin'
       })
       .then(response => response.json())
-      .then((json) => { appendLocation(json.location)})
+      .then((json) => {
+        appendLocationBox(json.location);
+        appendLocationModal(json.modal);
+      })
     } else {
       console.log("No address found")
     }
   };
 };
 
-function appendLocation(input) {
+function appendLocationBox(input) {
   const locationList = document.getElementById("locations-list")
   locationList.insertAdjacentHTML("beforeend", input)
+}
+
+function appendLocationModal(input) {
+  const locationModals = document.getElementById("location-modals")
+  locationModals.insertAdjacentHTML("beforeend", input)
 }
 
 createMap(mapStandard || mapFiltered || mapMarkers);
