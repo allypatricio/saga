@@ -48,8 +48,10 @@
   margin-bottom: 10em;
 }
 
-.searchbox {
-  width: 80%
+.searchbox-edit-submit {
+  position: absolute;
+  right: 1vw;
+  margin: 0;
 }
 
 #location_address {
@@ -57,7 +59,7 @@
 }
 
 .location_address {
-  width: 90%;
+  width: 85%;
 }
 
 // LOCATION LIST

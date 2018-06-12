@@ -12,10 +12,10 @@ class LocationsController < ApplicationController
     @location.tour = @tour
     if @location.save
       @location_html = render_to_string(partial: 'locations/location', locals: {location: @location})
+      @modal_html = render_to_string(partial: 'tours/editLocationModal', locals: {tour: @tour, location: @location})
       respond_to do |format|
         format.js do
-          # byebug
-          render json: {location: @location_html}
+          render json: {location: @location_html, modal: @modal_html}
         end
         format.html { redirect_to edit_tour_path(@tour), notice: "Location succesfully added"}
       end
