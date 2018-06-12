@@ -36,12 +36,12 @@
               <button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
             </div>
           </div>
-          <div id="map" style="width: 40%; height: 40vh;" data-markers="<%= @markers.to_json %>"></div>
+          <div id="map" class="map-show" style="width: 40%; height: 40vh;" data-markers="<%= @markers.to_json %>"></div>
         </div>
       </div>
     </div>
 
-    <div class="flex-container">
+    <div class="flex-container-show">
       <div class="col left-footer">
         <h1><%= @tour.title.capitalize %></h1>
         <p><%= @tour.description.capitalize %></p>
@@ -51,6 +51,7 @@
       <div class="col right-footer">
        <h1>Reviews</h1>
        <div class="rating" id="rating-show">
+        <p>Overall Rating</p>
         <% (@average_rating.to_i).times do%>
         <div class="full-star">★</div>
         <% end %>
