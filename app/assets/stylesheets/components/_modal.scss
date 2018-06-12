@@ -35,6 +35,8 @@
 .modal-content-edit-tour-page {
   height: 100% !important;
   background-color: $gray-transparent;
+
+
   h2, h3, p {
     color: white;
   }
@@ -43,6 +45,14 @@
   }
 }
 
+.modal-body-edit-tour-page {
+  padding: 1vw;
+}
+
+.modal-header-edit-tour-page {
+  padding-right: 1vw;
+  padding-left: 1vw;
+}
 
 .modal.right.fade .modal-dialog {
   right: -320px;
