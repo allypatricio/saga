@@ -12,8 +12,9 @@
         <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :first_name %>
           <%= f.input :last_name %>
-          <label class="btn btn-primary btn-edit-photo">
-          Add a Picture
+          <p><strong>Profile picture</strong></p>
+          <label class="btn btn-back-pnk btn-edit-photo">
+          Choose file
           <span style="display:none;">
             <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
           </span>
