@@ -44,10 +44,10 @@
  top: 92vh;
  left: 30px;
 }
-.flex-container {
+.flex-container-show {
   display: flex;
 }
-#map {
+.map-show {
   border-radius: 3px;
   position: absolute;
   top: 5vh;
@@ -100,8 +100,13 @@
 }
 #rating-show {
   position: absolute;
-  right: 65px;
-  top: 74vh;
+  right: 45px;
+  top: 69vh;
+  background: $light-gray;
+  padding: 8px;
+  border-radius: 3px;
+  text-align: center;
+  align-items: center;
 }
 
 .scrollable {

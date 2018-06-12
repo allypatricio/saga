@@ -78,31 +78,18 @@
   }
 }
 
-// TRIANGLE BUTTON - PINK
-
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-
-  border-left: 20px solid $blue;
-  &:hover {
-    text-decoration: none;
-    color: $blue;
-    opacity: 0.5;
-  }
-}
-
 // FORM BUTTON - BLUE
 .btn-form-blue {
+  padding: 10px 20px;
   border-radius: 4px;
   background-color: $blue;
-  color: $gray;
+  color: white !important;
+  border: none !important;
   width: 100%;
   &:hover {
     text-decoration: none;
     color: white;
+    opacity: 0.5;
   }
   &:focus {
     outline: none !important;
