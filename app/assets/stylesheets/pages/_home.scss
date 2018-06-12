@@ -155,3 +155,18 @@
     padding-left: 0;
   }
 }
+
+.info-window{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    padding-bottom: 10px;
+  }
+  p{
+    margin-bottom: 5px;
+  }
+}
