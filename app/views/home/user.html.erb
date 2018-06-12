@@ -15,3 +15,11 @@
   <%= video_tag "lisbon1.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
 </div>
 
+<% content_for :external_script do %>
+<script>
+const video = document.getElementById('video-background');
+
+video.playbackRate = 0.7;
+</script>
+<%end%>
+

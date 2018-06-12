@@ -66,5 +66,13 @@
     </div>
   </div>
 </div>
+<% content_for :external_script do %>
+<script>
+const video = document.getElementById('video-background');
+
+video.playbackRate = 0.7;
+</script>
+<%end%>
+
 
 
