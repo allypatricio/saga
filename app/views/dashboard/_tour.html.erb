@@ -39,9 +39,11 @@
   <div class="message-status">
     <span id='status-<%=tour.id%>'>
       <% if tour.active?%>
-          <%= link_to "Active", change_status_tour_path(tour), method: :POST ,remote: true, class: "status active" %>
+          <p class="status active"> Active </p>
+          <%= link_to "Inactive", change_status_tour_path(tour), method: :POST ,remote: true, class: "status inactive" %>
       <%else%>
-        <%= link_to "Inactive", change_status_tour_path(tour), method: :POST ,remote: true,class: "status inactive" %>
+          <%= link_to "Active", change_status_tour_path(tour), method: :POST ,remote: true, class: "status inactive" %>
+          <p class="status active"> Inactive </p>
       <%end%>
     </span>
   </div>
@@ -52,7 +54,7 @@
     <i class="far fa-edit"></i>
     <%end%>
     <%=link_to tour_path(tour) do %>
-    <i class="fas fa-search"></i>
+    <i class="far fa-eye"></i>
     <%end%>
    </div>
 </div>
