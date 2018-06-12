@@ -1,27 +1,25 @@
  <div class="banner">
 
   <div class="banner-content">
-    <h1>SAGA</h1>
+   <div class="logo-in-line"> <%= image_tag "logo1.png", class: "logo" %> </div>
+   <h1>SAGA</h1>
+   <p class="description">Share the story of your city</p>
 
-    <h4>Create discovery games in your city.
-      <br>
-      Earn extra income while growing your business online.
-      <br>
-    Have fun discovering your own city by finding fun and unusal places to share with your users!</h4>
+   <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-blue border-radius" %>
 
-    <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-blue border-radius" %></div>
-    <div>
-      <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
-      <br>
+   </div>
+   <div>
+    <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
+    <br>
 
 
-      <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
+    <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
 
-      <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
-    </div>
+    <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
   </div>
+</div>
 
-  <%= video_tag "lisbon1.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
+<%= video_tag "lisbon1.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
 
 
 
@@ -36,19 +34,22 @@
 </div>
 
 <div class="bottom">
+  <br>
   <div class="title">
     <p>How it works....</p>
   </div>
   <br>
   <div class="bottom-landing">
     <div class="bottom-image"></div>
-    <div class="bottom-text"><h1>1</h1><h4>Map out a route</h4>
+    <div class="bottom-text">
+      <h3 class="bottom-title">1. Map out a route</h3>
       <p>As a game-builder you know the hidden gems of your city, you have a lively imagination and enjoy playing games yourself. You’re curious, playful (naturally!), and are intrigued by mystery and enjoy discovering new spots across a city.</p>
     </div>
   </div>
   <br>
   <div class="bottom-landing">
-    <div class="bottom-text"><h1>2</h1><h4>Create Riddles and Puzzles</h4>
+    <div class="bottom-text">
+      <h3 class="bottom-title">2. Create Riddles and Puzzles</h3>
       <p>With our discovery games, we want to show people (locals and visitors of a city) lesser-known spaces and places; anything from plaques or paintings on buildings and wicked statues to quirky shops and cafes. We want you to find the cities hidden gems.</p>
     </div>
     <div class="bottom-image-two"></div>
@@ -56,7 +57,8 @@
   <br>
   <div class="bottom-landing">
     <div class="bottom-image-three"></div>
-    <div class="bottom-text"><h1>3</h1><h4>Publish & BAM!!, you got yourself an urban advanture!</h4>
+    <div class="bottom-text">
+      <h3 class="bottom-title">3. Publish & BAM!!, you got yourself an urban advanture!</h3>
       <p>Once you have planned your tour and submitted it, one of our lovely saga team will review and approve it within 24 hours!</p>
     </div>
     <div>
