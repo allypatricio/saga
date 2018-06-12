@@ -5,7 +5,7 @@
   <i class="far fa-user avatar-border-turqoise-i" style="font-size: 24px"></i>
   <% end %>
   <div class="message-name">
-    <h3> Guide: <%= User.find(booking.tour.user_id).first_name%></h3>
+    <h3> Created by: <%= User.find(booking.tour.user_id).first_name%></h3>
     <p> <%=booking.created_at.strftime("%b %e, %l:%M %p")%></p>
   </div>
   <div class="message-body tourist">
