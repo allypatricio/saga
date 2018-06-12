@@ -9,9 +9,18 @@
   }
 }
 
+.close {
+  color: #fff;
+  opacity: 1;
+}
+
 .fa-info-circle {
   padding-right: 10px;
   color: $blue;
+}
+
+.modal-content {
+  border-radius: 4px;
 }
 
 .modal-header {
