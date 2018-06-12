@@ -11,11 +11,11 @@ class Tour < ApplicationRecord
   scope :price,    -> (price)    { where("price < ?", price) }
   scope :location, -> (location) { includes(:locations).where("locations.address like ?", "%#{location.capitalize}%").references(:locations) }
 
-  # validates :title, presence: true, length: { in: (8..25) }
-  # validates :description, presence: true, length: { in: (40..200) }
+  validates :title, presence: true, length: { in: (8..30) }
+  validates :description, presence: true, length: { in: (40..200) }
   validates :price, presence: true, on: :update
   validates :duration, presence: true, on: :update
-  # validates :category, presence: true, on: :update
+  validates :category, presence: true, on: :update
 
   def activate
     update_attributes(status: :active)

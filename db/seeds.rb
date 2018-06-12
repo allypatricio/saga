@@ -30,11 +30,11 @@ PHOTO_URLS = [
 10.times do |i|
   tour = Tour.new({
     user_id: rand(1..4),
-    title: Faker::Book.title,
+    title: Faker::Book.title[0..30],
     price: rand(5..30),
     duration: rand(1..5),
     status: 1,
-    description: Faker::Lorem.words(rand(10..30)).join(" "),
+    description: Faker::Lorem.words(rand(10..30)).join(" ")[0..200],
     category: Tour::CATEGORIES.sample
     })
   tour.remote_photo_url = PHOTO_URLS.sample
