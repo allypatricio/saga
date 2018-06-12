@@ -12,7 +12,13 @@
         <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :first_name %>
           <%= f.input :last_name %>
-          <%= f.input :photo %>
+          <label class="btn btn-primary btn-edit-photo">
+          Add a Picture
+          <span style="display:none;">
+            <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
+          </span>
+          </label>
+          <div id="filname-edit"> </div>
           <%= f.input :photo_cache, as: :hidden %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -34,3 +40,18 @@
     </div>
   </div>
 </div>
+
+<% content_for :external_script do  %>
+<script>
+
+function selectFile(event) {
+  // User cancelled
+  console.log(event.value)
+  text = event.value.replace("C:\\fakepath\\", "")
+  console.log(text)
+  var label = document.getElementById("filname-edit")
+  label.innerHTML = 'Selected file: ' + text
+}
+
+</script>
+<%end%>

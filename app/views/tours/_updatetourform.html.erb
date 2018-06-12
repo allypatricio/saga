@@ -7,10 +7,33 @@
   <%= f.input :description, as: :text, :input_html => {:rows => 6} %>
   <%= f.input :price, label: "Price (€)" %>
   <%= f.input :duration, label: "Duration (hours)" %>
-  <%= f.input :photo %>
+
+  <label class="btn btn-primary btn-edit-photo">
+  Add a Picture
+  <span style="display:none;">
+  <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
+  </span>
+  </label>
+  <div id="filname-edit"> </div>
   </div>
 
   <div class="form-actions">
   <%= f.button :submit, "Submit Tour for Review", :class => "btn-main-pnk" %>
   </div>
 <% end %>
+
+
+<% content_for :external_script do  %>
+<script>
+
+function selectFile(event) {
+  // User cancelled
+  console.log(event.value)
+  text = event.value.replace("C:\\fakepath\\", "")
+  console.log(text)
+  var label = document.getElementById("filname-edit")
+  label.innerHTML = 'Selected file: ' + text
+}
+
+</script>
+<%end%>
