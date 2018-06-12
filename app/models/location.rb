@@ -8,12 +8,7 @@ class Location < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :address, presence: true
-  # validates :story, presence: true, length: { in: (20..60) }
+  validates :story, presence: true, length: { in: (20..60) }
   validates :latitude, presence: true
   validates :longitude, presence: true
-
-  # TO DO:
-  # Uniqueness of position within tour
-  # presence of latitude / longitude before save
-
 end
