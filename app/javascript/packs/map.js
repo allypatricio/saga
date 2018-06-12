@@ -45,7 +45,7 @@ function createMap(mapElement) {
       map.addMarker({
         lat: e.latLng.lat(),
         lng: e.latLng.lng(),
-        icon: {url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'}
+        icon: {url: "https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png"}
       });
       geocoder.geocode({'location': e.latLng}, createLocation);
     });
@@ -78,7 +78,6 @@ function appendLocation(input) {
   const locationList = document.getElementById("locations-list")
   locationList.insertAdjacentHTML("beforeend", input)
 }
-
 
 createMap(mapStandard || mapFiltered || mapMarkers);
 autocomplete();

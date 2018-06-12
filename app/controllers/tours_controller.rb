@@ -19,14 +19,10 @@ class ToursController < ApplicationController
 
     @max_price = prices.max.to_i + 10
 
-
     @tours = @tours.location(params[:location]) if params[:location].present?
     @tours = @tours.category(params[:category].downcase.capitalize) if params[:category].present? && !params[:category].empty?
     @tours = @tours.duration(params[:duration]) if params[:duration].present?
     @tours = @tours.price(params[:price]) if params[:price].present?
-
-
-
 
     @markers = @tours.map do |tour|
       {
@@ -69,7 +65,7 @@ class ToursController < ApplicationController
 
     @markers = @locations_ordered.map do |location|
       {
-        icon: {url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'},
+        icon: {url: "https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png"},
         lat: location.latitude,
         lng: location.longitude,
         infoWindow: {
@@ -78,7 +74,6 @@ class ToursController < ApplicationController
       }
     end
   end
-
 
   def update
     @tour.update(tour_params)
@@ -124,10 +119,6 @@ class ToursController < ApplicationController
     end
 
   end
-
-
-
-
 
   private
 
