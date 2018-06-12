@@ -1,7 +1,8 @@
 
- <%= form_tag tours_path, method: :get, remote: true do %>
+
  <div class="filter-bar">
     <div class="location-search">
+      <%= form_tag tours_path, method: :get, remote: true do %>
       <label for="location">Location</label>
        <input id="location" type="text" name="location" placeholder="Lisbon"><br>
     </div>
