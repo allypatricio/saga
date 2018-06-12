@@ -24,3 +24,39 @@
   position: relative;
 }
 
+.modal.right.fade .modal-dialog {
+
+}
+
+.modal-dialog-edit-tour-page {
+  margin-top: calc(70px + 2vh) !important;
+  margin-right: 2vw !important;
+  margin-bottom: 2vh !important;
+  margin-left: 50% !important;
+
+  width: calc(50% - 2vw) !important;
+  height: calc(100vh - 70px - 4vh) !important;
+}
+
+.modal-content-edit-tour-page {
+  height: 100% !important;
+}
+
+
+.modal.right.fade .modal-dialog {
+  right: -320px;
+  // Transition in
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+     -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+          transition: opacity 0.3s linear, right 0.3s ease-out;
+  // Transition out
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(2%, 0, 0);
+   -o-transform: translate3d(0%, 0, 0);
+      transform: translate3d(0%, 0, 0);
+}
+
+.modal.right.fade.in .modal-dialog {
+  right: 0;
+}

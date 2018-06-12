@@ -26,11 +26,14 @@
       </div>
     </ul>
 
-    <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu text-center" %>
+    <%= link_to "Instructions", "", data: {toggle: "modal", target: "#instructions"}, class: "btn-back-pnk btn-edit-tour-menu-left text-center" %>
+
+    <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu-right text-center" %>
   </div>
 </div>
 
-<!-- EDIT LOCATION MODAL -->
+<!-- EDIT LOCATION MODALS -->
+
 <div id="location-modals">
   <% @locations_ordered.each do |location| %>
     <%= render 'editLocationModal', {tour: @tour, location: location} %>
@@ -41,7 +44,7 @@
 <!-- UPDATE TOUR MODAL -->
 
 <div class="modal fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
 
       <div class="modal-header">
@@ -60,6 +63,32 @@
     </div>
   </div>
 </div>
+
+<!-- INSTRUCTIONS MODAL -->
+
+
+<div class="modal right fade" id= "instructions" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-edit-tour-page" role="document">
+    <div class="modal-content modal-content-edit-tour-page">
+
+      <div class="modal-header">
+        <h2 class="modal-title">
+          Hi there
+        </h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body" id="updateTourModalBody">
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EXTERNAL JS -->
 
 <% content_for :external_script do %>
 <script>
