@@ -1,9 +1,13 @@
 
+ <%= form_tag tours_path, method: :get, remote: true do %>
  <div class="filter-bar">
-
+    <div class="location-search">
+      <label for="location">Location</label>
+       <input id="location" type="text" name="location" placeholder="Lisbon"><br>
+    </div>
 
     <div class="filter-box-element">
-    <%= form_tag tours_path, method: :get, remote: true do %>
+
     <input type="hidden" id="searchquery" name="search" value=<%= params[:search] %>>
       <label for="category">Category</label>
       <select id="category" name="category" placeholder="Category" class="input-box no-margin" onchange="updateCategoryInput();">
@@ -12,11 +16,6 @@
         <option><%= category %></option>
         <% end %>
       </select>
-    </div>
-
-    <div class="location-search">
-      <label for="location">Location</label>
-       <input id="location" type="text" name="location" placeholder="Lisbon"><br>
     </div>
 
     <div class="duration-search" >
