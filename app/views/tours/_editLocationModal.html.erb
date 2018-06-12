@@ -11,17 +11,11 @@
       </div>
       <div class="modal-body modal-body-edit-tour-page">
 
-        <%= simple_form_for [@tour, @location], defaults: { label_html: {:class => "modal-label"} } do |f| %>
-          <%= f.input :address %>
-          <%= f.input :story, as: :text %>
+        <%= render 'editLocationModalForm' %>
 
-          <%= f.input :question %>
-          <%= f.input :hint %>
-          <%= f.input :answer %>
-
-          <hr>
-          <%= f.submit "Edit location", class: "btn-main-pnk" %>
-        <% end %>
+      <%= link_to tour_location_path(@tour, location), class: "btn-back-pnk btn-delete-location", method: :delete, data: {confirm: 'Are you sure you want to delete this location?'} do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
 
       </div>
     </div>

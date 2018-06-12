@@ -1,0 +1,14 @@
+<%= simple_form_for [@tour, @location], defaults: { label_html: {:class => "modal-label"} } do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :address %>
+  <%= f.input :story, as: :text %>
+
+  <%= f.input :question %>
+  <%= f.input :hint %>
+  <%= f.input :answer %>
+
+  <hr>
+  <%= f.submit "Save location", class: "btn-main-pnk btn-save-location" %>
+<% end %>
