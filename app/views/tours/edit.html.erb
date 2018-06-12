@@ -26,11 +26,14 @@
       </div>
     </ul>
 
-    <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu text-center" %>
+    <%= link_to "Instructions", "", data: {toggle: "modal", target: "#instructions"}, class: "btn-back-pnk btn-edit-tour-menu-left text-center" %>
+
+    <%= link_to "Finalize Tour", "", data: {toggle: "modal", target: "#updateTour"}, class: "btn-main-pnk btn-edit-tour-menu-right text-center" %>
   </div>
 </div>
 
-<!-- EDIT LOCATION MODAL -->
+<!-- EDIT LOCATION MODALS -->
+
 <div id="location-modals">
   <% @locations_ordered.each do |location| %>
     <%= render 'editLocationModal', {tour: @tour, location: location} %>
@@ -41,7 +44,7 @@
 <!-- UPDATE TOUR MODAL -->
 
 <div class="modal fade" id= "updateTour" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
 
       <div class="modal-header">
@@ -60,6 +63,44 @@
     </div>
   </div>
 </div>
+
+<!-- INSTRUCTIONS MODAL -->
+
+
+<div class="modal right fade" id= "instructions" tabindex="-1" role="dialog" aria-labelledby="updateTour" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-edit-tour-page" role="document">
+    <div class="modal-content modal-content-edit-tour-page">
+
+      <div class="modal-header">
+        <h2 class="modal-title">
+          Instructions
+        </h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body" id="updateTourModalBody">
+        <h3>Step 1: Map out your favourite locations</h3>
+        <p>Add the coolest spots in your city to the tour. You can search for your favorite spot using the searchbar in the menu. Found a hidden gem but don't know the address? Just drop a pin on the map!</p>
+        <br>
+
+        <h3>Step 2: Choose the best route</h3>
+        <p>Now that all your hidden gems are mapped out on the map, it's time to choose the best route. Drag and drop the grey location boxes in the menu to find the best order. </p>
+        <br>
+
+        <h3>Step 3: Add info for each location</h3>
+        <p>Do you have a cool story to tell about your hidden gem? Share it with the people playing your tour! Click on the location boxes to add a story to each location. You can choose to add a question and its answer if you want to incorporate a playful element to your tour.</p>
+        <br>
+
+        <h3>Step 4: Finalize your tour!</h3>
+        <p>Included all your the hidden gems in your tour? Ready to show it to the world? Click the "Finalize Tour" to add the final information. Add a duration and price and don't forget a cool picture!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXTERNAL JS -->
 
 <% content_for :external_script do %>
 <script>

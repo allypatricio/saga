@@ -136,11 +136,19 @@
 
 // BUTTONS FOR EDIT TOUR MENU
 
-.btn-edit-tour-menu {
+.btn-edit-tour-menu-right {
   position: absolute;
   right: 0px;
   bottom: 0px;
   margin: 0 1vw 1vw 0;
+}
+
+.btn-edit-tour-menu-left {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 0 0 1vw 1vw;
+  color: white !important;
 }
 
 
