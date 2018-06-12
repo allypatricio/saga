@@ -10,9 +10,9 @@
   <div class="edit-tour-menu">
     <div class="menu-label">Add Location</div>
     <div class="add-location-form">
-      <%= simple_form_for [@tour, @location], html: {class: "form-inline"} do |f| %>
-          <%= f.input :address, label: false, html: { class: "searchbox" } %>
-          <%= f.button :submit, "+" %>
+      <%= simple_form_for [@tour, @location], html: { class: "form-inline"} do |f| %>
+          <%= f.input :address, label: false %>
+          <%= f.button :submit, "+", class: 'searchbox-edit-submit' %>
       <% end %>
     </div>
 
@@ -34,33 +34,33 @@
 
 <% @locations_ordered.each do |location| %>
 
-  <div class="modal fade" id= <%= "editLocation#{location.id}" %> tabindex="-1" role="dialog" aria-labelledby="editLocationLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="bookNowModalLabel">
-            Edit Location
-          </h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+<div class="modal fade" id= <%= "editLocation#{location.id}" %> tabindex="-1" role="dialog" aria-labelledby="editLocationLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="bookNowModalLabel">
+          Edit Location
+        </h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 
-          <%= simple_form_for [@tour, location] do |f| %>
-            <%= f.input :address %>
-            <%= f.input :story, as: :text %>
+        <%= simple_form_for [@tour, location] do |f| %>
+          <%= f.input :address %>
+          <%= f.input :story, as: :text %>
 
-            <%= f.input :question %>
-            <%= f.input :hint %>
-            <%= f.input :answer %>
-            <%= f.submit "Edit location" %>
-          <% end %>
+          <%= f.input :question %>
+          <%= f.input :hint %>
+          <%= f.input :answer %>
+          <%= f.submit "Edit location" %>
+        <% end %>
 
-        </div>
       </div>
     </div>
   </div>
+</div>
 
 <% end %>
 
