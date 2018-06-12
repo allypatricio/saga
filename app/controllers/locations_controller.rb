@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
     @location.tour = @tour
     if @location.save
       @location_html = render_to_string(partial: 'locations/location', locals: {location: @location})
+      # @modal_html = render_to_string(partial: )
       respond_to do |format|
         format.js do
           # byebug
