@@ -3,79 +3,20 @@
   font-size : 50px;
   color: white;
 }
-
-input {
-  margin-right: 10px;
-}
-
-input:invalid ~ span:after {
-    content: '✖';
-    padding-left: 5px;
-    position: absolute;
-}
-
-input:valid ~ span:after {
-    content: '✓';
-    padding-left: 5px;
-    position: absolute;
-}
-
-.search {
-  text-align: center;
-  line-height: 50px;
-}
-
-.discover-btn {
+.create-button-blue {
+  align-items: center;
+  border:solid $blue 2px;
   background-color: $blue;
-  padding:1px 30px;
   color: white;
   font-weight: bold;
-  border-radius:4px;
-  border-width: 0px;
-}
-.search-box {
-  border: 0px;
-  border-radius: 4px;
-  margin: 0px;
-  opacity: 0.8;
-  box-decoration-break: none;
-}
-
-.create-button-sign-up1 {
-  color: white;
-  background-color: gray;
-  opacity: 0.6;
-  padding: 10px 20px;
-  border-radius: 5px;
-  position: absolute;
-  top: 20px;
-  right: 292px;
-  &:hover {
-    text-decoration: none !important;
-    color: white;
-    opacity: 0.5;
-  }
-   &:focus {
-    outline: none !important;
-  }
-}
-
-.create-button-login1 {
-  color: white;
-  background-color: grey;
-  opacity: 0.6;
+  opacity: 1;
   padding: 10px 30px;
-  border-radius: 5px;
-  position: absolute;
-  top: 20px;
-  right: 180px;
+  border-radius: 4px;
   &:hover {
-    text-decoration: none !important;
+    text-decoration: none;
+    border: solid $blue 2px;
     color: white;
-    opacity: 0.5;
-  }
-  &:focus {
-    outline: none !important;
+    opacity: 0.6;
   }
 }
 
