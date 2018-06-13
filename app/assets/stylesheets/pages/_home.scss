@@ -5,10 +5,10 @@
   font-size: 20px;
 }
 
-.create-button-blue {
+.create-button-pink {
   align-items: center;
-  border:solid $blue 2px;
-  background-color: $blue;
+  border:solid $pink 2px;
+  background-color: $pink;
   color: white;
   font-weight: bold;
   opacity: 1;
@@ -16,7 +16,7 @@
   border-radius: 4px;
   &:hover {
     text-decoration: none;
-    border: solid $blue 2px;
+    border: solid $pink 2px;
     color: white;
     opacity: 0.6;
   }
