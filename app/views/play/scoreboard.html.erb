@@ -1,0 +1,23 @@
+ <meta http-equiv="refresh" content="5" />
+<div class="text-center">
+<h1> Scoreboard </h1>
+<table class="player-table" >
+<thead>
+<tr>
+<th>Player</th>
+<th>Time in s</th>
+</tr>
+</thead>
+<tbody>
+<% @players.each do |player| %>
+<tr>
+  <% if player.start_time && player.end_time != nil %>
+  <td><%=player.name%></td>
+  <td><%=player.end_time - player.start_time%></td>
+  <%end%>
+</tr>
+<%end%>
+</tbody>
+</table>
+
+</div>
