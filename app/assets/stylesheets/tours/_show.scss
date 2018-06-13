@@ -50,8 +50,10 @@
 .map-show {
   border-radius: 3px;
   position: absolute;
-  top: 5vh;
-  right: 5vh;
+  top: 5vh !important;
+  left: 36.5vh !important;
+  width: 40% !important;
+  height: 40vh !important;
 }
 .right-footer {
   width: 42.5%;

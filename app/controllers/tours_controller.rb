@@ -30,7 +30,7 @@ class ToursController < ApplicationController
         lat: tour.locations.first.latitude,
         lng: tour.locations.first.longitude,
         infoWindow: {
-                    content: "Tour: " + tour.title
+                    content: render_to_string(partial: "/shared/info_window", locals: { tour: tour})
                     }
       }
     end
