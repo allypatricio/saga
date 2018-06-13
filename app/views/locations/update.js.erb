@@ -1,0 +1,13 @@
+<% if @location.errors.any? %>
+// When there are errors, render them
+  function renderUpdatedForm(input) {
+    const modalBody = document.getElementById('updateLocationModalForm');
+    modalBody.innerHTML = input;
+  }
+
+  renderUpdatedForm('<%= j render "tours/editLocationModalForm@", locals: {location: @location} %>');
+
+<% else %>
+  window.location.replace('<%= "/tours/#{@tour.id}/edit" %>')
+<% end %>
+

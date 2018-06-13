@@ -6,7 +6,7 @@ class Location < ApplicationRecord
   before_validation :geocode, if: :will_save_change_to_address?
 
   validates :address, presence: true
-  # validates :story, presence: true, length: { in: (20..60) }, on: :update
+  validates :story, presence: true, length: { in: (10..100) }, on: :update
   validates :latitude, presence: true
   validates :longitude, presence: true
 end

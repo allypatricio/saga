@@ -20,13 +20,8 @@ class LocationsController < ApplicationController
         format.html { redirect_to edit_tour_path(@tour), notice: "Location succesfully added"}
       end
     else
-      redirect_to edit_tour_path(@tour), notice: "Adding location failed, please try again"
+      redirect_to edit_tour_path(@tour), alert: "Adding location failed, please try again"
     end
-    # respond_to do |format|
-    #     format.js do
-    #       byebug
-    #     end
-    #   end
   end
 
   def edit
@@ -35,13 +30,15 @@ class LocationsController < ApplicationController
   def update
     if @location.update(location_params)
       respond_to do |format|
-        format.html { redirect_to edit_tour_path(@tour), notice: "Location succesfully edited"}
+        format.js
+        # format.html { redirect_to edit_tour_path(@tour), notice: "Location succesfully edited"}
         format.json { render json: @location, status: :ok }
       end
     else
       respond_to do |format|
-        format.html { redirect_to edit_tour_path(@tour), alert: "Could not update location, please try again"}
-        render json: {errors: @location.errors.messages }, status: :unprocessable_entity
+        format.js
+        # format.html { redirect_to edit_tour_path(@tour), alert: "Could not update location, please try again"}
+        format.json { render json: {errors: @location.errors.messages }, status: :unprocessable_entity }
       end
     end
   end
