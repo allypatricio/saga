@@ -5,8 +5,8 @@
     </div>
 
      <div class="welcome-dashboard">
-    <% if current_user.sign_in_count == 1 %>
-      <p> Welcome <%= current_user.first_name %>! Create your first tour below.</p>
+    <% if @tours.count == 0 %>
+      <p> Welcome <%= current_user.first_name.capitalize %>! Create your first tour below.</p>
     <%end%>
     </div>
     <div class="new-message">
