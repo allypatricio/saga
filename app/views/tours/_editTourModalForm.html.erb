@@ -1,4 +1,4 @@
-<%= simple_form_for @tour, defaults: { label_html: {:class => "modal-label"} } do |f| %>
+<%= simple_form_for @tour, remote: true, defaults: { label_html: {:class => "modal-label"} } do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -16,7 +16,7 @@
     <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
     </span>
     </label>
-  <div id="filname-edit"> </div>
+  <div id="filname-edit-edit-tour-page"> </div>
   </div>
   <br>
   <hr>
@@ -34,7 +34,7 @@
     console.log(event.value)
     text = event.value.replace("C:\\fakepath\\", "")
     console.log(text)
-    var label = document.getElementById("filname-edit")
+    var label = document.getElementById("filname-edit-edit-tour-page")
     label.innerHTML = 'Selected file: ' + text
   }
 

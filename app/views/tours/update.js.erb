@@ -5,10 +5,10 @@
     modalBody.innerHTML = input;
   }
 
-  renderUpdatedForm('<%= j render "tours/updatetourform" %>');
+  renderUpdatedForm('<%= j render "tours/editTourModalForm" %>');
 
 <% else %>
 // Redirect
-window.location.replace("/dashboard")
+  window.location.replace("/dashboard")
 
 <% end %>
