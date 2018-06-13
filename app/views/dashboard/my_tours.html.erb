@@ -27,7 +27,7 @@
        <button type="button" class="close show-close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <h3>Add a new tour!</h3>
+      <h2>New Tour</h2>
     </div>
     <div class="modal-body">
 
@@ -36,17 +36,16 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :title %>
-      <%= f.input :description, as: :text, :input_html => {:rows => 6} %>
+      <%= f.input :title, :placeholder => "E.g. Discover the Secrets of Lisbon" %>
+      <%= f.input :description, as: :text, :input_html => {:rows => 6}, :placeholder => "Share the story of your tour, be creative!
+
+This story is the selling point for your tour. You need to entice your prospective customer to pick your tour from all the others." %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Add", :class => "btn-form-blue" %>
+      <%= f.button :submit, "Next", :class => "btn-form-blue" %>
     </div>
   <% end %>
-
-
-
     </div>
   </div>
 </div>
