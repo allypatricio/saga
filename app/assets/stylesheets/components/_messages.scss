@@ -4,7 +4,7 @@
   align-items: center;
   padding: 20px;
   padding-left: 0px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $gray;
 }
 .message:last-child {
   border-bottom: none;
@@ -61,7 +61,11 @@
   color: $blue;
 }
 .status.inactive {
-  color: grey;
+  color: $gray;
+  &:hover {
+    text-decoration: none;
+    color: #a0a0a0;
+  }
 }
 .status.pending {
   color: black;
@@ -71,11 +75,11 @@
   margin-left: 50px;
   a {
     display: block;
-    color: grey;
+    color: $gray;
     font-size: 18px;
     &:hover {
-        color: black;
-        font-size: 18px;
+      color: black;
+      font-size: 18px;
     }
   }
 }
@@ -130,21 +134,22 @@
 }
 
 .header-tours{
-text-align: left;
-padding: 0px 0px;
-font-weight: bold;
-margin-bottom: 10px;
-font-size: 32px;
-margin-bottom: 20px;
-  p{
+  text-align: left;
+  padding: 0px 0px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  h1 {
     margin:0;
+    color: $gray;
   }
 }
 
 .message-rating{
   p{
-  font-size: 16px;
-}
+    font-size: 16px;
+  }
 }
 
 .welcome-dashboard{
