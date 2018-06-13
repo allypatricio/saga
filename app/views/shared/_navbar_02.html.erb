@@ -2,11 +2,11 @@
   <!-- Logo -->
   <% if current_user.guide %>
     <%= link_to root_path, class: "navbar-saga-brand"  do %>
-    <%= image_tag('favicon.png') %>
+    <%= image_tag('logo.png') %>
   <%end%>
   <%else%>
     <%= link_to user_landing_page_path, class: "navbar-saga-brand"  do %>
-    <%= image_tag('favicon.png') %>
+    <%= image_tag('logo.png') %>
   <%end%>
   <%end%>
 
