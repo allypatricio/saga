@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   get '/user-landing-page', to: 'home#user'
-
+  get '/play', to: 'play#index'
+  get '/play/1', to: 'play#first'
+  get '/play/2', to: 'play#second'
+  get '/play/3', to: 'play#third'
+  get '/play/final', to: 'play#final'
   # get '/tours' => "tours#index", as: :user_root
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
