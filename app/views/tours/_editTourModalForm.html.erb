@@ -9,14 +9,14 @@
     <%= f.input :price, label: "Price (€)" %>
     <%= f.input :duration, label: "Duration (hours)" %>
 
-    <p class: modal-label><strong>Add a picture</strong></p>
+    <div class="modal-label add-picture-label">Add a picture</div>
     <label class="btn btn-back-pnk btn-edit-photo">
     Choose file
     <span style="display:none;">
     <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
     </span>
     </label>
-  <div id="filname-edit-edit-tour-page"> </div>
+  <div id="filname-edit" class="modal-label"></div>
   </div>
   <br>
   <hr>
@@ -34,7 +34,7 @@
     console.log(event.value)
     text = event.value.replace("C:\\fakepath\\", "")
     console.log(text)
-    var label = document.getElementById("filname-edit-edit-tour-page")
+    var label = document.getElementById("filname-edit")
     label.innerHTML = 'Selected file: ' + text
   }
 

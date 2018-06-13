@@ -50,7 +50,7 @@
   border-radius: 4px;
   background-color: $pink;
   color: white !important;
-  border: none !important;
+  border: solid 2px $pink;
   &:hover {
     text-decoration: none;
     color: white;
