@@ -13,7 +13,7 @@
 <tr>
   <% if player.start_time && player.end_time != nil %>
   <td><%=player.name%></td>
-  <td><%=player.end_time - player.start_time%></td>
+  <td><%=(player.end_time - player.start_time).to_i%></td>
   <%end%>
 </tr>
 <%end%>
