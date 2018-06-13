@@ -79,7 +79,7 @@ class ToursController < ApplicationController
     @tour.update(tour_params)
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to dashboard_index_path, notice: 'Your tour is submitted for review' }
+        format.html { redirect_to my_tours_path, notice: 'Your tour is submitted for review' }
         format.js
       else
         format.html { redirect_to edit_tour_path }
