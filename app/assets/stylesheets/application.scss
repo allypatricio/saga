@@ -15,3 +15,8 @@
 @import "pages/index";
 @import "tours/index";
 @import "play/index";
+
+// General rules
+*:focus {
+  outline: none !important;
+}
