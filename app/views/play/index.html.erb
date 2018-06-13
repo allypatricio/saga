@@ -1,8 +1,13 @@
-<div class="play-index text-center">
+  <div class="play-error">
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+<div class="container play-index text-center">
 <h1 id="play-header"> Welcome to Saga </h1>
-
+  <p> Enter your name </p>
     <form class="form-inline" action="/play/1" method="get">
-      <input type="text" name="name" value="your name" class="form-control">
-      <input type="submit" value="Star playing" class="btn-main-pnk">
+      <input type="text" name="name" placeholder="your name" class="form-control">
+      <input type="submit" value="Start playing" class="btn-main-pnk" id="play-button">
     </form>
 </div>
