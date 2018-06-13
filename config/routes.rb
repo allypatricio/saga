@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   get '/my-tours', to: 'dashboard#my_tours'
   get '/my-bookings', to: 'dashboard#my_bookings'
+
 end
 
 # dashboard
