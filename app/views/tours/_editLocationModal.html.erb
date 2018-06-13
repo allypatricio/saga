@@ -1,6 +1,6 @@
 <div class="modal right fade" id= <%= "editLocation#{location.id}" %> tabindex="-1" role="dialog" aria-labelledby="editLocationLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-edit-tour-page" role="document">
-    <div class="modal-content modal-content-edit-tour-page" id="updateLocationModalForm">
+    <div class="modal-content modal-content-edit-tour-page" id= <%= "updateLocationModalForm#{location.id}" %>>
       <%= render '/tours/editLocationModalForm', {location: location} %>
     </div>
   </div>
