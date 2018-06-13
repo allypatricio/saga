@@ -26,7 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :dashboard, only: :index
+   get '/my-tours', to: 'dashboard#my_tours'
+  get '/my-bookings', to: 'dashboard#my_bookings'
 end
 
 # dashboard
