@@ -1,0 +1,38 @@
+.play-header{
+  height: 30vh;
+  background-color: grey;
+  border-bottom: 6px solid $blue;
+}
+
+.play-logo{
+  margin-top: 3vh;
+  width: auto;
+  height: 15vh;
+}
+
+.play-title{
+  color: white;
+  font-size: 32px;
+  margin-top: 1vh;
+}
+
+.play-index{
+  margin-top: 10vh;
+}
+
+#play-header{
+  margin-bottom: 10vh;
+}
+
+.play-box{
+  h4{
+    margin-bottom: 1vh;
+  }
+  p{
+    margin-bottom: 2vh;
+  }
+}
+
+.play-error{
+  margin: 2vh 0;
+}
