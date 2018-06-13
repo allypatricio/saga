@@ -69,7 +69,7 @@ class ToursController < ApplicationController
         lat: location.latitude,
         lng: location.longitude,
         infoWindow: {
-                    content: location.position.to_s + ": " + location.address
+                    content: render_to_string(partial: "/tours/editInfoWindow", locals: { location: location})
                     }
       }
     end
