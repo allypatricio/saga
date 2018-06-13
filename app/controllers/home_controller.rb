@@ -12,6 +12,7 @@ class HomeController < ApplicationController
   end
   def user
     @navbar = false
+
   end
 end
 

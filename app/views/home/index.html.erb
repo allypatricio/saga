@@ -16,21 +16,19 @@
     <% if current_user == nil %>
     <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
     <br>
-
-
     <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
 
     <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
 
     <% else %>
 
-    <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-login border-radius"  %>
-    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center create-button-sign-up border-radius"  %>
+    <%= link_to "Find a tour", tours_path, class: "text-center create-button-login-new border-radius"  %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center create-button-sign-up-new border-radius"  %>
     <% end %>
   </div>
 </div>
 
-<%= video_tag "lisbon4.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
+<%= video_tag "lisbon2.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
 
 
 
