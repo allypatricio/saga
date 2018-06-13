@@ -11,11 +11,44 @@
     </div>
     <div class="new-message">
       <div class="new-message-button">
-      <%= link_to "Add new tour", new_tour_path, class: "btn btn-main-pnk new-tour-margin" %>
-      </div>
+        <button type="button" class="btn btn-main-pnk new-tour-margin" data-toggle="modal" data-target="#addTourModal">Add new tour</button></div>
     </div>
     <% @tours.each do |tour| %>
       <%= render "tour", tour: tour %>
     <%end%>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="addTourModal" tabindex="-1" role="dialog" aria-labelledby="addTourModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header show-modal-header" >
+       <button type="button" class="close show-close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h2>New Tour</h2>
+    </div>
+    <div class="modal-body">
+
+     <%= simple_form_for(@tour) do |f| %>
+<%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :title, :placeholder => "E.g. Discover the Secrets of Lisbon" %>
+      <%= f.input :description, as: :text, :input_html => {:rows => 6}, :placeholder => "Share the story of your tour, be creative!
+
+This story is the selling point of your tour. You need to entice your prospective customer to pick your tour to discover the respective city in a unique way." %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Next", :class => "btn-form-blue" %>
+    </div>
+  <% end %>
+    </div>
+  </div>
+</div>
+</div>
+
+

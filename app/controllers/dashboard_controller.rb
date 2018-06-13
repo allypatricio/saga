@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 
   def my_tours
+    @tour = Tour.new
     @tours = Tour.where(user_id: current_user.id)
     @bookings_filtered = []
     bookings = Booking.all
