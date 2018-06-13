@@ -70,6 +70,7 @@ function createMap(mapElement) {
       .then((json) => {
         appendLocationBox(json.location);
         appendLocationModal(json.modal);
+        colorMarkers();
       })
     } else {
       console.log("No address found")
@@ -86,6 +87,8 @@ function appendLocationModal(input) {
   const locationModals = document.getElementById("location-modals")
   locationModals.insertAdjacentHTML("beforeend", input)
 }
+
+
 
 createMap(mapStandard || mapFiltered || mapMarkers);
 autocomplete();

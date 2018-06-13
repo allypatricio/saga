@@ -53,31 +53,34 @@
 <% content_for :external_script do %>
 <script>
 
-    var locations = document.getElementsByClassName("location-box");
+    function colorMarkers() {
+      var locations = document.getElementsByClassName("location-box");
 
-    function markBlue(i) {
-        map.markers[i].setIcon({
-             url: 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_blue.png'
-        })
-      }
+      function markBlue(i) {
+          map.markers[i].setIcon({
+               url: 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_blue.png'
+          })
+        }
 
-    function markRed(i) {
-        map.markers[i].setIcon({
-          url: 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png'
-        })
-      }
+      function markRed(i) {
+          map.markers[i].setIcon({
+            url: 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png'
+          })
+        }
 
-    Array.from(locations).forEach(function(location, index) {
-      location.addEventListener("mouseover", function() {
-        markBlue(index)
+      Array.from(locations).forEach(function(location, index) {
+        location.addEventListener("mouseover", function() {
+          markBlue(index)
+        });
       });
-    });
 
-    Array.from(locations).forEach(function(location, index) {
-      location.addEventListener("mouseout", function() {
-        markRed(index)
+      Array.from(locations).forEach(function(location, index) {
+        location.addEventListener("mouseout", function() {
+          markRed(index)
+        });
       });
-    });
+    }
 
+    colorMarkers();
   </script>
 <% end %>
