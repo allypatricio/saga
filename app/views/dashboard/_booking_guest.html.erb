@@ -10,14 +10,15 @@
   </div>
   <div class="message-body tourist">
     <%=link_to tour_path(Tour.find(booking.tour_id)) do %>
-    <p><strong><%=Tour.find(booking.tour_id).title%></strong></p>
+    <p><strong><%=Tour.find(booking.tour_id).title%></strong>
     <%end%>
-    <p>
+
       <%  if Review.where(user_id: current_user.id, booking_id: booking.id).any? %>
-      <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Edit Review</button>
+      <a id="review-link" href="#" data-toggle="modal" data-target="#review-<%=booking.id%>"> (Edit Review)</a>
       <%else%>
-      <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Add Review</button>
+      <a id="review-link" href="#" data-toggle="modal" data-target="#review-<%=booking.id%>"> (Add Review)</a>
       <%end%>
+
     </p>
   </div>
   <%if booking.status == nil || "accepted"%>

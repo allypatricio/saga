@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @navbar = false
     if current_user != nil
       if current_user.guide
-        redirect_to dashboard_index_path
+        redirect_to my_tours_path
       else
         redirect_to tours_path
       end
