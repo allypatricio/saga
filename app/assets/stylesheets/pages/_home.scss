@@ -90,7 +90,8 @@
 }
 
 .icon {
-  height: 150px;
+  height: 130px;
+  -webkit-filter: drop-shadow(2px 2px 2px #888 );
 }
 
 .title {
@@ -142,22 +143,13 @@
   margin-left: 75px;
   margin-bottom: 20px;
 }
-.logo {
-  height: 120px;
-  width: 120px;
-  margin-right: 10px;
-  justify-content: center;
 
-}
-.logo-in-line{
-  text-align: center;
-  margin-top: 270px;
-}
 .bottom-title {
   font-weight: bold;
 }
 .description {
   text-align: center;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
   font-size : 50px;
   color: white;
 }
