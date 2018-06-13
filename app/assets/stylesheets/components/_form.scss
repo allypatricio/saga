@@ -28,9 +28,14 @@
 .form-inputs {
   color: #2c2d33;
   font-size: 18px;
+  strong {
+    position: absolute;
+    left: 30px;
+  }
 }
 
 .form-card {
+  position: relative;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -66,7 +71,9 @@ hr {
   border-top: 1px solid $gray !important;
 }
 
-
+.btn-edit-photo {
+  margin-top: 25px;
+}
 
 
 

@@ -3,42 +3,42 @@
 
   <div class="header">
     <% if @tour.photo.url != nil %>
-      <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.photo%>);">
-    <%else%>
+    <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(<%= @tour.photo%>);">
+      <%else%>
       <div class="gallery" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0)), url(http://via.placeholder.com/500x500);">
-    <% end %>
-    <div class="col right-header">
-      <div class="tour-guide-details">
-          <div class="guide-pic">
-          <% if @tour.user.photo.url == nil %>
-            <i class="far fa-user 3x card-user avatar-small avatar-border-white-i avatar-color"></i>
-          <% else %>
-            <%= image_tag @tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-white avatar-color" %>
-          <% end %>
-          </div>
-          <div class="created-by">
-            <p><strong>Tour Created By: </strong></p>
-          </div>
-          <div class="name">
-            <p><%= @booking.tour.user.first_name.capitalize %></p></div>
-          </div>
-        <div class="booking-details">
-          <h3><strong>Booking Details</strong></h3>
-          <div class="details">
-            <p><strong>Price: </strong> <%= @tour.price %>€</p>
-            <p><strong>Duration: </strong> <%= @tour.duration %>h</p>
-            <p><strong>Starting Location: </strong> <%= @tour.locations.first.address %></p>
-          </div>
-          <div class="button-book">
-            <button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
-          </div>
-          </div>
-          <div class="map-show">
-          <div id="map" style="width: 100%; height: 40vh;" data-markers="<%= @markers.to_json %>"></div>
+        <% end %>
+        <div class="col right-header">
+          <div class="tour-guide-details">
+            <div class="guide-pic">
+              <% if @tour.user.photo.url == nil %>
+              <i class="far fa-user 3x card-user avatar-small avatar-border-white-i avatar-color"></i>
+              <% else %>
+              <%= image_tag @tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-white avatar-color" %>
+              <% end %>
+            </div>
+            <div class="created-by">
+              <p><strong>Tour Created By: </strong></p>
+            </div>
+            <div class="name">
+              <p><%= @booking.tour.user.first_name.capitalize %></p></div>
+            </div>
+            <div class="booking-details">
+              <h3><strong>Booking Details</strong></h3>
+              <div class="details">
+                <p><strong>Price: </strong> <%= @tour.price %>€</p>
+                <p><strong>Duration: </strong> <%= @tour.duration %>h</p>
+                <p><strong>Starting Location: </strong> <%= @tour.locations.first.address %></p>
+              </div>
+              <div class="button-book">
+                <button type="button" class="btn-main-pnk show-book text-center" data-toggle="modal" data-target="#bookNowModal">Book Now</button>
+              </div>
+            </div>
+            <div class="map-show">
+              <div id="map" style="width: 100%; height: 40vh;" data-markers="<%= @markers.to_json %>"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
 
     <div class="flex-container-show">
@@ -79,26 +79,27 @@ I am really looking forward to playing your tour! "%>
 <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-labelledby="bookNowModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" >
-        <div class="text-center" style="text-align: center; padding-left: 25px; padding-right: 25px;">
-          <h3>You are Booking "<%= @tour.title%>" </h3>
-          <p><i class="fas fa-map-marker"></i><%= @tour.locations.first.address %></p>
-          <p><i class="fas fa-clock"></i>The estimated duration of your tour is <%= @tour.duration %>h</p>
-          <p><i class="fas fa-info-circle"></i> <strong>Please Note:</strong> You will recieve a confirmation email with a link to play your tour. Once the tour is completed this link is no longer accessible. </p>
-        </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for([@tour, @booking]) do |f| %>
+      <div class="modal-header show-modal-header" >
+       <button type="button" class="close show-close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h3>You are Booking "<%= @tour.title%>" </h3>
 
-        <div class="form-actions" style="text-align: center; padding-bottom: 10px;">
-          <%= f.button :submit, "Confirm", :class => "btn-main-pnk" %>
-        </div>
-        <% end %>
+    </div>
+    <div class="modal-body">
+      <div class="text-center" style="text-align: center; padding-left: 25px; padding-right: 25px;">
+        <p><i class="fas fa-map-marker"></i><%= @tour.locations.first.address %></p>
+        <p><i class="fas fa-clock"></i>The estimated duration of your tour is <%= @tour.duration %>h</p>
+        <p><i class="fas fa-info-circle"></i> <strong>Please Note:</strong> You will recieve a confirmation email with a link to play your tour. Once the tour is completed this link is no longer accessible. </p>
       </div>
+      <%= simple_form_for([@tour, @booking]) do |f| %>
+
+      <div class="form-actions" style="text-align: center; padding-bottom: 10px;">
+        <%= f.button :submit, "Confirm", :class => "btn-main-pnk" %>
+      </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
 
