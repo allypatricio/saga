@@ -77,6 +77,12 @@
   }
 }
 
+.no-underline {
+  &:focus {
+    text-decoration: none !important;
+  }
+}
+
 // FORM BUTTON - BLUE
 .btn-form-blue {
   padding: 10px 20px;
