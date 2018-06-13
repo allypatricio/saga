@@ -44,11 +44,11 @@
 <div class="modal fade" id="review-<%=booking.id%>" tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Review for <%=Tour.find(booking.tour_id).title%></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header show-modal-header">
+         <button type="button" class="close show-close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        <h3> Add Review for "<%=Tour.find(booking.tour_id).title%>"</h3>
       </div>
       <div class="modal-body">
 
@@ -58,9 +58,7 @@
 
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+
     </div>
   </div>
 </div>
