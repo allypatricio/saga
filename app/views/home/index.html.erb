@@ -5,7 +5,7 @@
    <h1>SAGA</h1>
    <p class="description">Share the story of your city</p>
 
-   <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-blue border-radius" %>
+   <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-pink border-radius" %>
 
    </div>
    <div>
@@ -19,17 +19,17 @@
   </div>
 </div>
 
-<%= video_tag "lisbon1.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
+<%= video_tag "lisbon4.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
 
 
 
 </div>
 <div class="middle-landing">
+ <div><h3>Create your tour</h3><br><%= image_tag "map.svg", class: "icon" %>
+ </div>
  <div><h3>Grow your business</h3><br><%= image_tag "graph.svg", class: "icon" %>
  </div>
- <div><h3>Earn extra money</h3><br><%= image_tag "coins.svg", class: "icon" %>
- </div>
- <div><h3>Discover new places</h3><br> <%= image_tag "loupe.svg", class: "icon" %>
+ <div><h3>Earn extra money</h3><br> <%= image_tag "coins.svg", class: "icon" %>
  </div>
 </div>
 
