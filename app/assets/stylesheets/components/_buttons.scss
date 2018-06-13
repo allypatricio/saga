@@ -48,7 +48,7 @@
 .btn-main-pnk {
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: $blue;
+  background-color: $pink;
   color: white !important;
   border: none !important;
   &:hover {
@@ -63,13 +63,13 @@
 
 // BACK BUTTON - PINK
 .btn-back-pnk {
-  color: $blue;
-  border: solid 2px $blue;
+  color: $pink;
+  border: solid 2px $pink;
   padding: 10px 20px;
   border-radius: 4px;
   &:hover {
     text-decoration: none;
-    color: $blue;
+    color: $pink;
     opacity: 0.5;
   }
   &:focus {
@@ -81,7 +81,7 @@
 .btn-form-blue {
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: $blue;
+  background-color: $pink;
   color: white !important;
   border: none !important;
   width: 100%;
@@ -98,15 +98,15 @@
 // INVERSE FORM BUTTON - BLUE
 .btn-form-inv-blue {
   background-color: white;
-  color: $blue;
+  color: $pink;
   // width: 100%;
-  border: solid 2px $blue;
+  border: solid 2px $pink;
   padding: 10px 20px;
   border-radius: 4px;
   &:hover {
     text-decoration: none;
     opacity: 0.5px !important;
-    color: $blue;
+    color: $pink;
   }
   &:focus {
     outline: none !important;
@@ -115,7 +115,7 @@
 
 // CIRCULAR BUTTON - PINK
 .btn-rnd-pnk {
-  border: 2px solid $blue;
+  border: 2px solid $pink;
   border-radius: 50%;
   padding: 10px;
 }
@@ -140,14 +140,14 @@
 
 // FILTER BUTTON - PINK
  .btn-filter-pnk {
-  color: $blue;
-  border: solid 2px $blue;
+  color: $pink;
+  border: solid 2px $pink;
   padding: 5px 20px;
   border-radius: 20px;
   background-color: white;
   &:hover {
     text-decoration: none;
-    color: $blue;
+    color: $pink;
     opacity: 0.5px !important;
   }
   &:focus {
