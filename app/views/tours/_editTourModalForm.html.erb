@@ -1,4 +1,15 @@
-<%= simple_form_for @tour, remote: true, defaults: { label_html: {:class => "modal-label"} } do |f| %>
+<div class="modal-header modal-header-edit-tour-page">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h2 class="modal-title">
+    Finalize Tour
+  </h2>
+</div>
+
+<div class="modal-body modal-body-edit-tour-page" >
+
+  <%= simple_form_for @tour, remote: true, defaults: { label_html: {:class => "modal-label"} } do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -11,40 +22,42 @@
 
     <div class="modal-label add-picture-label">Add a picture</div>
     <label class="btn btn-back-pnk btn-edit-photo">
-    Choose file
-    <span style="display:none;">
-    <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
-    </span>
+      Choose file
+      <span style="display:none;">
+        <%= f.input :photo, id: "edit-upload-photo", input_html: {onchange: "selectFile(this);"} %>
+      </span>
     </label>
-  <div id="filname-edit" class="modal-label"></div>
+    <div id="filname-edit" class="modal-label"></div>
   </div>
-  <br>
-  <hr>
+</div>
+
+<div class="modal-footer modal-footer-edit-tour-page">
   <div class="form-actions">
-  <%= f.button :submit, "Submit Tour for Review", class: "btn-main-pnk" %>
+    <%= f.button :submit, "Submit Tour for Review", class: "btn-main-pnk btn-modal-bottom-left" %>
   </div>
-<% end %>
+  <% end %>
+</div>
 
 
 <% content_for :external_script do  %>
-  <script>
+<script>
 
   function selectFile(event) {
     // User cancelled
-    console.log(event.value)
+    // console.log(event.value)
     text = event.value.replace("C:\\fakepath\\", "")
-    console.log(text)
+    // console.log(text)
     var label = document.getElementById("filname-edit")
     label.innerHTML = 'Selected file: ' + text
   }
 
   document.addEventListener("mousewheel", function(event){
     if(document.activeElement.type === "integer" &&
-       document.activeElement.classList.contains("noscroll"))
+     document.activeElement.classList.contains("noscroll"))
     {
-        document.activeElement.blur();
+      document.activeElement.blur();
     }
-});
+  });
 
-  </script>
+</script>
 <%end%>

@@ -43,28 +43,6 @@
   height: calc(100vh - 70px - 4vh) !important;
 }
 
-.modal-content-edit-tour-page {
-  height: 100% !important;
-  background-color: $gray-transparent;
-  overflow-y: auto;
-  h2, h3, p {
-    color: white;
-  }
-  h3 {
-    font-weight: bolder;
-  }
-}
-
-.modal-body-edit-tour-page {
-  padding: 1vw;
-  position: relative;
-}
-
-.modal-header-edit-tour-page {
-  padding-right: 1vw;
-  padding-left: 1vw;
-}
-
 .modal.right.fade .modal-dialog {
   right: -320px;
   // Transition in
@@ -83,18 +61,58 @@
   right: 0;
 }
 
+
+.modal-content-edit-tour-page {
+  display: flex;
+  flex-direction: column;
+  height: 100% !important;
+  background-color: $gray-transparent;
+  h2, h3, p {
+    color: white;
+  }
+  h3 {
+    font-weight: bolder;
+  }
+}
+
+.modal-header-edit-tour-page {
+  padding-right: 1vw;
+  padding-left: 1vw;
+}
+
+.modal-body-edit-tour-page {
+  flex-grow: 1;
+  padding: 1vw;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.modal-footer-edit-tour-page {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1vw;
+  padding-bottom: 1vw;
+  padding-right: 1vw;
+}
+
+.push-box {
+  flex-grow: 1;
+}
+
 .modal-label {
   color: white;
 }
 
-.btn-save-location {
-  position: relative;
+.btn-modal-bottom-left {
+  // position: absolute;
+  // left: 1vw;
+  // bottom: 1vw;
 }
 
-.btn-delete-location {
-  position: absolute;
-  right: 1vw;
-  bottom: 20px;
+.btn-modal-bottom-right {
+  // position: absolute;
+  // right: 1vw;
+  // bottom: 20px;
 }
 
 #filname-edit-edit-tour-page {

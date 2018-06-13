@@ -1,7 +1,7 @@
 <% if @location.errors.any? %>
 // When there are errors, render them
   function renderUpdatedForm(input) {
-    const modalBody = document.getElementById('updateLocationModalForm');
+    const modalBody = document.getElementById('<%= "updateLocationModalForm#{@location.id}" %>');
     modalBody.innerHTML = input;
   }
 
