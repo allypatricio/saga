@@ -87,11 +87,13 @@
   color: white;
 }
 
-.btn-save-location {
-  position: relative;
+.btn-modal-bottom-left {
+  position: absolute;
+  left: 1vw;
+  bottom: 20px;
 }
 
-.btn-delete-location {
+.btn-modal-bottom-right {
   position: absolute;
   right: 1vw;
   bottom: 20px;
