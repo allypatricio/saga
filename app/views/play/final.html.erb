@@ -1,6 +1,6 @@
-<h1> This this is the end </h1>
+<h1> Congratulations! </h1>
 <p>
-You needed <%= @time %> secondsto complete the tour.
+You needed <%= @time.to_i %> seconds to complete the tour.
 </p>
 <p>
  View the scoreboard <%= link_to "here", play_scoreboard_path %>
