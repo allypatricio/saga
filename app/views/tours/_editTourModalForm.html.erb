@@ -6,8 +6,8 @@
     <%= f.input :title %>
     <%= f.input :description, as: :text, :input_html => {:rows => 6} %>
     <%= f.input :category, label: "Category", :collection => Tour::CATEGORIES %>
-    <%= f.input :price, label: "Price (€)" %>
-    <%= f.input :duration, label: "Duration (hours)" %>
+    <%= f.input :price, label: "Price (€)", class: "noscroll" %>
+    <%= f.input :duration, label: "Duration (hours)", class: "noscroll" %>
 
     <div class="modal-label add-picture-label">Add a picture</div>
     <label class="btn btn-back-pnk btn-edit-photo">
@@ -37,6 +37,14 @@
     var label = document.getElementById("filname-edit")
     label.innerHTML = 'Selected file: ' + text
   }
+
+  document.addEventListener("mousewheel", function(event){
+    if(document.activeElement.type === "integer" &&
+       document.activeElement.classList.contains("noscroll"))
+    {
+        document.activeElement.blur();
+    }
+});
 
   </script>
 <%end%>
