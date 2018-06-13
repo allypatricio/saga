@@ -33,7 +33,7 @@
           <% if current_user.guide %>
           <li><%=link_to "My Tours", my_tours_path %></li>
           <% end %>
-          <li><%=link_to "My Bookings", my_bookings_path %></li>
+          <li><%=link_to "Bookings", my_bookings_path %></li>
           <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
           <!-- <li><a href="#">Dashboard</a></li> -->
           <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
