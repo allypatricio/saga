@@ -84,9 +84,12 @@
   justify-content: space-between;
   text-align: center;
   align-items: center;
+  padding: 20px;
   margin-right: 220px;
   margin-left: 220px;
   margin-top:20px;
+  font-family: halvetica;
+  // border-bottom: solid 2px;
 }
 
 .icon {
@@ -98,6 +101,11 @@
   text-align: center;
   font-size: 70px;
   font-style: bold;
+  padding: 30px;
+  border-top: solid 1px;
+}
+.middle-title {
+  font-style: halvetica;
 }
 
 .bottom-landing {
@@ -116,7 +124,7 @@
 }
 
 .bottom-text {
-  padding: 10px;
+  padding: 25px;
   vertical-align: super;
   margin-right: 50px;
   margin-left: 50px;
@@ -163,6 +171,17 @@
     padding-left: 0;
   }
 }
+
+// .footer {
+//   position: absolute;
+//   height: 100px;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   padding: 1rem;
+//   background-color: #efefef;
+//   text-align: center;
+// }
 
 .info-window{
   text-align: center;

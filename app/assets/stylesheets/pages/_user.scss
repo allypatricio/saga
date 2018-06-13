@@ -38,3 +38,37 @@
     outline: none !important;
   }
 }
+.create-button-sign-up1 {
+  color: white;
+  background-color: gray;
+  opacity: 0.6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 290px;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+   &:focus {
+    outline: none !important;
+  }
+}
+
+.create-button-login1 {
+  color: white;
+  background-color: grey;
+  opacity: 0.6;
+  padding: 10px 30px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 179px;
+  &:hover {
+    text-decoration: none !important;
+    color: white;
+    opacity: 0.5;
+  }
+}
