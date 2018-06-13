@@ -52,7 +52,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   #The path used after sign up.
   def after_sign_up_path_for(resource)
-    super(resource)
+    if resource.guide == true
+      my_tours_path
+    else
+      tours_path
+    end
+    # super(resource)
   end
 
   #The path used after sign up for inactive accounts.
