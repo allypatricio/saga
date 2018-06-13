@@ -19,7 +19,7 @@ class PlayController < ApplicationController
     answer = params[:answer];
     if answer != "green"
       flash[:error]= "The answer is not correct"
-      redirect_to play_2_path
+      redirect_to "/play/2?answer=blue"
     end
   end
 
@@ -27,7 +27,7 @@ class PlayController < ApplicationController
     answer = params[:answer];
     if answer != "pink"
       flash[:error]= "The answer is not correct"
-      redirect_to play_3_path
+      redirect_to "/play/3?answer=green"
     end
   end
 
