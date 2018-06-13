@@ -14,16 +14,16 @@
     <%end%>
     <p>
       <%  if Review.where(user_id: current_user.id, booking_id: booking.id).any? %>
-        <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Edit Review</button>
+      <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Edit Review</button>
       <%else%>
-        <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Add Review</button>
+      <button type="button" class="btn-main-pnk" data-toggle="modal" data-target="#review-<%=booking.id%>">Add Review</button>
       <%end%>
     </p>
   </div>
   <%if booking.status == nil || "accepted"%>
   <div class="message-status">
     <p class="status accepted">Booked</p>
-  <%end%>
+    <%end%>
     <p class="message-price"><%=(Tour.find(booking.tour_id)).price.to_i%>€</p>
 <!--     <%= link_to tour_booking_path(Tour.find(booking.tour_id), booking), method: :delete,remote: true, :class => "message-link" do %>
     <i class="far fa-trash-alt"></i>
@@ -45,21 +45,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header show-modal-header">
-         <button type="button" class="close show-close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h3> Add Review for "<%=Tour.find(booking.tour_id).title%>"</h3>
-      </div>
-      <div class="modal-body">
+       <button type="button" class="close show-close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h3> Add Review for "<%=Tour.find(booking.tour_id).title%>"</h3>
+    </div>
+    <div class="modal-body">
 
       <div id="review-form-<%=booking.id%>">
         <%= render "review_form", {review: review, tour: tour, booking: booking}%>
       </div>
-
-
-      </div>
-
     </div>
   </div>
+</div>
 </div>
 
