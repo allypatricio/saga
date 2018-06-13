@@ -58,12 +58,12 @@
   }
 }
 .status.active {
-  color: $blue;
+  color: $pink;
 }
 .status.inactive {
-  color: $gray;
+  color: #a0a0a0;
   &:hover {
-    text-decoration: none;
+    // text-decoration: none;
     color: #a0a0a0;
   }
 }

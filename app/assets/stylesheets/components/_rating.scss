@@ -30,7 +30,7 @@ color: #888;
 }
 .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
 content: "★";
-color: #86E7DF;
+color: #f4e842;
 text-shadow: none;
 }
 .star-cb-group > .star-cb-clear + label {
@@ -48,13 +48,13 @@ text-shadow: none;
 }
 .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
 content: "★";
-color: #86E7DF;
+color: #f4e842;
 text-shadow: none;
 }
 
 .full-star{
   display:inline;
-  color: #86E7DF;
+  color: #f4e842;
 }
 
 .emtpty-star{
