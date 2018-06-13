@@ -158,7 +158,17 @@
 }
 
 .message-body.tourist{
-  a{
-    color: black;
+  a {
+    color: $gray;
+    &:hover {
+      text-decoration: none !important;
+      color: #a0a0a0;
+    }
+  }
+  strong {
+    color: $gray;
+    &:hover {
+      color: #a0a0a0;
+    }
   }
 }
