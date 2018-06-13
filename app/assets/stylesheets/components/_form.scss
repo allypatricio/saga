@@ -76,7 +76,13 @@ hr {
 }
 
 
-
+a {
+  color: $pink;
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 120, 154, 0.5)
+  }
+}
 
 
 
