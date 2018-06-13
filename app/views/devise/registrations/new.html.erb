@@ -12,11 +12,12 @@
         <%= f.input :email, required: true %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
-         <%= f.input :guide, label: 'I am a Tour Guide' %>
+        <%= f.input :guide, label: 'I am a Tour Guide' %>
       </div>
 
       <div class="form-actions">
         <%= f.button :submit, "Sign up", :class=> "btn-form-blue" %>
+        <hr>
         <p>Already have a Saga account?  <%= render "devise/shared/links" %></p>
       </div>
       <% end %>
