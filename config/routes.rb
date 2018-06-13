@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
   }
 
   root to: 'home#index'
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   end
 
   resources :dashboard, only: :index
+
+
+  resources :play, only: [:index, :show]
+
 end
 
 # dashboard
