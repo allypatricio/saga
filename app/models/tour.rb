@@ -1,5 +1,6 @@
 class Tour < ApplicationRecord
-  CATEGORIES = ["Bachelor Party", "Team buidling", "Kids", "Rainy day", "Sightseeing"]
+  CATEGORIES = ["Bachelor Party", "Team building", "Kids", "Rainy day", "Sightseeing"]
+
   belongs_to :user
   has_many :locations, -> { order(position: :asc) }, dependent: :destroy
   enum status: [:inactive, :active]
