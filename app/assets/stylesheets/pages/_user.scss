@@ -21,7 +21,7 @@
 }
 
 .create-button-new {
-  color: white;
+  color: black;
   background-color: white;
   opacity: 0.6;
   padding: 10px 20px;
@@ -31,16 +31,16 @@
   right: 20px;
   &:hover {
     text-decoration: none !important;
-    color: white;
-    opacity: 0.5;
+    color: black;
+    opacity: 0.4;
   }
    &:focus {
     outline: none !important;
   }
 }
 .create-button-sign-up1 {
-  color: white;
-  background-color: gray;
+  color: black;
+  background-color: white;
   opacity: 0.6;
   padding: 10px 20px;
   border-radius: 5px;
@@ -49,8 +49,8 @@
   right: 290px;
   &:hover {
     text-decoration: none !important;
-    color: white;
-    opacity: 0.5;
+    color: black;
+    opacity: 0.4;
   }
    &:focus {
     outline: none !important;
@@ -58,8 +58,8 @@
 }
 
 .create-button-login1 {
-  color: white;
-  background-color: grey;
+  color: black;
+  background-color: white;
   opacity: 0.6;
   padding: 10px 30px;
   border-radius: 5px;
@@ -68,7 +68,7 @@
   right: 179px;
   &:hover {
     text-decoration: none !important;
-    color: white;
-    opacity: 0.5;
+    color: black;
+    opacity: 0.4;
   }
 }
