@@ -13,12 +13,17 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <%= f.input :address %>
-  <%= f.input :story, as: :text %>
+  <%= f.input :address, as: :string, readonly: true, hint: "You can't change the address of a saved location. Feel free to remove it, if you don't want to include it anymore." %>
+  <%= f.input :story, as: :text, :input_html => {:rows => 7}, placeholder: "Example for Miradouro de Sophia de Mello Breyner Andresen: \nThere are many viewpoints like these around Lisbon. The Portuguese name for these viewpoints is Miradouro, which can be translated to 'view of gold'. This viewpoint was named after Sophia de Mello Breyner Andresen, a famous Portuguese poet from the 20th century. She passed away in 2004 and is the second woman to ever receive National Pantheon honours by the Portuguese parliament." %>
 
-  <%= f.input :question %>
-  <%= f.input :hint %>
-  <%= f.input :answer %>
+  <%= f.input :question, as: :text, :input_html => {:rows => 2}, placeholder: "Walk down from the viewpoint until you find a shop famous for it's wine and cheese. On what house number are you allowed to enter?" %>
+  <%= f.input :hint, placeholder: "Look for Graça do Vinho. It has two house numbers, but only one is a door." %>
+
+  <div class="form-row">
+    <div class="form-group col-md-4 form-group-left">
+      <%= f.input :answer, placeholder: "10B", hint: "Keep answers short and sweet."  %>
+    </div>
+  </div>
 </div>
 <div class="modal-footer modal-footer-edit-tour-page">
   <%= f.submit "Save location", class: "btn-main-pnk" %>
