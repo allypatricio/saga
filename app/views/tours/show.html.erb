@@ -11,9 +11,9 @@
           <div class="tour-guide-details">
             <div class="guide-pic">
               <% if @tour.user.photo.url == nil %>
-              <i class="far fa-user 3x card-user avatar-small avatar-border-white-i avatar-color"></i>
+              <i class="far fa-user 3x card-user avatar-med avatar-border-white-i avatar-color"></i>
               <% else %>
-              <%= image_tag @tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-small avatar-border-white avatar-color" %>
+              <%= image_tag @tour.user.photo.url(:thumnail), :class => "far fa-user card-user avatar-med avatar-border-white avatar-color" %>
               <% end %>
             </div>
             <div class="created-by">
