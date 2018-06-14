@@ -14,13 +14,14 @@
 
     <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up1 border-radius"  %>
     <% else %>
-    <%= link_to "Find a tour", tours_path, class: "text-center create-button-login-new border-radius"  %>
-    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center create-button-sign-up-new border-radius"  %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center create-button-logout border-radius"  %>
     <% end %>
 </div>
 
   </div>
+  <div>
   <%= video_tag "lisbon1.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
+  </div>
 </div>
 
 <% content_for :external_script do %>
