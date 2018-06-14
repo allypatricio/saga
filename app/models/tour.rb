@@ -15,9 +15,9 @@ after_create :default_image
   scope :location, -> (location) { includes(:locations).where("locations.address like ?", "%#{location.capitalize}%").references(:locations) }
 
   validates :title, presence: true, length: { in: (8..30) }
-  validates :description, presence: true, length: { in: (40..200) }
-  validates :price, presence: true, on: :update
-  validates :duration, presence: true, on: :update
+  validates :description, presence: true, length: { in: (40..400) }
+  validates :price, presence: true, inclusion: { in: (0..100) }, on: :update
+  validates :duration, presence: true, inclusion: { in: (0..10) }, on: :update
   validates :category, presence: true, on: :update
 
   def activate
