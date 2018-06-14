@@ -1,0 +1,6 @@
+function updateNewTourModal(input) {
+  const modalBody = document.getElementById('new-tour-modal');
+  modalBody.innerHTML = input;
+}
+
+updateNewTourModal('<%= j render "dashboard/newTourModal" %>');
