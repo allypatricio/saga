@@ -8,6 +8,10 @@ class PlayController < ApplicationController
 
   def first
     name = params[:name]
+    if Player.find_by(name: name)
+      flash[:error]= "Name already taken"
+      redirect_to play_path
+    end
     session[:name] = name
     player = Player.create(name: name, start_time: Time.now)
     session[:player_id] = player.id
@@ -43,7 +47,7 @@ class PlayController < ApplicationController
   end
 
   def scoreboard
-    @players = Player.all
+    @players = Player.all.order('end_time - start_time')
   end
 
 

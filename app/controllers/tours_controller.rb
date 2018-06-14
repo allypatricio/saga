@@ -43,6 +43,10 @@ class ToursController < ApplicationController
   end
 
   def new
+     if !current_user.guide
+      flash[:alert]= "You are not a Tour Guide!"
+      redirect_to tours_path
+    end
     @tour = Tour.new
   end
 
@@ -124,6 +128,10 @@ class ToursController < ApplicationController
 
   def set_tour
     @tour = Tour.find(params[:id])
+    if @tour.user_id != current_user.id
+      flash[:alert]= "This is not your tour!"
+      redirect_to my_tours_path
+    end
   end
 
   def tour_params
