@@ -8,11 +8,13 @@
 
   <% if current_user == nil %>
   <div class="home-btn-positions"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center btn-main-pnk" %>
+  </div>
   <% else %>
   <div class="home-btn-positions"> <%= link_to "Create your tour", my_tours_path, class: "text-center btn-main-pnk" %>
+  </div>
   <%end%>
 
-   </div>
+
    <div>
     <% if current_user == nil %>
     <%= link_to "Find a tour", user_landing_page_path, class: "text-center btn-home-white create"  %>
@@ -25,7 +27,7 @@
     <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center btn-home-white sign-up-new"  %>
     <% end %>
   </div>
-
+</div>
   <div class="video-wrapper">
 
     <%= video_tag "lisbon2.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
