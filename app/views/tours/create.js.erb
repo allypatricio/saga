@@ -1,6 +1,9 @@
-function updateNewTourModal(input) {
-  const modalBody = document.getElementById('new-tour-modal');
-  modalBody.innerHTML = input;
-}
-
-updateNewTourModal('<%= j render "dashboard/newTourModal" %>');
+<% if @tour.errors.any? %>
+  function updateNewTourModal(input) {
+    const modalBody = document.getElementById('new-tour-modal');
+    modalBody.innerHTML = input;
+  }
+  updateNewTourModal('<%= j render "dashboard/newTourModal" %>');
+<% else %>
+  window.location.replace('<%= "/tours/#{@tour.id}/edit" %>')
+<% end %>
