@@ -1,5 +1,24 @@
+.video-wrapper {
+ position: relative;
+
+}
+
 #video-background {
  width: 100%;
+ display: block;
+}
+
+.video-wrapper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+ /*  width: 100%;
+  height: 100%; */
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.25) 50%);
 }
 
 .banner-content
@@ -8,7 +27,6 @@
   width: 100%;
   position: absolute;
   height: 980px;
-  background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%);
   //image-url("lisbon.mp4");
 }
 .banner h1 {
