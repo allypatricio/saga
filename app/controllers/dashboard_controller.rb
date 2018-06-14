@@ -1,6 +1,10 @@
 class DashboardController < ApplicationController
 
   def my_tours
+    if !current_user.guide
+      flash[:alert]= "You are not a tour guide!"
+      redirect_to tours_path
+    end
     @tour = Tour.new
     @tours = Tour.where(user_id: current_user.id)
     @bookings_filtered = []

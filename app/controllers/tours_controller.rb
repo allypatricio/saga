@@ -43,6 +43,10 @@ class ToursController < ApplicationController
   end
 
   def new
+     if !current_user.guide
+      flash[:alert]= "You are not a Tour Guide!"
+      redirect_to tours_path
+    end
     @tour = Tour.new
   end
 
@@ -53,13 +57,19 @@ class ToursController < ApplicationController
     respond_to do |format|
       if @tour.save
         format.html { redirect_to edit_tour_path(Tour.last), notice: 'Tour was successfully created.' }
+        format.js
       else
         format.html { render :new }
+        format.js
       end
     end
   end
 
   def edit
+    if @tour.user_id != current_user.id
+      flash[:alert]= "This is not your tour!"
+      redirect_to my_tours_path
+    end
     @location = Location.new
     @locations_ordered = @tour.locations.sort_by {|obj| obj.position}
 

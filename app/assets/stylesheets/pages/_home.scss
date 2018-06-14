@@ -1,120 +1,45 @@
 
-.button {
+.home-btn-positions {
   text-align: center;
   margin-top: 60px;
   font-size: 20px;
 }
-
-.create-button-pink {
-  align-items: center;
-  border:solid $pink 2px;
-  background-color: $pink;
-  color: white;
-  font-weight: bold;
-  opacity: 1;
-  padding: 10px 30px;
-  border-radius: 4px;
-  &:hover {
-    text-decoration: none;
-    border: solid $pink 2px;
-    color: white;
-    opacity: 0.6;
-  }
+.login {
+  position: absolute;
+  top: 20px;
+  right: 167px;
 }
-
-.create-button-sign-up {
-  color: black;
-  background-color: white;
-  opacity: 0.6;
-  padding: 10px 20px;
-  border-radius: 5px;
+.login-tourist {
+  position: absolute;
+  top: 20px;
+  right: 185px;
+}
+.create {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.sign-up {
   position: absolute;
   top: 20px;
   right: 270px;
-  &:hover {
-    text-decoration: none !important;
-    color: black;
-    opacity: 0.4;
-  }
-   &:focus {
-    outline: none !important;
-  }
 }
-
-.create-button-login {
-  color: black;
-  background-color: white;
-  opacity: 0.6;
-  padding: 10px 30px;
-  border-radius: 5px;
+.sign-up-tourist {
   position: absolute;
   top: 20px;
-  right: 157px;
-  &:hover {
-    text-decoration: none !important;
-    color: black;
-    opacity: 0.4;
-  }
-  &:focus {
-    outline: none !important;
-  }
+  right: 285px;
 }
 
-// .create-button-sign-up-new {
-//   color: black;
-//   background-color: white;
-//   opacity: 0.6;
-//   padding: 10px 20px;
-//   border-radius: 5px;
-//   position: absolute;
-//   top: 20px;
-//   right: 179px;
-//   &:hover {
-//     text-decoration: none !important;
-//     color: black;
-//     opacity: 0.4;
-//   }
-//    &:focus {
-//     outline: none !important;
-//   }
-// }
+.sign-up-new {
+  position: absolute;
+  top: 20px;
+  right: 179px;
+}
 
-.create-button-logout {
-  color: black;
-  background-color: white;
-  opacity: 0.6;
-  padding: 10px 30px;
-  border-radius: 5px;
+.login-new {
   position: absolute;
   top: 20px;
   right: 20px;
-  &:hover {
-    text-decoration: none !important;
-    color: black;
-    opacity: 0.4;
-  }
-  &:focus {
-    outline: none !important;
-  }
-}
-
-.create-button-white {
-  color: black;
-  background-color: white;
-  opacity: 0.6;
-  padding: 10px 20px;
-  border-radius: 5px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  &:hover {
-    text-decoration: none !important;
-    color: black;
-    opacity: 0.4;
-  }
-   &:focus {
-    outline: none !important;
-  }
 }
 
 .middle-landing {
@@ -235,3 +160,4 @@
     margin-bottom: 5px;
   }
 }
+

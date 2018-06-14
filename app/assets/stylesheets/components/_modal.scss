@@ -103,17 +103,12 @@
   color: white;
 }
 
-.btn-modal-bottom-left {
-  // position: absolute;
-  // left: 1vw;
-  // bottom: 1vw;
+.btn-upload-photo-edit-page {
+  // font-size: 18px;
+  padding: 6px 12px !important;
+  line-height: 22px
 }
 
-.btn-modal-bottom-right {
-  // position: absolute;
-  // right: 1vw;
-  // bottom: 20px;
-}
 
 #filname-edit-edit-tour-page {
   color: white;
@@ -122,4 +117,21 @@
 .add-picture-label {
   left: 0px;
   font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.form-group-right {
+  padding-right: 0px;
+}
+
+.form-group-left {
+  padding-left: 0px;
+}
+
+.location-address-modal {
+  width: 100% !important;
+}
+
+.text-muted {
+  color: white;
 }

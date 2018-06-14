@@ -19,7 +19,7 @@ class PlayController < ApplicationController
 
   def second
     answer = params[:answer].downcase;
-    if answer != "blue"
+    if answer != "welcome!"
       flash[:error]= "The answer is not correct"
       redirect_to play_1_path
     end
@@ -29,7 +29,7 @@ class PlayController < ApplicationController
     answer = params[:answer].downcase;
     if answer != "green"
       flash[:error]= "The answer is not correct"
-      redirect_to "/play/2?answer=blue"
+      redirect_to "/play/2?answer=welcome!"
     end
   end
 
