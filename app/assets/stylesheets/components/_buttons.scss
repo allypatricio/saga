@@ -174,5 +174,22 @@
 
 }
 
+// LANDING PAGE BUTTONS - WHITE
+
+.btn-home-white {
+  color: $gray;
+  background-color: white;
+  opacity: 0.6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  &:hover {
+    text-decoration: none !important;
+    color: $gray;
+    opacity: 0.3;
+  }
+   &:focus {
+    outline: none !important;
+  }
+}
 
 
