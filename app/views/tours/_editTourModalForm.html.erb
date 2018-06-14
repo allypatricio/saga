@@ -17,7 +17,7 @@
     <%= f.input :title %>
     <%= f.input :description, as: :text, :input_html => {:rows => 6} %>
     <%= f.input :category, label: "Category", :collection => Tour::CATEGORIES %>
-    <%= f.input :price, label: "Price (€)", class: "noscroll" %>
+    <%= f.input :price, label: "Price (€)" %>
     <%= f.input :duration, label: "Duration (hours)", class: "noscroll" %>
 
     <div class="modal-label add-picture-label">Add a picture</div>

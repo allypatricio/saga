@@ -10,4 +10,15 @@ class ApplicationController < ActionController::Base
    def store_user_location!
      store_location_for(:user, request.fullpath)
    end
+
+
+  def after_sign_in_path_for(resource)
+    if resource.guide
+      my_tours_path
+    else
+      tours_path
+    end
+  end
+
+
 end
