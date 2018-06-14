@@ -7,11 +7,16 @@ class PlayController < ApplicationController
   end
 
   def first
-    name = params[:name]
-    if Player.find_by(name: name)
-      flash[:error]= "Name already taken"
-      redirect_to play_path
+    if session[:name] != nil
+      name = session[:name]
+    else
+      name = params[:name]
+      if Player.find_by(name: name)
+        flash[:error]= "Name already taken"
+        redirect_to play_path
+      end
     end
+
     session[:name] = name
     player = Player.create(name: name, start_time: Time.now)
     session[:player_id] = player.id
