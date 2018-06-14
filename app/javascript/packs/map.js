@@ -13,6 +13,7 @@ function createMap(mapElement) {
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: false,
+    maxZoom: 15,
     zoomControl: true,
     zoomControlOptions: {
         position: google.maps.ControlPosition.TOP_RIGHT
