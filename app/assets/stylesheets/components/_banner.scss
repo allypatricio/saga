@@ -8,9 +8,8 @@
   width: 100%;
   position: absolute;
   height: 980px;
-  background-image: linear-gradient(-225deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.25) 50%);
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 50%);
   //image-url("lisbon.mp4");
-
 }
 .banner h1 {
   color: white;
@@ -21,8 +20,7 @@
   opacity: 1;
   //text-shadow: 1px 1px 1px;
   text-align: center;
-}
-.banner h4 {
+  h4 {
   //padding-top: 75px;
   font-size: 25px;
   color: white;
@@ -30,16 +28,19 @@
   margin-left: 200px;
   margin-right: 200px;
 }
+}
 .logo {
-
   -webkit-filter: drop-shadow(3px 3px 3px #888 );
   height: 120px;
   width: 120px;
   margin-right: 10px;
   justify-content: center;
-
 }
 .logo-in-line{
   text-align: center;
   margin-top: 270px;
 }
+
+
+
+
