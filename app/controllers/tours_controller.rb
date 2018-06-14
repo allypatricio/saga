@@ -43,6 +43,10 @@ class ToursController < ApplicationController
   end
 
   def new
+     if !current_user.guide
+      flash[:alert]= "You are not a Tour Guide!"
+      redirect_to tours_path
+    end
     @tour = Tour.new
   end
 
