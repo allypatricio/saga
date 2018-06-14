@@ -22,8 +22,7 @@ class DashboardController < ApplicationController
     @bookings_filtered = []
     bookings = Booking.all
     bookings.each do |booking|
-      raise
-      if booking.tour.user_id == current_user.id
+    if booking.tour.user_id == current_user.id
         @bookings_filtered << booking
       end
     end
