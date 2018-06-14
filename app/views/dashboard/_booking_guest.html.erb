@@ -1,6 +1,6 @@
 <div class="message" data-booking-id="<%= booking.id %>">
   <%  if User.find(booking.user_id).photo.url != nil %>
-  <%= image_tag User.find(booking.user_id).photo.url(:thumnail), :class => "avatar avatar-border-turqoise" %>
+  <%= image_tag User.find(booking.tour.user_id).photo.url(:thumnail), :class => "avatar avatar-border-turqoise" %>
   <% else %>
   <i class="far fa-user avatar-border-turqoise-i" style="font-size: 24px"></i>
   <% end %>
