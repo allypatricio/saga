@@ -20,6 +20,15 @@
         <span class="card-category"><%=tour.category%></span>
         <div class="center-title"><h2><%= tour.title %></h2></div>
 
+      <div class="rating rating-cards">
+        <% (@average_rating.to_i).times do%>
+        <div class="full-star">★</div>
+        <% end %>
+        <% (5-@average_rating.to_i).times do%>
+        <div class="emtpty-star">☆</div>
+        <% end %>
+      </div>
+
         <div class="card-location"><p><i class="fas fa-map-marker"></i><%= tour.locations.first.address %></p></div>
 
         <div class="card-price">

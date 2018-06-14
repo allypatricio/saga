@@ -15,7 +15,7 @@
 .card-category {
   position: absolute;
   top: 15px;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: lighter;
@@ -68,7 +68,7 @@
     top: 13px;
     h2 {
       color: $gray;
-      font-size: 16px;
+      font-size: 18px;
     }
   }
   .card-location {
@@ -77,7 +77,7 @@
    top: 150px;
    border-bottom: 1px solid $light-gray;
    p {
-     font-size: 13px;
+     font-size: 15px;
      color: $gray;
      font-weight: lighter;
    }
@@ -87,7 +87,7 @@
   right: 30%;
   top: 205px;
   p {
-    font-size: 13px;
+    font-size: 15px;
     color: $gray;
     font-weight: lighter;
   }
@@ -97,7 +97,7 @@
  left: 30%;
  top: 205px;
  p {
-  font-size: 13px;
+  font-size: 15px;
   color: $gray;
   font-weight: lighter;
     // transform: translate(-50%, -50%);
@@ -113,4 +113,9 @@
 .card-container{
   padding-left: 13vw;
   padding-right: 13vw;
+}
+
+.rating-cards {
+   position: absolute;
+   top: 120px;
 }
