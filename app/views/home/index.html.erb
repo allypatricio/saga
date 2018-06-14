@@ -1,45 +1,42 @@
- <div class="banner">
+<div class="banner">
 
   <div class="banner-content">
    <div class="logo-in-line"> <%= image_tag "logo1.png", class: "logo" %> </div>
    <h1>SAGA</h1>
    <p class="description">Share the story of your city</p>
 
-  <% if current_user == nil %>
-  <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-pink border-radius" %>
-  <% else %>
-  <div class="button"> <%= link_to "Create your tour", my_tours_path, class: "text-center create-button-pink border-radius" %>
-  <%end%>
-
-   </div>
-   <div>
-    <% if current_user == nil %>
-    <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
-    <br>
-    <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
-
-    <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
-
+   <% if current_user == nil %>
+   <div class="button"> <%= link_to "Create your tour", new_user_registration_path, class: "text-center create-button-pink border-radius" %>
     <% else %>
+    <div class="button"> <%= link_to "Create your tour", my_tours_path, class: "text-center create-button-pink border-radius" %>
+      <%end%>
 
-    <%= link_to "Find a tour", tours_path, class: "text-center create-button-login-new border-radius"  %>
-    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center create-button-sign-up-new border-radius"  %>
-    <% end %>
+    </div>
+    <div>
+      <% if current_user == nil %>
+      <%= link_to "Find a tour", user_landing_page_path, class: "text-center create-button-white border-radius"  %>
+      <br>
+      <%= link_to "Login", new_user_session_path, class: "text-center create-button-login border-radius"  %>
+
+      <%= link_to "Sign Up", new_user_registration_path, class: "text-center create-button-sign-up border-radius"  %>
+
+      <% else %>
+
+      <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-center create-button-logout border-radius"  %>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <%= video_tag "lisbon2.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
   </div>
 </div>
-
-<%= video_tag "lisbon2.mp4", autoplay: "true", loop: "true", muted: true, id: "video-background" %>
-
-
-
-</div>
 <div class="middle-landing">
- <div class="middle-title"><h3>Create your tour</h3><br><%= image_tag "map.svg", class: "icon" %>
- </div>
- <div class="middle-title"><h3>Grow your business</h3><br><%= image_tag "graph.svg", class: "icon" %>
- </div>
- <div class="middle-title"><h3>Earn extra money</h3><br> <%= image_tag "coins.svg", class: "icon" %>
- </div>
+  <div class="middle-title"><h3>Create your tour</h3><br><%= image_tag "map.svg", class: "icon" %>
+  </div>
+  <div class="middle-title"><h3>Grow your business</h3><br><%= image_tag "graph.svg", class: "icon" %>
+  </div>
+  <div class="middle-title"><h3>Earn extra money</h3><br> <%= image_tag "coins.svg", class: "icon" %>
+  </div>
 </div>
 
 <div class="bottom">
@@ -80,9 +77,9 @@
 </div>
 <% content_for :external_script do %>
 <script>
-const video = document.getElementById('video-background');
+  const video = document.getElementById('video-background');
 
-video.playbackRate = 0.7;
+  video.playbackRate = 0.7;
 </script>
 <%end%>
 

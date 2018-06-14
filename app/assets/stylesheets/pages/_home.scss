@@ -60,26 +60,26 @@
   }
 }
 
-.create-button-sign-up-new {
-  color: black;
-  background-color: white;
-  opacity: 0.6;
-  padding: 10px 20px;
-  border-radius: 5px;
-  position: absolute;
-  top: 20px;
-  right: 179px;
-  &:hover {
-    text-decoration: none !important;
-    color: black;
-    opacity: 0.4;
-  }
-   &:focus {
-    outline: none !important;
-  }
-}
+// .create-button-sign-up-new {
+//   color: black;
+//   background-color: white;
+//   opacity: 0.6;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   position: absolute;
+//   top: 20px;
+//   right: 179px;
+//   &:hover {
+//     text-decoration: none !important;
+//     color: black;
+//     opacity: 0.4;
+//   }
+//    &:focus {
+//     outline: none !important;
+//   }
+// }
 
-.create-button-login-new {
+.create-button-logout {
   color: black;
   background-color: white;
   opacity: 0.6;
