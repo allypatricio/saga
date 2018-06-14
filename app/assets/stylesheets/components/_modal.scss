@@ -89,10 +89,10 @@
 
 .modal-footer-edit-tour-page {
   display: flex;
+  align-items: flex-end;
   justify-content: flex-start;
-  padding-left: 1vw;
-  padding-bottom: 1vw;
-  padding-right: 1vw;
+  // min-height: 10vh;
+  padding: 1vw;
 }
 
 .push-box {
