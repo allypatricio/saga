@@ -28,7 +28,7 @@ class PlayController < ApplicationController
 
   def second
     answer = params[:answer].downcase.strip;
-    if answer != "welcome!"
+    if answer != "kiwi"
       flash[:error]= "The answer is not correct"
       redirect_to play_1_path
     end
@@ -36,17 +36,17 @@ class PlayController < ApplicationController
 
   def third
     answer = params[:answer].downcase.strip;
-    if answer != "benfica"
+    if answer != "roberto"
       flash[:error]= "The answer is not correct"
-      redirect_to "/play/2?answer=welcome!"
+      redirect_to "/play/2?answer=kiwi"
     end
   end
 
   def final
     answer = params[:answer].downcase.strip;
-    if answer != "texas"
+    if answer != "12"
       flash[:error]= "The answer is not correct"
-      redirect_to "/play/3?answer=benfica"
+      redirect_to "/play/3?answer=roberto"
     end
 
     player = Player.find(session['player_id'])
