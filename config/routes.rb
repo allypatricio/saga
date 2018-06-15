@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/play/3', to: 'play#third'
   get '/play/final', to: 'play#final'
   get '/play/scoreboard', to: 'play#scoreboard'
+  get '/play/existing', to: 'play#existing_session'
   # get '/tours' => "tours#index", as: :user_root
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
