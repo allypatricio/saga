@@ -2,8 +2,12 @@ class PlayController < ApplicationController
   layout 'mobile'
 
   def index
-    session[:name] = nil
-    session[:player_id] = nil
+    if session[:player_id] != nil && Player.exists?(session['player_id'])
+      flash[:error] = "You already played!"
+      redirect_to  play_existing_path
+    end
+    #session[:name] = nil
+    #session[:player_id] = nil
   end
 
   def first
@@ -23,7 +27,7 @@ class PlayController < ApplicationController
   end
 
   def second
-    answer = params[:answer].downcase;
+    answer = params[:answer].downcase.strip;
     if answer != "welcome!"
       flash[:error]= "The answer is not correct"
       redirect_to play_1_path
@@ -31,7 +35,7 @@ class PlayController < ApplicationController
   end
 
   def third
-    answer = params[:answer].downcase;
+    answer = params[:answer].downcase.strip;
     if answer != "benfica"
       flash[:error]= "The answer is not correct"
       redirect_to "/play/2?answer=welcome!"
@@ -39,7 +43,7 @@ class PlayController < ApplicationController
   end
 
   def final
-    answer = params[:answer].downcase;
+    answer = params[:answer].downcase.strip;
     if answer != "texas"
       flash[:error]= "The answer is not correct"
       redirect_to "/play/3?answer=benfica"
@@ -53,6 +57,8 @@ class PlayController < ApplicationController
 
   def scoreboard
     @players = Player.all.order('end_time - start_time')
+  end
+  def existing_session
   end
 
 
